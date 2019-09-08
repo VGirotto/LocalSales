@@ -59,7 +59,7 @@ class _CadastroState extends State<Cadastro> {
               Container(
                 child: TextFormField(
                   keyboardType: TextInputType.text,
-                  //obscureText: true,
+                  obscureText: true,
                   decoration: InputDecoration(
                       labelStyle: TextStyle(color: Colors.black),
                       labelText: 'Password',
@@ -77,7 +77,7 @@ class _CadastroState extends State<Cadastro> {
               Container(
                 child: TextFormField(
                   keyboardType: TextInputType.text,
-                  //obscureText: true,
+                  obscureText: true,
                   decoration: InputDecoration(
                       labelStyle: TextStyle(color: Colors.black),
                       labelText: 'Reenter the Password',
