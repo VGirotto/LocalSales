@@ -68,7 +68,8 @@ class _CadastroState extends State<Cadastro> {
                         size: 30,
                         color: Colors.orange,
                       )),
-                  validator: (_pass) {
+                  validator: (text) {
+                    _pass = text;
                     if (_pass.isEmpty || _pass.length < 6)
                       return "Senha inválida!";
                   },
