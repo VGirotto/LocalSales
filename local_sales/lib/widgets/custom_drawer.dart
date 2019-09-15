@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_sales/widgets/drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -36,22 +37,33 @@ class CustomDrawer extends StatelessWidget {
                       child: DecoratedBox(
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('screens/Logo.png'),
+                            image: AssetImage('images/Logo.png')
+                          )
+                        )
+                      )
+                    ),
+                    Positioned(
+                      left: 0.0,
+                      bottom: 0.0,
+                      child: Text(
+                        "Olá, Claudio!",
+                        style: 
+                          TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold
                           ),
-                        ),
-                      ),
-                    )
+                      )
+                    ),
                   ],
                 ),
               ),
-              /*DecoratedBox(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('screens/Logo.png'),
-                  )
-                )
-              ),*/
-
+              Divider(),
+              DrawerTile(Icons.home, "Início"),
+              DrawerTile(Icons.store, "Produtos"),
+              DrawerTile(Icons.account_circle, "Perfil"),
+              DrawerTile(Icons.chat, "Chat"),
+              DrawerTile(Icons.playlist_add_check, "Histórico"),
+              DrawerTile(Icons.info_outline, "Sobre o aplicativo"),
             ],
           ),
         ]
