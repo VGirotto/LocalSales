@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:local_sales/screens/login_screen.dart';
-import 'package:local_sales/screens/perfil_screen.dart';
+import 'package:local_sales/tabs/home_tab.dart';
+//import 'package:local_sales/screens/login_screen.dart';
+//import 'package:local_sales/screens/perfil_screen.dart';
 
-class Feed extends StatefulWidget {
-  @override
-  _FeedState createState() => _FeedState();
-}
-
-class _FeedState extends State<Feed> {
+class Feed extends StatelessWidget {
+  
+  final _pageController = PageController();
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return PageView(
+      controller: _pageController,
+      physics: NeverScrollableScrollPhysics(),
+      children: <Widget>[
+        HomeTab(),
+      ]
+    );
+    
+    /*return Scaffold(
       body: Padding(
           padding: EdgeInsets.all(20.0),
           child: Column(
@@ -45,6 +52,6 @@ class _FeedState extends State<Feed> {
           ),
         ),
       backgroundColor: Colors.white
-    );
+    );*/
   }
 }
