@@ -32,6 +32,7 @@ class _PerfilState extends State<Perfil> {
           )
         ],
       ),
+      //drawer: CustomDrawer(),
       body: new SingleChildScrollView(
 
 

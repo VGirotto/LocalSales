@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:local_sales/tabs/home_tab.dart';
 import 'package:local_sales/widgets/custom_drawer.dart';
 //import 'package:local_sales/screens/login_screen.dart';
-//import 'package:local_sales/screens/perfil_screen.dart';
+import 'package:local_sales/screens/perfil_screen.dart';
 
 class Feed extends StatelessWidget {
   
@@ -16,8 +16,10 @@ class Feed extends StatelessWidget {
       children: <Widget>[
         Scaffold(
           body: HomeTab(),
-          drawer: CustomDrawer(),
+          drawer: CustomDrawer(_pageController),
         ),
+        Perfil(),
+        //TODO: Adicionar os outros filhos
       ],
     );
     

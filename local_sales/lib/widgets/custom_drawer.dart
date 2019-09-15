@@ -2,19 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:local_sales/widgets/drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
+  
+  final PageController pageController;
+
+  CustomDrawer(this.pageController);
+  
   @override
   Widget build(BuildContext context) {
     
     Widget _buildDrawerBack() => Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        color: Colors.white
+        /*gradient: LinearGradient(
           colors: [
             Color.fromARGB(255, 255, 124, 39),
             Colors.white
           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-        )
+        )*/
       ),
     );
     
@@ -34,10 +40,16 @@ class CustomDrawer extends StatelessWidget {
                     Positioned(
                       top: 8.0,
                       left: 0.0,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('images/Logo.png')
+                      child: Container(
+                        width: 100.0,
+                        height: 100.0,
+                        child: DecoratedBox(
+                          decoration: new BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage('images/Logo.png')
+                            )
                           )
                         )
                       )
@@ -58,12 +70,13 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
               Divider(),
-              DrawerTile(Icons.home, "Início"),
-              DrawerTile(Icons.store, "Produtos"),
-              DrawerTile(Icons.account_circle, "Perfil"),
-              DrawerTile(Icons.chat, "Chat"),
-              DrawerTile(Icons.playlist_add_check, "Histórico"),
-              DrawerTile(Icons.info_outline, "Sobre o aplicativo"),
+              DrawerTile(Icons.home, "Início", pageController, 0),
+              DrawerTile(Icons.store, "Produtos", pageController, 1),
+              DrawerTile(Icons.account_circle, "Perfil", pageController, 2),
+              DrawerTile(Icons.chat, "Chat", pageController, 3),
+              DrawerTile(Icons.playlist_add_check, "Histórico", pageController, 4),
+              DrawerTile(Icons.settings, "Configurações", pageController, 5),
+              DrawerTile(Icons.info_outline, "Sobre o aplicativo", pageController, 6),
             ],
           ),
         ]
