@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_sales/tabs/home_tab.dart';
+import 'package:local_sales/widgets/custom_drawer.dart';
 //import 'package:local_sales/screens/login_screen.dart';
 //import 'package:local_sales/screens/perfil_screen.dart';
 
@@ -13,8 +14,11 @@ class Feed extends StatelessWidget {
       controller: _pageController,
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
-        HomeTab(),
-      ]
+        Scaffold(
+          body: HomeTab(),
+          drawer: CustomDrawer(),
+        ),
+      ],
     );
     
     /*return Scaffold(
