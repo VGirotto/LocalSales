@@ -1,4 +1,4 @@
-#Sun Sep 15 12:26:25 BRT 2019
+#Sun Sep 15 14:03:58 BRT 2019
 base.0=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
