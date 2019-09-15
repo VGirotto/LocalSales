@@ -7,6 +7,8 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
+        //Para migrar para o Android X, troque a linha 9 pela linha 11 sem comentário
+        //classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         //Descomentar as linhas abaixo caso o projeto não esteja funcionando
         //classpath 'com.android.tools.build:gradle:3.3.0'

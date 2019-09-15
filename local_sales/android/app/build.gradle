@@ -44,6 +44,8 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //Trocar a linha 46 pela linha 48 para migrar para o Android X
+        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -64,4 +66,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //Trocar as duas linhas acima pelas duas linhas abaixo para migrar para o Android X
+    //androidTestImplementation 'androidx.test:runner:1.1.1'
+    //androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
