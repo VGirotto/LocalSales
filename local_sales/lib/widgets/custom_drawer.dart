@@ -76,7 +76,7 @@ class CustomDrawer extends StatelessWidget {
               DrawerTile(Icons.chat, "Chat", pageController, 3),
               DrawerTile(Icons.playlist_add_check, "Histórico", pageController, 4),
               DrawerTile(Icons.settings, "Configurações", pageController, 5),
-              DrawerTile(Icons.info_outline, "Sobre o aplicativo", pageController, 6),
+              DrawerTile(Icons.info_outline, "Sobre o app", pageController, 6),
             ],
           ),
         ]
