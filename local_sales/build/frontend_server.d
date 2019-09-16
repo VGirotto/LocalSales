@@ -1,1 +1,1 @@
-frontend_server.d: C:\src\flutter\bin\cache\artifacts\engine\windows-x64\frontend_server.dart.snapshot
+frontend_server.d: /home/vinicius/Android/Flutter SDK/flutter/bin/cache/artifacts/engine/linux-x64/frontend_server.dart.snapshot

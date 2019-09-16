@@ -1,4 +1,4 @@
-#Sun Sep 15 18:31:57 BRT 2019
-base.0=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+#Sun Sep 15 20:40:30 BRT 2019
+base.0=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
