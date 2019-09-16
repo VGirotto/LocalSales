@@ -82,7 +82,7 @@ class _LoginState extends State<Login> {
                 style: TextStyle(fontSize: 15.0, color: Colors.orange))
           )
         ],
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.fromLTRB(20.0,60.0,20.0,20.0),
       ),
       backgroundColor: Colors.white,
     );
