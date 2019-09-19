@@ -14,7 +14,7 @@ class _EditProfileState extends State<EditProfile> {
         appBar: AppBar(
           title: Text("Edições do Usuário"),
           centerTitle: true,
-          backgroundColor: Colors.deepOrangeAccent,
+          backgroundColor: Colors.orange,
         ),
         body: new SingleChildScrollView(
           child: new Column(

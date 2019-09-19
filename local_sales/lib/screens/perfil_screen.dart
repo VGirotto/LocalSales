@@ -21,7 +21,7 @@ class _PerfilState extends State<Perfil> {
       appBar: AppBar(
         title: Text("Informações do Usuário"),
         centerTitle: true,
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: Colors.orange,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.edit),
@@ -115,7 +115,7 @@ class _PerfilState extends State<Perfil> {
                 alignment: Alignment.center,
 
                 child: RaisedButton(
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.orange,
                   onPressed: (){
                     if(_formKey.currentState.validate())
                       print("1");

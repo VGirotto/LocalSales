@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_sales/tabs/home_tab.dart';
+import 'package:local_sales/tabs/products_tab.dart';
 import 'package:local_sales/widgets/custom_drawer.dart';
 //import 'package:local_sales/screens/login_screen.dart';
 import 'package:local_sales/screens/perfil_screen.dart';
@@ -17,6 +18,14 @@ class Feed extends StatelessWidget {
         Scaffold(
           body: HomeTab(),
           drawer: CustomDrawer(_pageController),
+        ),
+        Scaffold(
+          appBar: AppBar(
+            title: Text("Categorias"),
+            centerTitle: true,
+          ),
+          drawer: CustomDrawer(_pageController),
+          body: ProductsTab(),
         ),
         Perfil(),
         //TODO: Adicionar os outros filhos
