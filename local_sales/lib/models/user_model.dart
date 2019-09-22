@@ -57,6 +57,10 @@ class UserModel extends Model {
     notifyListeners();
   }
 
+  bool isLoggedIn(){
+    return firebaseUser != null;
+  }
+
   void recoverPass() {}
 
   Future<Null> _saveUserData(Map<String, dynamic> userData) async {

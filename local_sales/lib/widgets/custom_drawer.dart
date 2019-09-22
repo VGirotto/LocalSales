@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/widgets/drawer_tile.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class CustomDrawer extends StatelessWidget {
   
@@ -13,14 +15,6 @@ class CustomDrawer extends StatelessWidget {
     Widget _buildDrawerBack() => Container(
       decoration: BoxDecoration(
         color: Colors.white
-        /*gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 255, 124, 39),
-            Colors.white
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        )*/
       ),
     );
     
@@ -57,13 +51,17 @@ class CustomDrawer extends StatelessWidget {
                     Positioned(
                       left: 0.0,
                       bottom: 0.0,
-                      child: Text(
-                        "Olá, Claudio!",
-                        style: 
-                          TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold
-                          ),
+                      child: ScopedModelDescendant<UserModel>(
+                        builder: (context, child, model){
+                          return Text(
+                            "Olá, ${!model.isLoggedIn() ? "" : model.userData["name"]}!",
+                            style: 
+                              TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold
+                              ),
+                          );
+                        }
                       )
                     ),
                   ],

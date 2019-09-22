@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "C:\\Users\\Claud\\Documents\\EnSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/64c3456f494a24073e7f48c5e078a2d8/res/values-pt-rPT/values-pt-rPT.xml",
+                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\a1af00810df5140b86ccc09ecd7cc1a0\\res\\values-pt-rPT\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "203",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1294",
+                        "endColumns": "203",
+                        "endOffsets": "1493"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\2f88514a7f6239fa642f180402765895\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/5303824108a3f566ed0750e2a2a13feb/res/values-pt-rPT/values.xml",
+                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\cad5b3edf6caa45a41685cdce5a28681\\res\\values-pt-rPT\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -35,23 +52,6 @@
                         "startOffsets": "105,212,407,537,647,874,1004,1156,1498,1745,1855,2056,2189,2407,2615,2713,2812",
                         "endColumns": "106,194,129,109,226,129,151,137,246,109,200,132,217,207,97,98,115",
                         "endOffsets": "207,402,532,642,869,999,1151,1289,1740,1850,2051,2184,2402,2610,2708,2807,2923"
-                    }
-                },
-                {
-                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/e80fa951ab8fd9a9b87a466f777110c8/res/values-pt-rPT/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "203",
-                        "endOffsets": "454"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1294",
-                        "endColumns": "203",
-                        "endOffsets": "1493"
                     }
                 }
             ]
