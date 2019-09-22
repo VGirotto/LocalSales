@@ -17,15 +17,6 @@ class _PerfilState extends State<Perfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-      appBar: AppBar(
-        title: Text("Informações do Usuário"),
-        centerTitle: true,
-        backgroundColor: Colors.orange,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.edit),
-=======
         appBar: AppBar(
           title: Text("Informações do Usuário"),
           centerTitle: true,
@@ -33,7 +24,6 @@ class _PerfilState extends State<Perfil> {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.edit),
->>>>>>> Augusto
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => EditProfile()));
@@ -100,23 +90,6 @@ class _PerfilState extends State<Perfil> {
                   decoration: InputDecoration(
                     labelText: 'Senha:\n\n **********',
                   ),
-<<<<<<< HEAD
-                         new Padding(
-                        padding: EdgeInsets.all(10.0),
-            child: new Container(
-                height: 50.0,
-                alignment: Alignment.center,
-
-                child: RaisedButton(
-                  color: Colors.orange,
-                  onPressed: (){
-                    if(_formKey.currentState.validate())
-                      print("1");
-                  },
-                  child: Text("Submeter", style: TextStyle(color: Colors.white),),
-
-=======
->>>>>>> Augusto
                 ),
               ),
               new Padding(
