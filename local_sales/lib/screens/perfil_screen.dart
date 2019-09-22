@@ -9,7 +9,6 @@ class Perfil extends StatefulWidget {
 }
 
 class _PerfilState extends State<Perfil> {
-
   TextEditingController _novasenha = TextEditingController();
   TextEditingController _verificasenha = TextEditingController();
 
@@ -18,6 +17,7 @@ class _PerfilState extends State<Perfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       appBar: AppBar(
         title: Text("Informações do Usuário"),
         centerTitle: true,
@@ -25,89 +25,82 @@ class _PerfilState extends State<Perfil> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.edit),
+=======
+        appBar: AppBar(
+          title: Text("Informações do Usuário"),
+          centerTitle: true,
+          backgroundColor: Colors.deepOrangeAccent,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.edit),
+>>>>>>> Augusto
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => EditProfile()));
               },
-          )
-        ],
-      ),
-      //drawer: CustomDrawer(),
-      body: new SingleChildScrollView(
-
-
-              child: new Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  new Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: new Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                              width: 190.0,
-                              height: 190.0,
-                              decoration: new BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: new DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage("images/Augusto.jpg")))))),
-                  new Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: new Align(
-                          alignment: Alignment.center,
-                          child: new Text(
-                            "Augusto Rocha",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 15, color: Colors.black45),
-                          ))),
-                  new Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: new TextField(
-                        enabled: false,
-                        decoration: new InputDecoration(
-
-                          labelText: 'Nome: \n\n Augusto César Campos Rocha',
-                        ),
-                      )
-                  ),
-                  new Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: new TextField(
-                        enabled: false,
-                        decoration: new InputDecoration(
-
-                          labelText: 'Email: \n\n augusto.rochacampos@gmail.com',
-                        ),
-                      )
-                  ),
-                  new Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: TextFormField(
-                      controller: _novasenha,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: 'Password',
-                        labelText: 'Enter your new password',
-
-                      ),
+            )
+          ],
+        ),
+        body: new SingleChildScrollView(
+          child: new Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: new Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                          width: 190.0,
+                          height: 190.0,
+                          decoration: new BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: new DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("images/Augusto.jpg")))))),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: new Align(
+                      alignment: Alignment.center,
+                      child: new Text(
+                        "Augusto Rocha",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 15, color: Colors.black45),
+                      ))),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: new TextField(
+                    enabled: false,
+                    decoration: new InputDecoration(
+                      labelText: 'Nome: \n\n Augusto César Campos Rocha',
                     ),
-                  ),
-                  new Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: TextFormField(
-                      controller: _verificasenha,
-                      obscureText: true,
-                      validator: (value){
-                          if(value.isEmpty) {return "Senhas digitadas incorretamente";}
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'Password',
-                        labelText: 'Confirm your new password',
-
-                      ),
+                  )),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: new TextField(
+                    enabled: false,
+                    decoration: new InputDecoration(
+                      labelText: 'Email: \n\n augusto.rochacampos@gmail.com',
                     ),
+                  )),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: new TextField(
+                    enabled: false,
+                    decoration: new InputDecoration(
+                      labelText: 'Data de Nascimento: \n\n 21/01/1999',
+                    ),
+                  )),
+              new Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _novasenha,
+                  enabled: false,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Senha:\n\n **********',
                   ),
+<<<<<<< HEAD
                          new Padding(
                         padding: EdgeInsets.all(10.0),
             child: new Container(
@@ -122,44 +115,28 @@ class _PerfilState extends State<Perfil> {
                   },
                   child: Text("Submeter", style: TextStyle(color: Colors.white),),
 
+=======
+>>>>>>> Augusto
                 ),
-            )),
-                  new Padding(padding: EdgeInsets.all(10.0),
-                  child: new Row(
-                    children: <Widget>[
-                      Text(
-                          "PicPay",
-                          textAlign: TextAlign.left
-                      ),
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Switch(
-                          value: isSwitched,
-                          onChanged: (value){
-                            setState(() {
-                              isSwitched = value;
-                            });
-                          },
-                          activeTrackColor: Colors.deepOrangeAccent,
-                          activeColor: Colors.deepOrange,
-                        ),
-                      )
-                    ],
-                  )
-                  ),
-                  new Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: TextField(
-                      enabled: isSwitched,
-                      decoration: new InputDecoration(
-                        hintText: 'PicPay User',
-                        labelText: '@nickname'
-                      ),
-                    ),
-                  )
-                ],
               ),
-      )
-    );
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: new TextField(
+                    enabled: false,
+                    decoration: new InputDecoration(
+                      labelText: 'Telefone: \n\n 11970707070',
+                    ),
+                  )),
+              new Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextField(
+                  enabled: false,
+                  decoration: new InputDecoration(
+                      hintText: 'PicPay User', labelText: 'PicPay:\n\n @augusto.rochacampos'),
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }
