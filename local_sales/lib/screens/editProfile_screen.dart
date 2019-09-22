@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 bool isSwitched = false;
+TextEditingController _PicPay = new TextEditingController(text: 'augusto.rochacampos');
+TextEditingController _phone = new TextEditingController(text: '11970707070');
+TextEditingController _birth = new TextEditingController(text: '21011999');
 
 class EditProfile extends StatefulWidget {
   @override
@@ -45,29 +48,40 @@ class _EditProfileState extends State<EditProfile> {
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new TextFormField(
+                    initialValue: 'Augusto César Campos Rocha',
                     keyboardType: TextInputType.text,
                     decoration: new InputDecoration(
-                        hintText: 'Beatriz Girotto de Claudião',
-                        labelText: "Full Name"
+                        labelText: "Nome Completo"
                     ),
                   )
               ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new TextFormField(
+                    initialValue: 'augusto.rochacampos@gmail.com',
                     keyboardType: TextInputType.emailAddress,
                     decoration: new InputDecoration(
-                        hintText: 'you@example.com',
-                        labelText: "E-mail Adress"
+
+                        labelText: "Endereço de Email"
                     ),
                   )
               ),
               new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: new TextField(
+                    controller: _birth,
+                    enabled: false,
+                    decoration: new InputDecoration(
+                      labelText: 'Data de Nascimento',
+                    ),
+                  )),
+              new Padding(
                 padding: EdgeInsets.all(10.0),
                 child: TextFormField(
                   obscureText: true,
+                  initialValue: 'lalakekeroro123',
                   decoration: InputDecoration(
-                    hintText: 'Password',
+                    //hintText: 'Password',
                     labelText: 'Enter your password',
 
                   ),
@@ -99,6 +113,17 @@ class _EditProfileState extends State<EditProfile> {
               new Padding(
                 padding: EdgeInsets.all(10.0),
                 child: TextField(
+                  controller: _phone,
+                  keyboardType: TextInputType.phone,
+                  decoration: new InputDecoration(
+                      labelText: 'Telefone'
+                  ),
+                ),
+              ),
+              new Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _PicPay,
                   enabled: isSwitched,
                   decoration: new InputDecoration(
                       hintText: 'PicPay User',
@@ -106,18 +131,10 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ),
               ),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
-                  keyboardType: TextInputType.phone,
-                  decoration: new InputDecoration(
-                      labelText: 'Celular para contato:'
-                  ),
-                ),
-              )
             ],
           ),
         )
     );
   }
 }
+
