@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:local_sales/screens/esqueciSenha_screen.dart';
@@ -65,6 +66,7 @@ class _LoginState extends State<Login> {
           ),
           FlatButton(
             onPressed: () {
+              Firestore.instance.collection("Teste").document("Test").setData({"oi":"ola"});
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) => EsqueciSenha())
               );
