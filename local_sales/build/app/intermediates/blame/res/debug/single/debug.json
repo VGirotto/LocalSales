@@ -1,17 +1,27 @@
 [
     {
+<<<<<<< HEAD
         "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
         "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/64c3456f494a24073e7f48c5e078a2d8/res/layout-v21/notification_action_tombstone.xml"
     },
     {
         "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/64c3456f494a24073e7f48c5e078a2d8/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+=======
+        "merged": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/beatriz/repositorio/LocalSales/local_sales/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/beatriz/repositorio/LocalSales/local_sales/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+>>>>>>> master
     },
     {
+        "merged": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/beatriz/repositorio/LocalSales/local_sales/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+<<<<<<< HEAD
         "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/color_common_google_signin_btn_text_dark.xml.flat",
         "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/5303824108a3f566ed0750e2a2a13feb/res/color/common_google_signin_btn_text_dark.xml"
     },
@@ -62,12 +72,17 @@
     {
         "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/5303824108a3f566ed0750e2a2a13feb/res/drawable-xxhdpi-v4/googleg_disabled_color_18.png"
+=======
+        "merged": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/beatriz/repositorio/LocalSales/local_sales/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+>>>>>>> master
     },
     {
-        "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/res/merged/debug/drawable_launch_background.xml.flat",
+        "source": "/home/beatriz/repositorio/LocalSales/local_sales/android/app/src/main/res/drawable/launch_background.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/5303824108a3f566ed0750e2a2a13feb/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
     },
@@ -298,5 +313,9 @@
     {
         "merged": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
         "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/64c3456f494a24073e7f48c5e078a2d8/res/drawable/notification_icon_background.xml"
+=======
+        "merged": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/beatriz/repositorio/LocalSales/local_sales/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+>>>>>>> master
     }
 ]

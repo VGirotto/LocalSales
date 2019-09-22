@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/res/merged/debug/values-en-rIN_values-en-rIN.arsc.flat",
             "map": [
                 {
@@ -3939,6 +3940,12 @@
                 },
                 {
                     "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/64c3456f494a24073e7f48c5e078a2d8/res/values-lt/values-lt.xml",
+=======
+            "outputFile": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/beatriz/repositorio/LocalSales/local_sales/android/app/src/main/res/values/styles.xml",
+>>>>>>> master
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
