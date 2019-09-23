@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
             controller: _emailController,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
-              labelText: "Login:",
+              labelText: "E-mail:",
               labelStyle: TextStyle(color: Colors.black, fontSize: 20.0),
             ),
             textAlign: TextAlign.center,

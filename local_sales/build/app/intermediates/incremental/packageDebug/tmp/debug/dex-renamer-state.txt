@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Sat Sep 21 20:38:19 BRT 2019
 base.2=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/10
 base.1=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/1
@@ -9,6 +10,9 @@ path.8=classes.dex
 path.7=classes.dex
 =======
 #Sun Sep 22 15:32:55 BRT 2019
+=======
+#Mon Sep 23 14:20:58 BRT 2019
+>>>>>>> Augusto
 path.1=classes.dex
 path.0=classes.dex
 >>>>>>> Augusto

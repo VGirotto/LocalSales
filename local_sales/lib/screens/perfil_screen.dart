@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/screens/editProfile_screen.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 bool isSwitched = false;
 
@@ -9,8 +11,6 @@ class Perfil extends StatefulWidget {
 }
 
 class _PerfilState extends State<Perfil> {
-  TextEditingController _novasenha = TextEditingController();
-  TextEditingController _verificasenha = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -52,62 +52,83 @@ class _PerfilState extends State<Perfil> {
                   padding: EdgeInsets.all(10.0),
                   child: new Align(
                       alignment: Alignment.center,
-                      child: new Text(
-                        "Augusto Rocha",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 15, color: Colors.black45),
-                      ))),
+                      child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return Text(
+                                    "${model.currentUser() == null ? "Fail" : model.userData["name"]}",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 15, color: Colors.black45),
+                                  );
+                                }
+                            )
+                  )
+              ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
-                  child: new TextField(
-                    enabled: false,
-                    decoration: new InputDecoration(
-                      labelText: 'Nome: \n\n Augusto César Campos Rocha',
-                    ),
-                  )),
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new TextField(
-                    enabled: false,
-                    decoration: new InputDecoration(
-                      labelText: 'Email: \n\n augusto.rochacampos@gmail.com',
-                    ),
-                  )),
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new TextField(
-                    enabled: false,
-                    decoration: new InputDecoration(
-                      labelText: 'Data de Nascimento: \n\n 21/01/1999',
-                    ),
-                  )),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
-                  controller: _novasenha,
-                  enabled: false,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Senha:\n\n **********',
+                  child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return new TextField(
+                                    enabled: false,
+                                    decoration: new InputDecoration(
+                                      labelText: "Nome: \n\n ${model.currentUser() == null ? "Fail" : model.userData["name"]}",
+                                    ),
+                                  );
+                                }
+                            )
                   ),
-                ),
-              ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
-                  child: new TextField(
-                    enabled: false,
-                    decoration: new InputDecoration(
-                      labelText: 'Telefone: \n\n 11970707070',
-                    ),
-                  )),
+                  child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return new TextField(
+                                    enabled: false,
+                                    decoration: new InputDecoration(
+                                      labelText: "E-mail: \n\n ${model.currentUser() == null ? "Fail" : model.userData["email"]}",
+                                    ),
+                                  );
+                                }
+                            )
+                  ),
               new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
-                  enabled: false,
-                  decoration: new InputDecoration(
-                      hintText: 'PicPay User', labelText: 'PicPay:\n\n @augusto.rochacampos'),
-                ),
-              ),
+                  padding: EdgeInsets.all(10.0),
+                  child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return new TextField(
+                                    enabled: false,
+                                    decoration: new InputDecoration(
+                                      labelText: "Data de Nascimento: \n\n ${model.currentUser() == null ? "Fail" : model.userData["birth"]}",
+                                    ),
+                                  );
+                                }
+                            )
+                  ),
+
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return new TextField(
+                                    enabled: false,
+                                    decoration: new InputDecoration(
+                                      labelText: "Telefone: \n\n ${model.currentUser() == null ? "Fail" : model.userData["phone"]}",
+                                    ),
+                                  );
+                                }
+                            )
+                  ),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return new TextField(
+                                    enabled: false,
+                                    decoration: new InputDecoration(
+                                      labelText: "Usuário do PicPay: \n\n ${model.currentUser() == null ? "Fail" : model.userData["picpay"]}",
+                                    ),
+                                  );
+                                }
+                            )
+                  ),
             ],
           ),
         ));

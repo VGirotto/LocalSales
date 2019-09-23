@@ -10,9 +10,9 @@ import 'package:local_sales/widgets/custom_drawer.dart';
 import 'package:local_sales/screens/perfil_screen.dart';
 
 class Feed extends StatelessWidget {
-  
+
   final _pageController = PageController();
-  
+
   @override
   Widget build(BuildContext context) {
     return PageView(
@@ -72,7 +72,7 @@ class Feed extends StatelessWidget {
         //TODO: Adicionar os outros filhos
       ],
     );
-    
+
     /*return Scaffold(
       body: Padding(
           padding: EdgeInsets.all(20.0),
@@ -80,7 +80,7 @@ class Feed extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget> [
-              Text("Bem-vindo", 
+              Text("Bem-vindo",
                   style: TextStyle(color: Colors.black, fontSize: 20.0),
                   textAlign: TextAlign.center),
               RaisedButton(
@@ -104,7 +104,7 @@ class Feed extends StatelessWidget {
                     style: TextStyle(color: Colors.black, fontSize: 20.0),
                     textAlign: TextAlign.center)
               ),
-            ] 
+            ]
           ),
         ),
       backgroundColor: Colors.white

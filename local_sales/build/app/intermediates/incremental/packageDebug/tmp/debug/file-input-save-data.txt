@@ -1,9 +1,13 @@
 #Internal package file, do not edit.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Sat Sep 21 20:38:55 BRT 2019
 =======
 #Sun Sep 22 13:03:05 BRT 2019
+>>>>>>> Augusto
+=======
+#Mon Sep 23 14:21:03 BRT 2019
 >>>>>>> Augusto
 17.baseType=DIRECTORY
 4.path=flutter_assets/vm_snapshot_data

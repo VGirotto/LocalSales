@@ -9,27 +9,25 @@ class Cadastro extends StatefulWidget {
 }
 
 class _CadastroState extends State<Cadastro> {
-
-
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
   final _birthController = TextEditingController();
+  final _picpay = TextEditingController();
+  final _phone = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-  String _pass = "",
-      t1 = 'Show Password',
-      t2 = "Show Password";
-  bool isSwitched = false,
-      isChecked1 = false,
-      isChecked2 = false;
+  String _pass = "", t1 = 'Show Password', t2 = "Show Password";
+  bool isSwitched = false, isChecked1 = false, isChecked2 = false;
   String _img_path;
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final date = new RegExp(r"\d\d\/\d\d\/\d\d\d\d");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       body: ScopedModelDescendant<UserModel>(
         builder: (context, child, model) {
           if (model.isLoading)
@@ -76,23 +74,23 @@ class _CadastroState extends State<Cadastro> {
                       ])),
                   Container(
                       child: new TextFormField(
-                        controller: _emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: new InputDecoration(
-                          labelStyle: TextStyle(color: Colors.black),
-                          hintText: 'you@example.com',
-                          labelText: "E-mail Adress",
-                          prefixIcon: Icon(
-                            Icons.account_circle,
-                            size: 30,
-                            color: Colors.orange,
-                          ),
-                        ),
-                        validator: (text) {
-                          if (text.isEmpty || !text.contains("@"))
-                            return "E-mail inválido!";
-                        },
-                      )),
+                    controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: new InputDecoration(
+                      labelStyle: TextStyle(color: Colors.black),
+                      hintText: 'you@example.com',
+                      labelText: "E-mail",
+                      prefixIcon: Icon(
+                        Icons.account_circle,
+                        size: 30,
+                        color: Colors.orange,
+                      ),
+                    ),
+                    validator: (text) {
+                      if (text.isEmpty || !text.contains("@"))
+                        return "E-mail inválido!";
+                    },
+                  )),
                   Container(
                     child: TextFormField(
                       controller: _passController,
@@ -100,7 +98,7 @@ class _CadastroState extends State<Cadastro> {
                       obscureText: !isChecked1,
                       decoration: InputDecoration(
                           labelStyle: TextStyle(color: Colors.black),
-                          labelText: 'Password',
+                          labelText: 'Senha',
                           prefixIcon: Icon(
                             Icons.lock_outline,
                             size: 30,
@@ -134,7 +132,7 @@ class _CadastroState extends State<Cadastro> {
                       obscureText: !isChecked2,
                       decoration: InputDecoration(
                           labelStyle: TextStyle(color: Colors.black),
-                          labelText: 'Reenter the Password',
+                          labelText: 'Repita a Senha',
                           prefixIcon: Icon(
                             Icons.lock_outline,
                             size: 30,
@@ -201,7 +199,7 @@ class _CadastroState extends State<Cadastro> {
                                         image: _img_path != null
                                             ? AssetImage(_img_path)
                                             : NetworkImage(
-                                            "https://logodetimes.com/wp-content/uploads/corinthians-capa.jpg"),
+                                                "https://logodetimes.com/wp-content/uploads/corinthians-capa.jpg"),
                                       ),
                                     ),
                                   ),
@@ -215,9 +213,9 @@ class _CadastroState extends State<Cadastro> {
                                       keyboardType: TextInputType.text,
                                       decoration: InputDecoration(
                                           labelStyle:
-                                          TextStyle(color: Colors.black),
+                                              TextStyle(color: Colors.black),
                                           hintText: "Fulano da Silva",
-                                          labelText: 'Display Name',
+                                          labelText: 'Nome',
                                           prefixIcon: Icon(
                                             Icons.contacts,
                                             size: 30,
@@ -255,7 +253,7 @@ class _CadastroState extends State<Cadastro> {
                           child: Container(
                             padding: EdgeInsets.only(top: 5, left: 15),
                             child: Text(
-                              "User Photo",
+                              "      Foto",
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontSize: 15,
@@ -274,7 +272,7 @@ class _CadastroState extends State<Cadastro> {
                       decoration: InputDecoration(
                           labelStyle: TextStyle(color: Colors.black),
                           hintText: "01/01/2000",
-                          labelText: 'Birthdate',
+                          labelText: 'Data de Nascimento',
                           prefixIcon: Icon(
                             Icons.cake,
                             size: 30,
@@ -286,6 +284,24 @@ class _CadastroState extends State<Cadastro> {
                       },
                     ),
                   ),
+
+                  Container(
+                      child: new TextFormField(
+                        controller: _phone,
+                        keyboardType: TextInputType.number,
+                        decoration: new InputDecoration(
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintText: '11970707070',
+                          labelText: "Telefone",
+                          prefixIcon: Icon(
+                            Icons.phone,
+                            size: 30,
+                            color: Colors.orange,
+                          ),
+                        ),
+                      )
+                  ),
+
                   Container(
                       padding: EdgeInsets.only(top: 30.0),
                       child: Row(children: <Widget>[
@@ -304,33 +320,36 @@ class _CadastroState extends State<Cadastro> {
                       ])),
                   Container(
                       child: new Row(
-                        children: <Widget>[
-                          Text("PicPay", textAlign: TextAlign.left),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Switch(
-                              value: isSwitched,
-                              onChanged: (value) {
-                                setState(() {
-                                  isSwitched = value;
-                                });
-                              },
-                              activeTrackColor: Colors.orangeAccent,
-                              activeColor: Colors.orange,
-                            ),
+                    children: <Widget>[
+                      Text("PicPay", textAlign: TextAlign.left),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Switch(
+                          value: isSwitched,
+                          onChanged: (value) {
+                            setState(() {
+                              isSwitched = value;
+                            });
+                          },
+                          activeTrackColor: Colors.orangeAccent,
+                          activeColor: Colors.orange,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 200.0,
+                        child: TextFormField(
+                          controller: _picpay,
+                          enabled: isSwitched,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            hintText: 'Usuário do PicPay',
                           ),
-                          SizedBox(
-                            width: 200.0,
-                            child: TextFormField(
-                              enabled: isSwitched,
-                              keyboardType: TextInputType.text,
-                              decoration: InputDecoration(
-                                hintText: 'PicPay user',
-                              ),
-                            ),
-                          ),
-                        ],
-                      )),
+                        ),
+                      ),
+                    ],
+                  )),
+
+
                   Container(
                     padding: EdgeInsets.only(top: 20.0, bottom: 40.0),
                     child: SizedBox(
@@ -343,25 +362,22 @@ class _CadastroState extends State<Cadastro> {
                           ),
                         ),
                         textColor: Colors.black,
-                        color: Theme
-                            .of(context)
-                            .primaryColor,
+                        color: Theme.of(context).primaryColor,
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
-
                             Map<String, dynamic> userData = {
                               "name": _nameController.text,
                               "email": _emailController.text,
                               "birth": _birthController.text,
+                              "picpay": _picpay.text,
+                              "phone": _phone.text,
                             };
-
 
                             model.signUp(
                                 userData: userData,
                                 pass: _passController.text,
-                                onSucess: _onSucess,
-                                onFail: _onFail
-                            );
+                                onSucess: _onSuccess,
+                                onFail: _onFail);
                           }
                         },
                       ),
@@ -371,18 +387,28 @@ class _CadastroState extends State<Cadastro> {
           );
         },
       ),
-
       backgroundColor: Colors.white,
     );
   }
 
-  void _onSucess(){
-
+  void _onSuccess(){
+    _scaffoldKey.currentState.showSnackBar(
+      SnackBar(content: Text("Usuário criado com sucesso!"),
+        backgroundColor: Theme.of(context).primaryColor,
+        duration: Duration(seconds: 2),
+      )
+    );
+    Future.delayed(Duration(seconds: 2)).then((_){
+      Navigator.of(context).pop();
+    });
   }
 
   void _onFail(){
-
+    _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Falha ao criar usuário!"),
+          backgroundColor: Colors.redAccent,
+          duration: Duration(seconds: 2),
+        )
+    );
   }
-
-
 }
