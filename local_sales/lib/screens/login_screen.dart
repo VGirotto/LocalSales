@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
             controller: _emailController,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
-              labelText: "Login:",
+              labelText: "E-mail:",
               labelStyle: TextStyle(color: Colors.black, fontSize: 20.0),
             ),
             textAlign: TextAlign.center,
@@ -79,8 +79,6 @@ class _LoginState extends State<Login> {
           ),
           FlatButton(
             onPressed: () {
-              Firestore.instance.collection("Teste").document("Test").setData(
-                  {"oi": "ola"});
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => EsqueciSenha())
               );

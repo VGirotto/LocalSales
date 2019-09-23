@@ -83,9 +83,11 @@ class UserModel extends Model {
     isLoading = true;
     notifyListeners();
 
-   _auth.signInWithEmailAndPassword(email: email, password: pass).then((user){
+   _auth.signInWithEmailAndPassword(email: email, password: pass).then((user) async {
 
      firebaseUser = user.user;
+
+    await _loadCurrentUser();
 
      onSucess();
      isLoading = false;
@@ -112,11 +114,6 @@ class UserModel extends Model {
   void recoverPass(String email){
     _auth.sendPasswordResetEmail(email: email);
   }
-
-  bool isLoggedIn(){
-    return firebaseUser != null;
-  }
-
 
   Future<Null> _saveUserData(Map<String, dynamic> userData) async {
     this.userData = userData;

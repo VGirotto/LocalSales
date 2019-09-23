@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/widgets/drawer_tile.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class CustomDrawer extends StatelessWidget {
   
@@ -55,17 +58,21 @@ class CustomDrawer extends StatelessWidget {
                       )
                     ),
                     Positioned(
-                      left: 0.0,
-                      bottom: 0.0,
-                      child: Text(
-                        "Olá, Claudio!",
-                        style: 
-                          TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold
-                          ),
-                      )
-                    ),
+                            left: 0.0,
+                            bottom: 0.0,
+                            child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return Text(
+                                    "Olá, ${model.currentUser() == null ? "Fail" : model.userData["name"]}!",
+                                    style:
+                                    TextStyle(
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  );
+                                }
+                            )
+                        ),
                   ],
                 ),
               ),

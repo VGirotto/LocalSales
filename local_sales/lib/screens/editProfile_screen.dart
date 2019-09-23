@@ -5,6 +5,7 @@ import 'package:local_sales/models/user_model.dart';
 
 
 import 'package:local_sales/models/user_model.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 bool isSwitched = false;
 
@@ -52,18 +53,24 @@ class _EditProfileState extends State<EditProfile> {
                   padding: EdgeInsets.all(10.0),
                   child: new Align(
                       alignment: Alignment.center,
-                      child: new Text(
-                        "Augusto Rocha",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 15, color: Colors.black45),
-                      ))),
+                      child: ScopedModelDescendant<UserModel>(
+                                builder: (context, child, model){
+                                  return Text(
+                                    "${model.currentUser() == null ? "Fail" : model.userData["name"]}",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 15, color: Colors.black45),
+                                  );
+                                }
+                            )
+                  )
+              ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new TextFormField(
                     controller: _name,
                     keyboardType: TextInputType.text,
                     decoration: new InputDecoration(
-                        labelText: "Nome Completo"
+                        labelText: "Nome"
                     ),
                   )
               ),
