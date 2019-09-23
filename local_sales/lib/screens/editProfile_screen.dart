@@ -1,9 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:local_sales/models/user_model.dart';
+
+
+
+import 'package:local_sales/models/user_model.dart';
 
 bool isSwitched = false;
-TextEditingController _PicPay = new TextEditingController(text: 'augusto.rochacampos');
-TextEditingController _phone = new TextEditingController(text: '11970707070');
-TextEditingController _birth = new TextEditingController(text: '21011999');
+
 
 class EditProfile extends StatefulWidget {
   @override
@@ -11,6 +15,14 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
+
+
+  static TextEditingController _PicPay = new TextEditingController(text: UserModel().read_user_base("picpay") as String);
+  static TextEditingController _phone  = new TextEditingController(text: UserModel().read_user_base("phone") as String);
+  static TextEditingController _birth  = new TextEditingController(text: UserModel().read_user_base("birth") as String);
+  static TextEditingController _name   = new TextEditingController(text: UserModel().read_user_base("name") as String);
+  static TextEditingController _email  = new TextEditingController(text: UserModel().read_user_base("email") as String);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +60,7 @@ class _EditProfileState extends State<EditProfile> {
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new TextFormField(
-                    initialValue: 'Augusto César Campos Rocha',
+                    controller: _name,
                     keyboardType: TextInputType.text,
                     decoration: new InputDecoration(
                         labelText: "Nome Completo"
@@ -58,7 +70,7 @@ class _EditProfileState extends State<EditProfile> {
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new TextFormField(
-                    initialValue: 'augusto.rochacampos@gmail.com',
+                    controller: _email,
                     keyboardType: TextInputType.emailAddress,
                     decoration: new InputDecoration(
 
@@ -70,20 +82,19 @@ class _EditProfileState extends State<EditProfile> {
                   padding: EdgeInsets.all(10.0),
                   child: new TextField(
                     controller: _birth,
-                    enabled: false,
+                    enabled: true,
                     decoration: new InputDecoration(
                       labelText: 'Data de Nascimento',
                     ),
                   )),
+
               new Padding(
                 padding: EdgeInsets.all(10.0),
-                child: TextFormField(
-                  obscureText: true,
-                  initialValue: 'lalakekeroro123',
-                  decoration: InputDecoration(
-                    //hintText: 'Password',
-                    labelText: 'Enter your password',
-
+                child: TextField(
+                  controller: _phone,
+                  keyboardType: TextInputType.phone,
+                  decoration: new InputDecoration(
+                      labelText: 'Telefone'
                   ),
                 ),
               ),
@@ -98,7 +109,7 @@ class _EditProfileState extends State<EditProfile> {
                         alignment: Alignment.topLeft,
                         child: Switch(
                           value: isSwitched,
-                          onChanged: (value){
+                          onChanged: (value) {
                             setState(() {
                               isSwitched = value;
                             });
@@ -113,16 +124,6 @@ class _EditProfileState extends State<EditProfile> {
               new Padding(
                 padding: EdgeInsets.all(10.0),
                 child: TextField(
-                  controller: _phone,
-                  keyboardType: TextInputType.phone,
-                  decoration: new InputDecoration(
-                      labelText: 'Telefone'
-                  ),
-                ),
-              ),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
                   controller: _PicPay,
                   enabled: isSwitched,
                   decoration: new InputDecoration(
@@ -131,9 +132,37 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ),
               ),
+              new Padding(padding: EdgeInsets.all(10.0),
+                child: RaisedButton(
+                  color: Colors.deepOrange,
+                  child: Text("Submeter",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white,
+                        fontSize: 18.0
+                    ),
+                  ),
+                  onPressed: () async{
+
+                    Map<String, dynamic> new_data = {
+                      "name": _name.text,
+                      "email": _email.text,
+                      "birth": _birth.text,
+                      "picpay": _PicPay.text,
+                      "phone": _phone.text,
+                    };
+
+                    print(new_data);
+
+                    await UserModel().update_base(userData: new_data);
+
+                    Navigator.pop(context);
+
+                  },
+                ),)
             ],
           ),
         )
     );
   }
+
 }

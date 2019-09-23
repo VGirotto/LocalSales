@@ -11,10 +11,12 @@ class Cadastro extends StatefulWidget {
 class _CadastroState extends State<Cadastro> {
 
 
-  final _nameController = TextEditingController();
-  final _emailController = TextEditingController();
-  final _passController = TextEditingController();
-  final _birthController = TextEditingController();
+  final _nameController   = TextEditingController();
+  final _emailController  = TextEditingController();
+  final _passController   = TextEditingController();
+  final _birthController  = TextEditingController();
+  final _picpay           = TextEditingController();
+  final _phone            = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
   String _pass = "",
@@ -322,6 +324,7 @@ class _CadastroState extends State<Cadastro> {
                           SizedBox(
                             width: 200.0,
                             child: TextFormField(
+                              controller: _picpay,
                               enabled: isSwitched,
                               keyboardType: TextInputType.text,
                               decoration: InputDecoration(
@@ -330,6 +333,17 @@ class _CadastroState extends State<Cadastro> {
                             ),
                           ),
                         ],
+                      )),
+                  new Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: new TextField(
+                        controller: _phone,
+                        keyboardType: TextInputType.number,
+                        enabled: true,
+                        decoration: new InputDecoration(
+                          labelText: 'Telefone:',
+                          hintText: "11970707070"
+                        ),
                       )),
                   Container(
                     padding: EdgeInsets.only(top: 20.0, bottom: 40.0),
@@ -353,6 +367,8 @@ class _CadastroState extends State<Cadastro> {
                               "name": _nameController.text,
                               "email": _emailController.text,
                               "birth": _birthController.text,
+                              "picpay": _picpay.text,
+                              "phone": _phone.text,
                             };
 
 
