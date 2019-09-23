@@ -17,11 +17,11 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
 
 
-  static TextEditingController _PicPay = new TextEditingController(text: UserModel().read_user_base("picpay") as String);
-  static TextEditingController _phone  = new TextEditingController(text: UserModel().read_user_base("phone") as String);
-  static TextEditingController _birth  = new TextEditingController(text: UserModel().read_user_base("birth") as String);
-  static TextEditingController _name   = new TextEditingController(text: UserModel().read_user_base("name") as String);
-  static TextEditingController _email  = new TextEditingController(text: UserModel().read_user_base("email") as String);
+  static TextEditingController _PicPay = new TextEditingController();
+  static TextEditingController _phone  = new TextEditingController();
+  static TextEditingController _birth  = new TextEditingController();
+  static TextEditingController _name   = new TextEditingController();
+  static TextEditingController _email  = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -81,17 +81,7 @@ class _PerfilState extends State<Perfil> {
                       labelText: 'Data de Nascimento: \n\n 21/01/1999',
                     ),
                   )),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
-                  controller: _novasenha,
-                  enabled: false,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Senha:\n\n **********',
-                  ),
-                ),
-              ),
+
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new TextField(
