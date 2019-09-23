@@ -1,17 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Sat Sep 21 20:38:19 BRT 2019
-base.2=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/10
-base.1=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/1
-base.0=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/0
-path.9=classes.dex
-path.8=classes.dex
-path.7=classes.dex
-=======
-#Sun Sep 22 15:32:55 BRT 2019
+#Sun Sep 22 18:19:50 BRT 2019
 path.1=classes.dex
 path.0=classes.dex
->>>>>>> Augusto
 renamed.9=classes10.dex
 renamed.8=classes9.dex
 renamed.7=classes8.dex
@@ -20,26 +9,18 @@ renamed.5=classes6.dex
 renamed.4=classes5.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
-<<<<<<< HEAD
-=======
-#Wed Sep 18 23:46:24 BRT 2019
-base.0=/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/0
->>>>>>> master
-path.0=classes.dex
-=======
-base.9=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/2
->>>>>>> Augusto
+base.9=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
 renamed.1=classes2.dex
-base.8=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/8
+base.8=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\8
 renamed.0=classes.dex
-base.7=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/7
-base.6=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/6
-base.5=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/5
-base.4=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/4
-base.3=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/3
-base.2=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/2
-base.1=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/1
-base.0=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/0
+base.7=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\7
+base.6=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\6
+base.5=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\5
+base.4=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\4
+base.3=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\3
+base.2=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
+base.1=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\1
+base.0=C\:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 path.9=classes2.dex
 path.8=classes.dex
 path.7=classes.dex

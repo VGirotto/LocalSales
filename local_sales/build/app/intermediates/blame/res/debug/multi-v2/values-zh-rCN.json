@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "C:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/d77e99037f348e1ea96faf8fdc9b64a7/res/values-zh-rCN/values.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\a6dbe084fd1d7e9467918842019d464f\\res\\values-zh-rCN\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "157",
+                        "endOffsets": "408"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1125",
+                        "endColumns": "157",
+                        "endOffsets": "1278"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\d07ac05044e1e2a89b583f2c741b50ec\\res\\values-zh-rCN\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/af598201c50e403c6fb29dab2c5b753d/res/values-zh-rCN/values-zh-rCN.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\13ed0347e422a1d3667d27fd2174a844\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -35,23 +52,6 @@
                         "startOffsets": "2408",
                         "endColumns": "100",
                         "endOffsets": "2504"
-                    }
-                },
-                {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/9b02b004ce7abaf2689b3fe337aac2df/res/values-zh-rCN/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "157",
-                        "endOffsets": "408"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1125",
-                        "endColumns": "157",
-                        "endOffsets": "1278"
                     }
                 }
             ]

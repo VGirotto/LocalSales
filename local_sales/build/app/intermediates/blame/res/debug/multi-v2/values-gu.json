@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-gu/values-gu.xml",
+            "outputFile": "C:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
             "map": [
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/d77e99037f348e1ea96faf8fdc9b64a7/res/values-gu/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,351,549,672,782,979,1099,1236,1361,1568,1674,1869,1992,2194,2370,2457,2549",
-                        "endColumns": "105,197,122,109,196,119,136,124,206,105,194,122,201,175,86,91,106",
-                        "endOffsets": "350,548,671,781,978,1098,1235,1360,1567,1673,1868,1991,2193,2369,2456,2548,2655"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,413,540,654,851,975,1116,1451,1658,1768,1963,2090,2292,2472,2563,2659",
-                        "endColumns": "109,197,126,113,196,123,140,128,206,109,194,126,201,179,90,95,110",
-                        "endOffsets": "210,408,535,649,846,970,1111,1240,1653,1763,1958,2085,2287,2467,2558,2654,2765"
-                    }
-                },
-                {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/9b02b004ce7abaf2689b3fe337aac2df/res/values-gu/values.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\a6dbe084fd1d7e9467918842019d464f\\res\\values-gu\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/af598201c50e403c6fb29dab2c5b753d/res/values-gu/values-gu.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\d07ac05044e1e2a89b583f2c741b50ec\\res\\values-gu\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,351,549,672,782,979,1099,1236,1361,1568,1674,1869,1992,2194,2370,2457,2549",
+                        "endColumns": "105,197,122,109,196,119,136,124,206,105,194,122,201,175,86,91,106",
+                        "endOffsets": "350,548,671,781,978,1098,1235,1360,1567,1673,1868,1991,2193,2369,2456,2548,2655"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,215,413,540,654,851,975,1116,1451,1658,1768,1963,2090,2292,2472,2563,2659",
+                        "endColumns": "109,197,126,113,196,123,140,128,206,109,194,126,201,179,90,95,110",
+                        "endOffsets": "210,408,535,649,846,970,1111,1240,1653,1763,1958,2085,2287,2467,2558,2654,2765"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\13ed0347e422a1d3667d27fd2174a844\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

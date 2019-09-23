@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml",
+            "outputFile": "C:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
             "map": [
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/af598201c50e403c6fb29dab2c5b753d/res/values-kk/values-kk.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\d07ac05044e1e2a89b583f2c741b50ec\\res\\values-kk\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,346,531,655,759,958,1082,1231,1365,1589,1693,1881,2008,2220,2403,2492,2577",
+                        "endColumns": "100,184,123,103,198,123,148,133,223,103,187,126,211,182,88,84,102",
+                        "endOffsets": "345,530,654,758,957,1081,1230,1364,1588,1692,1880,2007,2219,2402,2491,2576,2679"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,395,523,631,830,958,1111,1472,1696,1804,1992,2123,2335,2522,2615,2704",
+                        "endColumns": "104,184,127,107,198,127,152,137,223,107,187,130,211,186,92,88,106",
+                        "endOffsets": "205,390,518,626,825,953,1106,1244,1691,1799,1987,2118,2330,2517,2610,2699,2806"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\13ed0347e422a1d3667d27fd2174a844\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/9b02b004ce7abaf2689b3fe337aac2df/res/values-kk/values.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\a6dbe084fd1d7e9467918842019d464f\\res\\values-kk\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -35,23 +52,6 @@
                         "startOffsets": "1249",
                         "endColumns": "222",
                         "endOffsets": "1467"
-                    }
-                },
-                {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/d77e99037f348e1ea96faf8fdc9b64a7/res/values-kk/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,346,531,655,759,958,1082,1231,1365,1589,1693,1881,2008,2220,2403,2492,2577",
-                        "endColumns": "100,184,123,103,198,123,148,133,223,103,187,126,211,182,88,84,102",
-                        "endOffsets": "345,530,654,758,957,1081,1230,1364,1588,1692,1880,2007,2219,2402,2491,2576,2679"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,395,523,631,830,958,1111,1472,1696,1804,1992,2123,2335,2522,2615,2704",
-                        "endColumns": "104,184,127,107,198,127,152,137,223,107,187,130,211,186,92,88,106",
-                        "endOffsets": "205,390,518,626,825,953,1106,1244,1691,1799,1987,2118,2330,2517,2610,2699,2806"
                     }
                 }
             ]

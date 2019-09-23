@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ro/values-ro.xml",
+            "outputFile": "C:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ro\\values-ro.xml",
             "map": [
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/af598201c50e403c6fb29dab2c5b753d/res/values-ro/values-ro.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\a6dbe084fd1d7e9467918842019d464f\\res\\values-ro\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "203",
+                        "endOffsets": "450"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1283",
+                        "endColumns": "203",
+                        "endOffsets": "1482"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\13ed0347e422a1d3667d27fd2174a844\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/d77e99037f348e1ea96faf8fdc9b64a7/res/values-ro/values.xml",
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\d07ac05044e1e2a89b583f2c741b50ec\\res\\values-ro\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -35,23 +52,6 @@
                         "startOffsets": "105,214,406,537,648,858,992,1145,1487,1708,1820,2010,2144,2349,2545,2646,2743",
                         "endColumns": "108,191,130,110,209,133,152,137,220,111,189,133,204,195,100,96,110",
                         "endOffsets": "209,401,532,643,853,987,1140,1278,1703,1815,2005,2139,2344,2540,2641,2738,2849"
-                    }
-                },
-                {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/9b02b004ce7abaf2689b3fe337aac2df/res/values-ro/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "203",
-                        "endOffsets": "450"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1283",
-                        "endColumns": "203",
-                        "endOffsets": "1482"
                     }
                 }
             ]

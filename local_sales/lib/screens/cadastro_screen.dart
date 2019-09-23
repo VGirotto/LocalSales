@@ -15,6 +15,9 @@ class _CadastroState extends State<Cadastro> {
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
   final _birthController = TextEditingController();
+  String _metPagamentoController;
+
+
 
   final _formKey = GlobalKey<FormState>();
   String _pass = "",
@@ -313,6 +316,7 @@ class _CadastroState extends State<Cadastro> {
                               onChanged: (value) {
                                 setState(() {
                                   isSwitched = value;
+                                  if(isSwitched) _metPagamentoController = 'PickPay';
                                 });
                               },
                               activeTrackColor: Colors.orangeAccent,
@@ -350,9 +354,15 @@ class _CadastroState extends State<Cadastro> {
                           if (_formKey.currentState.validate()) {
 
                             Map<String, dynamic> userData = {
-                              "name": _nameController.text,
+                              "Compras Realizadas": 0,
+                              "Data de Nascimento": _birthController.text,
                               "email": _emailController.text,
-                              "birth": _birthController.text,
+                              "Método de pagamento": _metPagamentoController,
+                              "Nome": _nameController.text,
+                              "Seguidores": 0,
+                              "Vendas Realizadas": 0
+
+
                             };
 
 
