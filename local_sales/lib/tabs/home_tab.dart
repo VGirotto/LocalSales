@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-import 'package:local_sales/tabs/home_tab.dart';
+//import 'package:local_sales/tabs/home_tab.dart';
 import 'dart:async';
 ////////////Israel
 Future<Null> refresh() async{
@@ -81,35 +81,6 @@ class HomeTab extends StatelessWidget {
           )
       ),
     );
-<<<<<<< HEAD
-    
-    return Stack(
-      children: <Widget>[
-        _buildBodyBack(),
-        CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              floating: true,
-              snap: true,
-              backgroundColor: Colors.transparent,
-              elevation: 0.0,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text("Produtos"),
-                centerTitle: true,
-              ),
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: (){
-                  },
-                )
-              ],
-            )
-          ],
-        )
-      ],
-    );
-=======
 
     return
       Stack(
@@ -255,6 +226,5 @@ class HomeTab extends StatelessWidget {
         ],
       );
     //onRefresh: refresh;
->>>>>>> Augusto
   }
 }

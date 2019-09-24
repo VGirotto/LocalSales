@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-
-class ProductsTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-=======
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/widgets/category_tile.dart';
@@ -16,7 +6,6 @@ import 'dart:core';
 class ProductsTab extends StatelessWidget {
   @override
 
-
   Widget build(BuildContext context) {
     return FutureBuilder<QuerySnapshot>(
       future: Firestore.instance.collection("Produtos").getDocuments(),
@@ -24,8 +13,8 @@ class ProductsTab extends StatelessWidget {
         if (!snapshot.hasData){
           return Center(
             child: CircularProgressIndicator(),
-          );}
-        else {
+          );
+        }else {
           var dividedTiles = ListTile.divideTiles(
               context: context,
               tiles: snapshot.data.documents.map((doc) {
@@ -41,4 +30,3 @@ class ProductsTab extends StatelessWidget {
     );
   }
 }
->>>>>>> Augusto

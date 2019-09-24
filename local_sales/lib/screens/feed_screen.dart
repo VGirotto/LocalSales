@@ -6,7 +6,7 @@ import 'package:local_sales/tabs/home_tab.dart';
 import 'package:local_sales/tabs/log_tab.dart';
 import 'package:local_sales/tabs/products_tab.dart';
 import 'package:local_sales/widgets/custom_drawer.dart';
-//import 'package:local_sales/screens/login_screen.dart';
+import 'package:local_sales/screens/editProfile_screen.dart';
 import 'package:local_sales/screens/perfil_screen.dart';
 
 class Feed extends StatelessWidget {
@@ -32,8 +32,22 @@ class Feed extends StatelessWidget {
           body: ProductsTab(),
         ),
         Scaffold(
+          appBar: AppBar(
+            title: Text("Informações do Usuário"),
+            centerTitle: true,
+            backgroundColor: Colors.deepOrangeAccent,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => EditProfile()));
+                },
+              )
+            ],
+          ),
           drawer: CustomDrawer(_pageController),
-          body: Perfil(),
+          body: Perfil(),//
         ),
         Scaffold(
           appBar: AppBar(

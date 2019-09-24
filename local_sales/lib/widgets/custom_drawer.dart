@@ -16,14 +16,6 @@ class CustomDrawer extends StatelessWidget {
     Widget _buildDrawerBack() => Container(
       decoration: BoxDecoration(
         color: Colors.white
-        /*gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 255, 124, 39),
-            Colors.white
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        )*/
       ),
     );
     
@@ -58,21 +50,21 @@ class CustomDrawer extends StatelessWidget {
                       )
                     ),
                     Positioned(
-                            left: 0.0,
-                            bottom: 0.0,
-                            child: ScopedModelDescendant<UserModel>(
-                                builder: (context, child, model){
-                                  return Text(
-                                    "Olá, ${model.currentUser() == null ? "Fail" : model.userData["name"]}!",
-                                    style:
-                                    TextStyle(
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  );
-                                }
-                            )
-                        ),
+                      left: 0.0,
+                      bottom: 0.0,
+                      child: ScopedModelDescendant<UserModel>(
+                        builder: (context, child, model){
+                          return Text(
+                            "Olá, ${model.currentUser() == null ? "Fail" : model.userData["name"]}!",
+                            style:
+                              TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold
+                              ),
+                          );
+                        }
+                      )
+                    ),
                   ],
                 ),
               ),

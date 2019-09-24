@@ -17,20 +17,6 @@ class _PerfilState extends State<Perfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Informações do Usuário"),
-          centerTitle: true,
-          backgroundColor: Colors.deepOrangeAccent,
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => EditProfile()));
-              },
-            )
-          ],
-        ),
         body: new SingleChildScrollView(
           child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
