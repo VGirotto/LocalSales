@@ -111,9 +111,17 @@ class UserModel extends Model {
     notifyListeners();
   }
 
+<<<<<<< HEAD
   void recoverPass(String email){
     _auth.sendPasswordResetEmail(email: email);
   }
+=======
+  bool isLoggedIn(){
+    return firebaseUser != null;
+  }
+
+  void recoverPass() {}
+>>>>>>> d648112f1f15ddfd08ff5bdb4a0fe7c95ee3b607
 
   Future<Null> _saveUserData(Map<String, dynamic> userData) async {
     this.userData = userData;
