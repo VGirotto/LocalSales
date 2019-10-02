@@ -1,31 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
-            "outputFile": "C:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
-=======
-            "outputFile": "C:\\Users\\Claud\\Documents\\EnSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
->>>>>>> d648112f1f15ddfd08ff5bdb4a0fe7c95ee3b607
+            "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\a1af00810df5140b86ccc09ecd7cc1a0\\res\\values-km\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "207",
-                        "endOffsets": "454"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1262",
-                        "endColumns": "207",
-                        "endOffsets": "1465"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\2f88514a7f6239fa642f180402765895\\res\\values-km\\values-km.xml",
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/64c3456f494a24073e7f48c5e078a2d8/res/values-km/values-km.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\cad5b3edf6caa45a41685cdce5a28681\\res\\values-km\\values.xml",
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/5303824108a3f566ed0750e2a2a13feb/res/values-km/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -56,6 +35,23 @@
                         "startOffsets": "105,209,396,519,626,847,973,1124,1470,1687,1795,1997,2124,2328,2516,2610,2698",
                         "endColumns": "103,186,122,106,220,125,150,137,216,107,201,126,203,187,93,87,105",
                         "endOffsets": "204,391,514,621,842,968,1119,1257,1682,1790,1992,2119,2323,2511,2605,2693,2799"
+                    }
+                },
+                {
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/e80fa951ab8fd9a9b87a466f777110c8/res/values-km/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "207",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1262",
+                        "endColumns": "207",
+                        "endOffsets": "1465"
                     }
                 }
             ]

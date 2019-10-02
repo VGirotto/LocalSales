@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/widgets/drawer_tile.dart';
