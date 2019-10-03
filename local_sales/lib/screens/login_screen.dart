@@ -79,6 +79,8 @@ class _LoginState extends State<Login> {
           ),
           FlatButton(
             onPressed: () {
+              Firestore.instance.collection("Teste").document("Test").setData(
+                  {"oi": "ola"});
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => EsqueciSenha())
               );

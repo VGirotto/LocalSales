@@ -13,8 +13,14 @@ class _CadastroState extends State<Cadastro> {
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
   final _birthController = TextEditingController();
+<<<<<<< HEAD
   final _picpay = TextEditingController();
   final _phone = TextEditingController();
+=======
+  String _metPagamentoController;
+
+
+>>>>>>> Kenji
 
   final _formKey = GlobalKey<FormState>();
   String _pass = "", t1 = 'Show Password', t2 = "Show Password";
@@ -320,6 +326,7 @@ class _CadastroState extends State<Cadastro> {
                       ])),
                   Container(
                       child: new Row(
+<<<<<<< HEAD
                     children: <Widget>[
                       Text("PicPay", textAlign: TextAlign.left),
                       Align(
@@ -343,6 +350,33 @@ class _CadastroState extends State<Cadastro> {
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
                             hintText: 'Usuário do PicPay',
+=======
+                        children: <Widget>[
+                          Text("PicPay", textAlign: TextAlign.left),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Switch(
+                              value: isSwitched,
+                              onChanged: (value) {
+                                setState(() {
+                                  isSwitched = value;
+                                  if(isSwitched) _metPagamentoController = 'PickPay';
+                                });
+                              },
+                              activeTrackColor: Colors.orangeAccent,
+                              activeColor: Colors.orange,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 200.0,
+                            child: TextFormField(
+                              enabled: isSwitched,
+                              keyboardType: TextInputType.text,
+                              decoration: InputDecoration(
+                                hintText: 'PicPay user',
+                              ),
+                            ),
+>>>>>>> Kenji
                           ),
                         ),
                       ),
@@ -366,11 +400,21 @@ class _CadastroState extends State<Cadastro> {
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             Map<String, dynamic> userData = {
-                              "name": _nameController.text,
+                              "Compras Realizadas": 0,
+                              "Data de Nascimento": _birthController.text,
                               "email": _emailController.text,
+<<<<<<< HEAD
                               "birth": _birthController.text,
                               "picpay": _picpay.text,
                               "phone": _phone.text,
+=======
+                              "Método de pagamento": _metPagamentoController,
+                              "Nome": _nameController.text,
+                              "Seguidores": 0,
+                              "Vendas Realizadas": 0
+
+
+>>>>>>> Kenji
                             };
 
                             model.signUp(

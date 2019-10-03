@@ -123,7 +123,7 @@ class UserModel extends Model {
     this.userData = userData;
 
     await Firestore.instance
-        .collection("users")
+        .collection("Usuário")
         .document(firebaseUser.uid)
         .setData(userData);
 
