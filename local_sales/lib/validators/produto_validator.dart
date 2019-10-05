@@ -27,4 +27,9 @@ class ProductValidator{
     return null;
   }
 
+  String validateAmount(String text){
+    if(text.isEmpty || text.contains('.') || text.contains(',')) return "Preencha a quantidade de itens corretamente";
+    return null;
+  }
+
 }

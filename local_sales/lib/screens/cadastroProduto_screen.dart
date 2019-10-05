@@ -51,7 +51,11 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
           ),
           IconButton(
             icon: Icon(Icons.save),
-            onPressed: (){},
+            onPressed: (){
+             if( _formKey.currentState.validate()){
+               _formKey.currentState.save();
+             }
+            },
           ),
         ]
       ),
@@ -73,39 +77,39 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
                 ImagesWidget(
                   context: context,
                   initialValue: snapshot.data["images"],
-                  onSaved: (l){},
-                  validator: (l){},
+                  onSaved: _productBloc.saveImages,
+                  validator: validateImages,
                 ),
                 TextFormField(
                   initialValue: snapshot.data["title"],
                   style: _fieldStyle,
                   decoration: _buildDecoration("Nome"),
-                  onSaved: (t){},
-                  validator: (t){},
+                  onSaved: _productBloc.saveTitle,
+                  validator: validateTitle,
                 ),
                 TextFormField(
                   initialValue: snapshot.data["description"],
                   style: _fieldStyle,
                   maxLines: 6,
                   decoration: _buildDecoration("Descrição"),
-                  onSaved: (t){},
-                  validator: (t){},
+                  onSaved: _productBloc.saveDescription,
+                  validator: validateDescripition,
                 ),
                 TextFormField(
                   initialValue: snapshot.data["price"]?.toStringAsFixed(2),
                   style: _fieldStyle,
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                   decoration: _buildDecoration("Preço"),
-                  onSaved: (t){},
-                  validator: (t){},
+                  onSaved: _productBloc.savePrice,
+                  validator: validatePrice,
                ),
                 TextFormField(
                   initialValue: snapshot.data["amount"]?.toStringAsFixed(2),
                   style: _fieldStyle,
                   keyboardType: TextInputType.number,
                   decoration: _buildDecoration("Quantidade"),
-                  onSaved: (t){},
-                  validator: (t){},
+                  onSaved: _productBloc.saveAmount,
+                  validator: validateAmount,
                 ),
               ],
           );
