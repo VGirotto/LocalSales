@@ -1,17 +1,29 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
-            "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "C:\\Users\\gab_k\\Desktop\\EngSoftware\\LocalSales\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/64c3456f494a24073e7f48c5e078a2d8/res/values-v16/values-v16.xml",
-=======
-            "outputFile": "C:\\Users\\gab_k\\Downloads\\LocalSales-master (1)\\LocalSales-master\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
-            "map": [
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\a7d65d6f9b89ec5ba6d52f45650aa8a7\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
                 {
-                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\13ed0347e422a1d3667d27fd2174a844\\res\\values-v16\\values-v16.xml",
->>>>>>> Kenji
+                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\537afd4c891f39e3b799c5876e1ffb15\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

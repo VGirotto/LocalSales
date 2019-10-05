@@ -32,6 +32,7 @@ class Feed extends StatelessWidget {
           body: ProductsTab(),
         ),
         Scaffold(
+
           appBar: AppBar(
             title: Text("Informações do Usuário"),
             centerTitle: true,

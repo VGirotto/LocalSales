@@ -1,159 +1,119 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-//import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:flutter/services.dart';
+import 'package:local_sales/blocs/product_bloc.dart';
+import 'package:local_sales/validators/produto_validator.dart';
+import 'package:local_sales/widgets/Images_widgets.dart';
+
 
 class cadastroProduto extends StatefulWidget {
+
+ final String categoriaID;
+ final DocumentSnapshot product;
+
+ cadastroProduto({this.categoriaID, this.product});
+
   @override
-  _cadastroProdutoState createState() => _cadastroProdutoState();
+  _cadastroProdutoState createState() => _cadastroProdutoState(categoriaID, product);
 }
 
-class _cadastroProdutoState extends State<cadastroProduto> {
-
-  final _nomeProdutoController = TextEditingController();
-  final _descricaoController = TextEditingController();
-  final _precoController = TextEditingController();
-  final _categoriaController = TextEditingController();
-  final _qtdController = TextEditingController();
-
+class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator{
+  final ProductBloc _productBloc;
   final _formKey = GlobalKey<FormState>();
 
+  _cadastroProdutoState(String categoriaID, DocumentSnapshot product):
+        _productBloc = ProductBloc(categoriaID: categoriaID, product: product);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Cadastre seu produto', style: TextStyle(color: Colors.white),),
-          centerTitle: true,
-        ),
-        backgroundColor: Colors.white,
-        body:/* ScopedModelDescendant<UserModel>(
-      builder: (context, child, model) {
-      if (model.isLoading)
-      return Center(
-      child: CircularProgressIndicator(),
+
+    final _fieldStyle = TextStyle(
+      color: Colors.black,
+      fontSize: 16,
+    );
+
+    InputDecoration _buildDecoration(String label){
+      return InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.grey)
       );
 
-      return*/ Form(
-            key: _formKey,
-            child: ListView(
-                padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 40.0),
-                children: <Widget>[
-                  Container(
-                      child: new Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                              width: 150.0,
-                              height: 150.0,
-                              decoration: new BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: new DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage("images/Logo.png")
-                                  )
-                              )
-                          )
-                      )
+    }
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        title: Text('Anunciar produto', style: TextStyle(color: Colors.white)),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.remove),
+            onPressed: (){},
+          ),
+          IconButton(
+            icon: Icon(Icons.save),
+            onPressed: (){},
+          ),
+        ]
+      ),
+      body: Form(
+        key: _formKey,
+        child: StreamBuilder<Map>(
+          stream: _productBloc.outData,
+          builder: (context, snapshot){
+            if (!snapshot.hasData) return Container();
+            return ListView(
+              padding: EdgeInsets.all(16),
+              children: <Widget>[
+                Text("Fotos:",
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
                   ),
-                  Container(
-                      child: new TextFormField(
-                        controller: _nomeProdutoController,
-                        inputFormatters: [
-                          new LengthLimitingTextInputFormatter(15),
-                        ],
-                        decoration: new InputDecoration(
-                          labelStyle: TextStyle(color: Colors.black),
-                          labelText: "Nome do produto:",
-                          prefixIcon: Icon(
-                            Icons.add_shopping_cart,
-                            size: 40,
-                            color: Colors.orange,
-                          ),
-                        ),
-                        validator: (text) {
-                          if (text.isEmpty) // adicionar mais condições de nome
-                            return "Coloque um nome válido";
-                        },
-                      )),
-                  Container(
-                    child: new TextFormField(
-                      controller: _descricaoController,
-                      decoration: new InputDecoration(
-                        labelStyle: TextStyle(color: Colors.black),
-                        labelText: "Descrição:",
-                        /* prefixIcon: Icon(
-                      Icons., ENCONTRAR UM ICONE DAORA
-                      size: 30,
-                      color: Colors.orange,
-                    ),*/
-                      ),
-                      validator: (text) {
-                        if (text.isEmpty) // adicionar mais condições de descrição
-                          return "Coloque uma descrição válida";
-                      },
-                    ),
-                  ),
-                  Container(
-                    child: new TextFormField(
-                      controller: _precoController,
-                      keyboardType: TextInputType.number, // Arrumar um jeito de poder colocar numeros com virgula
-                      decoration: new InputDecoration(
-                        labelStyle: TextStyle(color: Colors.black),
-                        labelText: "Preço:",
-                        /* prefixIcon: Icon(
-                            Icons.add_shopping_cart,
-                            size: 30,
-                            color: Colors.orange,
-                          ),*/
-                      ),
-                      validator: (text) {
-                        if (text.isEmpty) // adicionar condições de preço
-                          return "Coloque um preço válido";
-                      },
-                    ),
-                  ),
-                  Container(
-                    child: new TextFormField(
-                      controller: _qtdController,
-                      keyboardType: TextInputType.number,
-                      decoration: new InputDecoration(
-                        labelStyle: TextStyle(color: Colors.black),
-                        labelText: "Quantidade disponível:",
-                        /* prefixIcon: Icon(
-                            Icons.add_shopping_cart,
-                            size: 30,
-                            color: Colors.orange,
-                          ),*/
-                      ),
-                      validator: (text) {
-                        if (text.isEmpty) // adicionar condições de preço
-                          return "Coloque uma quantidade válida";
-                      },
-                    ),
-                  ),
-                  Container(
-                    child: new TextFormField(
-                      controller: _categoriaController,
-                      decoration: new InputDecoration(
-                        labelStyle: TextStyle(color: Colors.black),
-                        labelText: "Categoria:",
-                        /* prefixIcon: Icon(
-                            Icons.add_shopping_cart,
-                            size: 30,
-                            color: Colors.orange,
-                          ),*/
-                      ),
-                      validator: (text) {
-                        if (text.isEmpty) // adicionar condições de preço
-                          return "Coloque uma categoria válida";
-                      },
-                    ),
-                  ),
-                ]
-            )
-        )
+                ),
+                ImagesWidget(
+                  context: context,
+                  initialValue: snapshot.data["images"],
+                  onSaved: (l){},
+                  validator: (l){},
+                ),
+                TextFormField(
+                  initialValue: snapshot.data["title"],
+                  style: _fieldStyle,
+                  decoration: _buildDecoration("Nome"),
+                  onSaved: (t){},
+                  validator: (t){},
+                ),
+                TextFormField(
+                  initialValue: snapshot.data["description"],
+                  style: _fieldStyle,
+                  maxLines: 6,
+                  decoration: _buildDecoration("Descrição"),
+                  onSaved: (t){},
+                  validator: (t){},
+                ),
+                TextFormField(
+                  initialValue: snapshot.data["price"]?.toStringAsFixed(2),
+                  style: _fieldStyle,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  decoration: _buildDecoration("Preço"),
+                  onSaved: (t){},
+                  validator: (t){},
+               ),
+                TextFormField(
+                  initialValue: snapshot.data["amount"]?.toStringAsFixed(2),
+                  style: _fieldStyle,
+                  keyboardType: TextInputType.number,
+                  decoration: _buildDecoration("Quantidade"),
+                  onSaved: (t){},
+                  validator: (t){},
+                ),
+              ],
+          );
+          }
+
+        ),
+      ),
     );
+
   }
 }
-
