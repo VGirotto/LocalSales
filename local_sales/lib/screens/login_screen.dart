@@ -47,7 +47,7 @@ class _LoginState extends State<Login> {
               textAlign: TextAlign.center),
           TextField(
             controller: _emailController,
-            keyboardType: TextInputType.text,
+            keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: "E-mail:",
               labelStyle: TextStyle(color: Colors.black, fontSize: 20.0),

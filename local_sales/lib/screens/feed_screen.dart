@@ -20,8 +20,13 @@ class Feed extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         Scaffold(
-          body: HomeTab(),
+          body: HomeTab(),//
           drawer: CustomDrawer(_pageController),
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){},
+            child: Icon(Icons.add, color: Colors.orange),
+            backgroundColor: Colors.white,
+          ),
         ),
         Scaffold(
           appBar: AppBar(
