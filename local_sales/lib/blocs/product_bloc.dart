@@ -35,11 +35,11 @@ class ProductBloc extends BlocBase {
 
   }
 
-  void saveTitle(String tittle){
-    unsavedData["tittle"] = tittle;
+  void saveTitle(String title){
+    unsavedData["title"] = title;
   }
   void saveDescription(String description){
-    unsavedData["descripition"] = description;
+    unsavedData["description"] = description;
   }
   void savePrice(String price){
     unsavedData["price"] = double.parse(price);
@@ -59,7 +59,7 @@ class ProductBloc extends BlocBase {
         await _uploadImages (product.documentID);
         await product.reference.updateData(unsavedData);
       } else {
-        DocumentReference dr = await Firestore.instance.collection("products")
+        DocumentReference dr = await Firestore.instance.collection("produtos")
             .document(categoriaID).collection("items").add(Map.from(unsavedData)..remove("images"));
         await _uploadImages(dr.documentID);
         await dr.updateData(unsavedData);

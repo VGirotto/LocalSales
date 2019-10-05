@@ -1,4 +1,4 @@
-#Sat Oct 05 14:19:42 BRT 2019
+#Sat Oct 05 20:51:11 BRT 2019
 base.2=C\:\\Users\\gab_k\\Desktop\\EngSoftware\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
 base.1=C\:\\Users\\gab_k\\Desktop\\EngSoftware\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\1
 base.0=C\:\\Users\\gab_k\\Desktop\\EngSoftware\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0

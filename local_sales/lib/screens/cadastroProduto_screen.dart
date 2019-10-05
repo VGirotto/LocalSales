@@ -124,7 +124,7 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
                       maxLines: 6,
                       decoration: _buildDecoration("Descrição"),
                       onSaved: _productBloc.saveDescription,
-                      validator: validateDescripition,
+                      validator: validateDescription,
                     ),
                     TextFormField(
                       initialValue: snapshot.data["price"]?.toStringAsFixed(2),

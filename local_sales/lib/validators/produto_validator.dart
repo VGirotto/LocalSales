@@ -11,7 +11,7 @@ class ProductValidator{
     return null;
   }
 
-  String validateDescripition(String text){
+  String validateDescription(String text){
     if(text.isEmpty) return "Preencha a descrição do produto";
     return null;
   }
