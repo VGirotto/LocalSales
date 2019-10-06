@@ -76,6 +76,23 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
   @override
   Widget build(BuildContext context) {
 
+    void onChangedSearch(String search){
+      if(search.trim().isEmpty){
+
+      }else{
+
+      }
+    }
+
+    /*List<Map<String, dynamic>> _filter(String search){
+      List<Map<String, dynamic>> produtosFiltrados = List.from();
+
+      produtosFiltrados.retainWhere((){
+        return products["name"].toUpperCase().contains(search.toUpperCase());
+      });
+      return produtosFiltrados;
+    }*/
+
     void _searchPressed(){
       setState((){
         if(this._icone.icon == Icons.search){
@@ -83,8 +100,9 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
           this._tituloAppBar = new TextField(
             decoration: new InputDecoration(
               prefixIcon: new Icon(Icons.search),
-              hintText: 'Search...'
+              hintText: 'Pesquisa...'
             ),
+            onChanged: onChangedSearch,
           );
         }else{
           this._icone = new Icon(Icons.search);
@@ -122,23 +140,7 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
                 actions: <Widget>[
                   IconButton(
                     icon: _icone,
-                    onPressed: (){
-                      setState((){
-                        if(this._icone.icon == Icons.search){
-                          this._icone = new Icon(Icons.close);
-                          this._tituloAppBar = new TextField(
-                            decoration: new InputDecoration(
-                              labelStyle: TextStyle(color: Colors.black, fontSize: 20.0),
-                              suffixIcon: new Icon(Icons.search, color: Colors.black),
-                              hintText: 'Pesquisa...'
-                            ),
-                          );
-                        }else{
-                          this._icone = new Icon(Icons.search);
-                          this._tituloAppBar = new Text("Produtos");
-                        }
-                      });
-                    }
+                    onPressed: _searchPressed
                   )
                 ],
               ),
