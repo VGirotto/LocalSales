@@ -1,100 +1,43 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:transparent_image/transparent_image.dart';
-
-//import 'package:local_sales/tabs/home_tab.dart';
-import 'dart:async';
-////////////Israel
-Future<Null> refresh() async{
-
-  Completer<Null> completer = Completer<Null>();
-  await Future.delayed(Duration(seconds: 1)).then((_){
-    completer.complete();
-  });
-
-  return completer.future;
-}
-
-Widget homeList(AsyncSnapshot snapshot, int index){
-  return snapshot.data.documents().map<Widget>((document){
-    return Container(
-      child:Row(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: snapshot.data["image"],
-              ),
-            ),
-          ),
-
-          Container(
-            margin:EdgeInsets.only(top:20),
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  child: Opacity(
-                    opacity:0.2,
-                    child: Container(
-                      color:Colors.black,
-                    ),
-                  ),
-                ),
-                Container(
-                  color:Colors.transparent,
-                  child: Text("inputDescription. Loren ipsun",
-                      style:TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                      )
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }).toList(index);
-}
-///////////Israel
+import 'package:local_sales/datas/product_data.dart';
+import 'package:local_sales/widgets/product_tile.dart';
 
 class HomeTab extends StatefulWidget {
   @override
   _HomeTabState createState() => _HomeTabState();
 }
 
-class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
+class _HomeTabState extends State<HomeTab>{
   Icon _icone = new Icon(Icons.search);
   Widget _tituloAppBar = new Text( 'Produtos' );
-  
+  CollectionReference _firestore = Firestore.instance.collection("Produtos").document("Todos").collection("itens");
+  Future<QuerySnapshot> _resultado = Firestore.instance.collection("Produtos").document("Todos").collection("itens").getDocuments();
+
   @override
   Widget build(BuildContext context) {
 
+    Query _filter(String search){
+      CollectionReference produtosFiltrados = this._firestore;
+      Query saida;
+
+      saida = produtosFiltrados.where('title'.toUpperCase(), arrayContains: search.toUpperCase());
+      
+      return saida;
+    }
+
     void onChangedSearch(String search){
       if(search.trim().isEmpty){
-
+        this._resultado = this._firestore.getDocuments();
+        print("ok");
       }else{
-
+        this._resultado = _filter(search.trim()).getDocuments();
       }
     }
 
-    /*List<Map<String, dynamic>> _filter(String search){
-      List<Map<String, dynamic>> produtosFiltrados = List.from();
-
-      produtosFiltrados.retainWhere((){
-        return products["name"].toUpperCase().contains(search.toUpperCase());
-      });
-      return produtosFiltrados;
-    }*/
-
     void _searchPressed(){
-      setState((){
+      //setState((){
         if(this._icone.icon == Icons.search){
           this._icone = new Icon(Icons.close);
           this._tituloAppBar = new TextField(
@@ -108,160 +51,79 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
           this._icone = new Icon(Icons.search);
           this._tituloAppBar = new Text("Produtos");
         }
-      });
+      //});
     }
-
-    Widget _buildBodyBack() => Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 255, 124, 39),
-              Colors.white
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          )
-      ),
-    );
 
     return
       Stack(
         children: <Widget>[
-          _buildBodyBack(),
-          CustomScrollView(
-            slivers: <Widget>[
-              SliverAppBar(
-                floating: true,
-                snap: true,
-                backgroundColor: Colors.transparent,
-                elevation: 0.0,
-                title: _tituloAppBar,
-                centerTitle: true,
+          DefaultTabController(
+            length: 2,
+            child: Scaffold(
+              appBar: AppBar(
+                leading: Container(color: Colors.orange),
                 actions: <Widget>[
                   IconButton(
                     icon: _icone,
                     onPressed: _searchPressed
                   )
                 ],
+                title: _tituloAppBar,
+                centerTitle: true,
+                bottom: TabBar(
+                  indicatorColor: Colors.white,
+                  tabs: <Widget>[
+                    Tab(icon: Icon(Icons.grid_on,),),
+                    Tab(icon: Icon(Icons.list,),),
+                  ],
+                ),
               ),
-            ],
-          ),
-
-
-/////////////israel/////////////////////
-          Container(
-            padding: EdgeInsets.only(left: 50, right: 50, top:100),
-            child: CustomScrollView(
-              slivers: <Widget>[
-                SliverToBoxAdapter(
-                  child: Container(
-                    height: 10.0,
-                    color:Colors.transparent,
-                  ),
-                ),
-                FutureBuilder<QuerySnapshot>(
-                  future: Firestore.instance.collection("Israel").getDocuments(),       ///trocar Israel Pela Colecao
-                  builder:(context, snapshot){
-                    if (!snapshot.hasData)
-                      return SliverToBoxAdapter(
-                        child: Container(
-                          height:50,
-                          alignment: Alignment.center,
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(Colors.deepOrange),
+              body: FutureBuilder<QuerySnapshot>(
+                future: _resultado,
+                builder: (context, snapshot){
+                  if(!snapshot.hasData)
+                    return Center(child: CircularProgressIndicator(),);
+                  else
+                    return TabBarView(
+                      children: [
+                        GridView.builder(
+                          padding: EdgeInsets.all(4.0),
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 4,
+                            crossAxisSpacing: 4,
+                            childAspectRatio: 0.65,
                           ),
-                        ),
-                      );
-                    else
-                      return SliverStaggeredGrid.count(
-                        crossAxisCount:1,
-                        mainAxisSpacing:50,
-                        staggeredTiles: snapshot.data.documents.map(
-                              (doc){
-                            return StaggeredTile.count(1,1);
+                          itemCount: snapshot.data.documents.length,
+                          itemBuilder: (context, index){
+                            return ProductTile("grid", ProductData.fromDocument(snapshot.data.documents[index]));
                           },
-                        ).toList(),
-                        children: snapshot.data.documents.map(
-                                (doc){
-                              return Container(
-                                child: Column(
-                                  children: <Widget>[
-                                    Container(
-
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            width: 1.0,
-                                            color: Colors.grey,
-                                          ),
-
-                                          borderRadius:BorderRadius.all(Radius.circular(5.0),),
-                                        ),
-                                        child:FadeInImage.memoryNetwork(
-                                          placeholder: kTransparentImage,
-                                          image: doc.data["image"],
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      child: Text("Olasas"),
-                                    ),
-
-                                    /*
-                                      Positioned.fill(
-                                        child: FractionallySizedBox(
-                                          heightFactor:0.3,
-                                          alignment: Alignment.bottomCenter,
-                                          child: Stack(
-                                            children: <Widget>[
-                                              Positioned.fill(
-                                                child: Container(
-                                                  decoration: BoxDecoration(borderRadius:BorderRadius.all(Radius.circular(5.0),),),
-                                                  child: _buildBodyText(),
-                                                ),
-                                              ),
-                                              Positioned.fill(
-                                                child: Container(
-                                                  child:
-                                                  SingleChildScrollView(
-                                                    child:
-                                                    Text(doc.data["msg"].toString(),
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-
-
-                                                        fontSize: 14,
-                                                        fontStyle: FontStyle.normal,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-
-                                      */
-
-                                  ],
-                                ),
-
-
-
-
-                              );
-                            }
-                        ).toList(),
-                      );
-                  },
+                        ),
+                        ListView.builder(
+                          padding: EdgeInsets.all(4.0),
+                          itemCount: snapshot.data.documents.length,
+                          itemBuilder: (context, index){
+                            return ProductTile("list", ProductData.fromDocument(snapshot.data.documents[index]),);
+                          }
+                        ),
+                      ],
+                    );
+                },
+              ),
+            ),
+          ),
+          Container(
+            height:110,
+            width:110,
+            child:CustomScrollView(
+              slivers: <Widget>[
+                SliverAppBar(
+                  backgroundColor: Colors.transparent,
                 ),
-///////////israel///////////
-
               ],
             ),
           ),
+
         ],
       );
     //onRefresh: refresh;

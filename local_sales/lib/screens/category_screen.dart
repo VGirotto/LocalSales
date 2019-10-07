@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:local_sales/datas/product_data.dart';
+import 'package:local_sales/widgets/product_tile.dart';
 
 class CategoryScreen extends StatelessWidget {
 
@@ -12,7 +15,7 @@ class CategoryScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(snapshot.data['title']),
+          title: Text(snapshot.data["title"]),
           centerTitle: true,
           bottom: TabBar(
             indicatorColor: Colors.white,
@@ -22,12 +25,38 @@ class CategoryScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
-            children:[
-              Container(color: Colors.red),
-              Container(color: Colors.green),
-            ],
-        ),
+        body: FutureBuilder<QuerySnapshot>(
+          future: Firestore.instance.collection("Produtos").document(snapshot.documentID).collection("itens").getDocuments(),
+          builder: (context, snapshot){
+            if(!snapshot.hasData)
+              return Center(child: CircularProgressIndicator(),);
+            else
+              return TabBarView(
+                children:[
+                  GridView.builder(
+                    padding: EdgeInsets.all(4.0),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 4.0,
+                        crossAxisSpacing: 4.0,
+                        childAspectRatio: 0.65,
+                      ),
+                      itemCount: snapshot.data.documents.length,
+                      itemBuilder: (context, index){
+                        return ProductTile("grid", ProductData.fromDocument(snapshot.data.documents[index]));
+                      }
+                  ),
+                  ListView.builder(
+                      padding: EdgeInsets.all(4.0),
+                      itemCount: snapshot.data.documents.length,
+                      itemBuilder: (context, index){
+                        return ProductTile("list", ProductData.fromDocument(snapshot.data.documents[index]));
+                      }
+                  ),
+                ],
+              );
+          }
+        )
       ),
     );
   }
