@@ -4,19 +4,37 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:local_sales/datas/product_data.dart';
 import 'package:local_sales/widgets/product_tile.dart';
 
-
-
 class HomeTab extends StatefulWidget {
   @override
   _HomeTabState createState() => _HomeTabState();
 }
 
-class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
+class _HomeTabState extends State<HomeTab>{
   Icon _icone = new Icon(Icons.search);
   Widget _tituloAppBar = new Text( 'Produtos' );
+  CollectionReference _firestore = Firestore.instance.collection("Produtos").document("Todos").collection("itens");
+  Future<QuerySnapshot> _resultado = Firestore.instance.collection("Produtos").document("Todos").collection("itens").getDocuments();
 
   @override
   Widget build(BuildContext context) {
+
+    Query _filter(String search){
+      CollectionReference produtosFiltrados = this._firestore;
+      Query saida;
+
+      saida = produtosFiltrados.where('title'.toUpperCase(), arrayContains: search.toUpperCase());
+      
+      return saida;
+    }
+
+    void onChangedSearch(String search){
+      if(search.trim().isEmpty){
+        this._resultado = this._firestore.getDocuments();
+        print("ok");
+      }else{
+        this._resultado = _filter(search.trim()).getDocuments();
+      }
+    }
 
     void _searchPressed(){
       setState((){
@@ -25,8 +43,9 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
           this._tituloAppBar = new TextField(
             decoration: new InputDecoration(
               prefixIcon: new Icon(Icons.search),
-              hintText: 'Search...'
+              hintText: 'Pesquisa...'
             ),
+            onChanged: onChangedSearch,
           );
         }else{
           this._icone = new Icon(Icons.search);
@@ -38,8 +57,6 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
     return
       Stack(
         children: <Widget>[
-
-
           DefaultTabController(
             length: 2,
             child: Scaffold(
@@ -47,24 +64,8 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
                 leading: Container(color: Colors.orange),
                 actions: <Widget>[
                   IconButton(
-                      icon: _icone,
-                      onPressed: (){
-                        setState((){
-                          if(this._icone.icon == Icons.search){
-                            this._icone = new Icon(Icons.close);
-                            this._tituloAppBar = new TextField(
-                              decoration: new InputDecoration(
-                                  labelStyle: TextStyle(color: Colors.black, fontSize: 20.0),
-                                  suffixIcon: new Icon(Icons.search, color: Colors.black),
-                                  hintText: 'Pesquisa...'
-                              ),
-                            );
-                          }else{
-                            this._icone = new Icon(Icons.search);
-                            this._tituloAppBar = new Text("Produtos");
-                          }
-                        });
-                      }
+                    icon: _icone,
+                    onPressed: _searchPressed
                   )
                 ],
                 title: _tituloAppBar,
@@ -78,7 +79,7 @@ class /*HomeTab*/_HomeTabState extends State<HomeTab>/*StatelessWidget*/ {
                 ),
               ),
               body: FutureBuilder<QuerySnapshot>(
-                future: Firestore.instance.collection("Produtos").document("Todos").collection("itens").getDocuments(),
+                future: _resultado,
                 builder: (context, snapshot){
                   if(!snapshot.hasData)
                     return Center(child: CircularProgressIndicator(),);
