@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
-import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/screens/login_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.orange,
             ),
             debugShowCheckedModeBanner: false,
-            home: cadastroProduto()
+            home: Login()
         ),
         model: UserModel(),
     );

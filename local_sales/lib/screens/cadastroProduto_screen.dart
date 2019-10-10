@@ -23,7 +23,7 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
 
 
   _cadastroProdutoState(String categoriaID, DocumentSnapshot product):
-        _productBloc = ProductBloc(categoriaID: categoriaID, product: product);
+  _productBloc = ProductBloc(categoriaID: categoriaID, product: product);
 
   @override
   Widget build(BuildContext context) {
@@ -178,6 +178,8 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
         )
       );
 
+      
+
       bool success = await _productBloc.saveProduct();
       _scaffoldKey.currentState.removeCurrentSnackBar();
 
@@ -190,4 +192,5 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
 
     }
   }
+
 }

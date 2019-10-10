@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/tabs/aboutapp_tab.dart';
 import 'package:local_sales/tabs/chat_tab.dart';
 import 'package:local_sales/tabs/configuration_tab.dart';
@@ -9,7 +10,13 @@ import 'package:local_sales/widgets/custom_drawer.dart';
 import 'package:local_sales/screens/editProfile_screen.dart';
 import 'package:local_sales/screens/perfil_screen.dart';
 
-class Feed extends StatelessWidget {
+class Feed extends StatefulWidget {
+
+  @override
+  _FeedState createState() => _FeedState();
+}
+
+class _FeedState extends State<Feed> {
 
   final _pageController = PageController();
 
@@ -20,8 +27,15 @@ class Feed extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         Scaffold(
-          body: HomeTab(),
+          body: HomeTab(),//
           drawer: CustomDrawer(_pageController),
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              _showSimpleDialog();
+            },
+            child: Icon(Icons.add, color: Colors.orange),
+            backgroundColor: Colors.white,
+          ),
         ),
         Scaffold(
           appBar: AppBar(
@@ -32,7 +46,6 @@ class Feed extends StatelessWidget {
           body: ProductsTab(),
         ),
         Scaffold(
-
           appBar: AppBar(
             title: Text("Informações do Usuário"),
             centerTitle: true,
@@ -87,42 +100,75 @@ class Feed extends StatelessWidget {
         //TODO: Adicionar os outros filhos
       ],
     );
+  }
 
-    /*return Scaffold(
-      body: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget> [
-              Text("Bem-vindo",
-                  style: TextStyle(color: Colors.black, fontSize: 20.0),
-                  textAlign: TextAlign.center),
-              RaisedButton(
+  _dismissDialog() {
+    Navigator.pop(context);
+  }
+
+  void _showSimpleDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            title: Text('Escolha a categoria para adicionar o produto:'),
+            children: <Widget>[
+              SimpleDialogOption(
                 onPressed: () {
+                  _dismissDialog();
                   Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Perfil())
+                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Calçados",))
                   );
                 },
-                child: Text("Perfil",
-                    style: TextStyle(color: Colors.black, fontSize: 20.0),
-                    textAlign: TextAlign.center),
-                color: Colors.orange,
+                child: const Text('Calçados'),
               ),
-              FlatButton(
+              SimpleDialogOption(
                 onPressed: () {
+                  _dismissDialog();
                   Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Login())
+                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Caronas",))
                   );
                 },
-                child: Text("Sair",
-                    style: TextStyle(color: Colors.black, fontSize: 20.0),
-                    textAlign: TextAlign.center)
+                child: const Text('Caronas'),
               ),
-            ]
-          ),
-        ),
-      backgroundColor: Colors.white
-    );*/
+              SimpleDialogOption(
+                onPressed: () {
+                  _dismissDialog();
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Doces",))
+                  );
+                },
+                child: const Text('Doces'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  _dismissDialog();
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Eletrônicos",))
+                  );
+                },
+                child: const Text('Eletrônicos'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  _dismissDialog();
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Roupas",))
+                  );
+                },
+                child: const Text('Roupas'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  _dismissDialog();
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Salgados",))
+                  );
+                },
+                child: const Text('Salgados'),
+              ),
+            ],
+          );
+        });
   }
 }

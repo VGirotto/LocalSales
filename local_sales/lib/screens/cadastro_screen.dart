@@ -74,23 +74,23 @@ class _CadastroState extends State<Cadastro> {
                       ])),
                   Container(
                       child: new TextFormField(
-                        controller: _emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: new InputDecoration(
-                          labelStyle: TextStyle(color: Colors.black),
-                          hintText: 'you@example.com',
-                          labelText: "E-mail",
-                          prefixIcon: Icon(
-                            Icons.account_circle,
-                            size: 30,
-                            color: Colors.orange,
-                          ),
-                        ),
-                        validator: (text) {
-                          if (text.isEmpty || !text.contains("@"))
-                            return "E-mail inválido!";
-                        },
-                      )),
+                    controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: new InputDecoration(
+                      labelStyle: TextStyle(color: Colors.black),
+                      hintText: 'you@example.com',
+                      labelText: "E-mail",
+                      prefixIcon: Icon(
+                        Icons.account_circle,
+                        size: 30,
+                        color: Colors.orange,
+                      ),
+                    ),
+                    validator: (text) {
+                      if (text.isEmpty || !text.contains("@"))
+                        return "E-mail inválido!";
+                    },
+                  )),
                   Container(
                     child: TextFormField(
                       controller: _passController,
@@ -199,7 +199,7 @@ class _CadastroState extends State<Cadastro> {
                                         image: _img_path != null
                                             ? AssetImage(_img_path)
                                             : NetworkImage(
-                                            "https://logodetimes.com/wp-content/uploads/corinthians-capa.jpg"),
+                                                "https://logodetimes.com/wp-content/uploads/corinthians-capa.jpg"),
                                       ),
                                     ),
                                   ),
@@ -213,7 +213,7 @@ class _CadastroState extends State<Cadastro> {
                                       keyboardType: TextInputType.text,
                                       decoration: InputDecoration(
                                           labelStyle:
-                                          TextStyle(color: Colors.black),
+                                              TextStyle(color: Colors.black),
                                           hintText: "Fulano da Silva",
                                           labelText: 'Nome',
                                           prefixIcon: Icon(
@@ -320,34 +320,34 @@ class _CadastroState extends State<Cadastro> {
                       ])),
                   Container(
                       child: new Row(
-                        children: <Widget>[
-                          Text("PicPay", textAlign: TextAlign.left),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Switch(
-                              value: isSwitched,
-                              onChanged: (value) {
-                                setState(() {
-                                  isSwitched = value;
-                                });
-                              },
-                              activeTrackColor: Colors.orangeAccent,
-                              activeColor: Colors.orange,
-                            ),
+                    children: <Widget>[
+                      Text("PicPay", textAlign: TextAlign.left),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Switch(
+                          value: isSwitched,
+                          onChanged: (value) {
+                            setState(() {
+                              isSwitched = value;
+                            });
+                          },
+                          activeTrackColor: Colors.orangeAccent,
+                          activeColor: Colors.orange,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 200.0,
+                        child: TextFormField(
+                          controller: _picpay,
+                          enabled: isSwitched,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            hintText: 'Usuário do PicPay',
                           ),
-                          SizedBox(
-                            width: 200.0,
-                            child: TextFormField(
-                              controller: _picpay,
-                              enabled: isSwitched,
-                              keyboardType: TextInputType.text,
-                              decoration: InputDecoration(
-                                hintText: 'Usuário do PicPay',
-                              ),
-                            ),
-                          ),
-                        ],
-                      )),
+                        ),
+                      ),
+                    ],
+                  )),
 
 
                   Container(
@@ -393,10 +393,10 @@ class _CadastroState extends State<Cadastro> {
 
   void _onSuccess(){
     _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Usuário criado com sucesso!"),
-          backgroundColor: Theme.of(context).primaryColor,
-          duration: Duration(seconds: 2),
-        )
+      SnackBar(content: Text("Usuário criado com sucesso!"),
+        backgroundColor: Theme.of(context).primaryColor,
+        duration: Duration(seconds: 2),
+      )
     );
     Future.delayed(Duration(seconds: 2)).then((_){
       Navigator.of(context).pop();

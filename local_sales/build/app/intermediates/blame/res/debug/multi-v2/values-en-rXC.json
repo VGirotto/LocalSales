@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\gab_k\\Desktop\\EngSoftware\\LocalSales\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
+            "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\a7d65d6f9b89ec5ba6d52f45650aa8a7\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/59f7cdba1fafde836f91a798f39228d6/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\gab_k\\.gradle\\caches\\transforms-2\\files-2.1\\537afd4c891f39e3b799c5876e1ffb15\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/ecd4d70ddebf04a00d2cd2425d873732/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

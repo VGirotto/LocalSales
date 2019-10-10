@@ -89,6 +89,7 @@ class UserModel extends Model {
 
     await _loadCurrentUser();
 
+
      onSucess();
      isLoading = false;
      notifyListeners();
@@ -123,7 +124,7 @@ class UserModel extends Model {
     this.userData = userData;
 
     await Firestore.instance
-        .collection("Usuário")
+        .collection("users")
         .document(firebaseUser.uid)
         .setData(userData);
 
@@ -133,6 +134,7 @@ class UserModel extends Model {
   Future<Null> _loadCurrentUser() async {
     if(firebaseUser == null)
       firebaseUser = await _auth.currentUser();
+    
     if(firebaseUser != null){
       if(userData["name"] == null){
         DocumentSnapshot docUser =

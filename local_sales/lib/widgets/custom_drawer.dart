@@ -54,7 +54,7 @@ class CustomDrawer extends StatelessWidget {
                       child: ScopedModelDescendant<UserModel>(
                         builder: (context, child, model){
                           return Text(
-                            "Olá, ${!model.isLoggedIn() ? "" : model.userData["name"]}!",
+                            "Olá, ${model.currentUser() == null ? "" : model.userData["name"]}!",
                             style: 
                               TextStyle(
                                 fontSize: 18.0,

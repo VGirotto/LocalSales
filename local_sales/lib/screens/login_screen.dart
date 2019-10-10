@@ -22,7 +22,6 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       key: _scaffoldKey,
       body: ListView(
         children: <Widget>[
@@ -80,8 +79,6 @@ class _LoginState extends State<Login> {
           ),
           FlatButton(
             onPressed: () {
-              Firestore.instance.collection("Teste").document("Test").setData(
-                  {"oi": "ola"});
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => EsqueciSenha())
               );

@@ -26,7 +26,7 @@ class ProductBloc extends BlocBase {
       _createdController.add(true);
     } else {
       unsavedData = {
-        "title": null, "description": null, "price": null, "images": [], "amount": null, "uid": null,
+        "title": null, "description": null, "price": null, "images": [], "amount": null, "uid": null, "vendedor": null,
       };
 
       _createdController.add(false);
@@ -47,6 +47,12 @@ class ProductBloc extends BlocBase {
   void saveAmount(String amount){
     unsavedData["amount"] = int.parse(amount);
   }
+  void saveUid(String uid){
+    unsavedData["uid"] = uid;
+  }
+  void saveVendedor(String vendedor){
+    unsavedData["vendedor"] = vendedor;
+  }
   void saveImages(List images){
     unsavedData["images"] = images;
   }
@@ -59,10 +65,13 @@ class ProductBloc extends BlocBase {
         await _uploadImages (product.documentID);
         await product.reference.updateData(unsavedData);
       } else {
-        DocumentReference dr = await Firestore.instance.collection("produtos")
-            .document(categoriaID).collection("items").add(Map.from(unsavedData)..remove("images"));
+        DocumentReference dr = await Firestore.instance.collection("Produtos")
+            .document(categoriaID).collection("itens").add(Map.from(unsavedData)..remove("images"));
+        DocumentReference drTodos = await Firestore.instance.collection("Produtos")
+            .document("Todos").collection("itens").add(Map.from(unsavedData)..remove("images"));
         await _uploadImages(dr.documentID);
         await dr.updateData(unsavedData);
+        await drTodos.updateData(unsavedData);
       }
 
       _createdController.add(true);
@@ -79,7 +88,7 @@ class ProductBloc extends BlocBase {
     for(int i = 0; i < unsavedData["images"].length; i++){
       if(unsavedData["images"][i] is String) continue;
 
-      StorageUploadTask uploadTask = FirebaseStorage.instance.ref().child(categoriaID).
+      StorageUploadTask uploadTask = FirebaseStorage.instance.ref().child("Produtos").child(categoriaID).
       child(productID).child(DateTime.now().millisecondsSinceEpoch.toString()).
       putFile(unsavedData["images"][i]);
 
