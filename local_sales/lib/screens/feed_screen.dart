@@ -111,7 +111,8 @@ class _FeedState extends State<Feed> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: Text('Escolha a categoria para adicionar o produto:'),
+            title: Text('Escolha a categoria para adicionar o produto:', textAlign: TextAlign.center,),
+            titlePadding: EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 10.0),
             children: <Widget>[
               SimpleDialogOption(
                 onPressed: () {
@@ -120,7 +121,10 @@ class _FeedState extends State<Feed> {
                     MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Calçados",))
                   );
                 },
-                child: const Text('Calçados'),
+                child: new Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: const Text('Calçados', style: TextStyle(fontSize: 16.0),),
+                )
               ),
               SimpleDialogOption(
                 onPressed: () {
@@ -129,7 +133,10 @@ class _FeedState extends State<Feed> {
                     MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Caronas",))
                   );
                 },
-                child: const Text('Caronas'),
+                child: new Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: const Text('Caronas', style: TextStyle(fontSize: 16.0),),
+                )
               ),
               SimpleDialogOption(
                 onPressed: () {
@@ -138,7 +145,10 @@ class _FeedState extends State<Feed> {
                     MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Doces",))
                   );
                 },
-                child: const Text('Doces'),
+                child: new Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: const Text('Doces', style: TextStyle(fontSize: 16.0),),
+                )
               ),
               SimpleDialogOption(
                 onPressed: () {
@@ -147,7 +157,10 @@ class _FeedState extends State<Feed> {
                     MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Eletrônicos",))
                   );
                 },
-                child: const Text('Eletrônicos'),
+                child: new Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: const Text('Eletrônicos', style: TextStyle(fontSize: 16.0),),
+                )
               ),
               SimpleDialogOption(
                 onPressed: () {
@@ -156,7 +169,10 @@ class _FeedState extends State<Feed> {
                     MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Roupas",))
                   );
                 },
-                child: const Text('Roupas'),
+                child: new Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: const Text('Roupas', style: TextStyle(fontSize: 16.0),),
+                )
               ),
               SimpleDialogOption(
                 onPressed: () {
@@ -165,7 +181,10 @@ class _FeedState extends State<Feed> {
                     MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Salgados",))
                   );
                 },
-                child: const Text('Salgados'),
+                child: new Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: const Text('Salgados', style: TextStyle(fontSize: 16.0),),
+                )
               ),
             ],
           );
