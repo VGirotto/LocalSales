@@ -41,7 +41,7 @@ class _HomeTabState extends State<HomeTab>{
           this._resultado = this._firestore.where('title', isEqualTo: search).getDocuments();
           print(search);
         }  
-      });
+      });}
 
     void _searchPressed(){
       setState((){
@@ -59,7 +59,7 @@ class _HomeTabState extends State<HomeTab>{
           this._tituloAppBar = new Text("Produtos");
         }
       });
-    }
+    };
 
     return
       Stack(
@@ -136,3 +136,4 @@ class _HomeTabState extends State<HomeTab>{
     //onRefresh: refresh;
   }
 }
+
