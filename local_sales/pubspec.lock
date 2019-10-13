@@ -8,7 +8,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.3.0"
-<<<<<<< HEAD
   bloc_pattern:
     dependency: "direct main"
     description:
@@ -16,8 +15,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.2"
-=======
->>>>>>> d0fa239cff587fef879ee8a43269eee875c53626
   boolean_selector:
     dependency: transitive
     description:
@@ -154,7 +151,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
-<<<<<<< HEAD
   rxdart:
     dependency: "direct main"
     description:
@@ -162,8 +158,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.22.3"
-=======
->>>>>>> d0fa239cff587fef879ee8a43269eee875c53626
   scoped_model:
     dependency: "direct main"
     description:
