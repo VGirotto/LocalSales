@@ -14,26 +14,35 @@ class _HomeTabState extends State<HomeTab>{
   Widget _tituloAppBar = new Text( 'Produtos' );
   CollectionReference _firestore = Firestore.instance.collection("Produtos").document("Todos").collection("itens");
   Future<QuerySnapshot> _resultado = Firestore.instance.collection("Produtos").document("Todos").collection("itens").getDocuments();
+  //Query where().firestore;
 
   @override
   Widget build(BuildContext context) {
 
-    Query _filter(String search){
-      CollectionReference produtosFiltrados = this._firestore;
+    /*Query _filter(String search){
+      setState(() {
+        CollectionReference produtosFiltrados = this._firestore;
+
+        this.saida = produtosFiltrados.where('itens.title', isEqualTo: search);  
+      });
+      /*CollectionReference produtosFiltrados = this._firestore;
       Query saida;
 
-      saida = produtosFiltrados.where('title'.toUpperCase(), arrayContains: search.toUpperCase());
+      saida = produtosFiltrados.where('itens.title', isEqualTo: search);*/
       
       return saida;
-    }
+    }*/
 
     void onChangedSearch(String search){
-      if(search.trim().isEmpty){
-        this._resultado = this._firestore.getDocuments();
-        print("ok");
-      }else{
-        this._resultado = _filter(search.trim()).getDocuments();
-      }
+      setState(() {
+        if(search.trim().isEmpty){
+          this._resultado = this._firestore.getDocuments();
+          print("ok");
+        }else{
+          this._resultado = this._firestore.where('title', isEqualTo: search).getDocuments();
+          print(search);
+        }  
+      });
     }
 
     void _searchPressed(){
@@ -45,7 +54,7 @@ class _HomeTabState extends State<HomeTab>{
               prefixIcon: new Icon(Icons.search),
               hintText: 'Pesquisa...'
             ),
-            onChanged: onChangedSearch,
+            onChanged: onChangedSearch
           );
         }else{
           this._icone = new Icon(Icons.search);
