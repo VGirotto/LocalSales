@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Oct 09 23:36:30 BRT 2019
+#Thu Oct 10 10:18:25 BRT 2019
 5.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/8
 22.path=classes.dex
 32.set=DEX
@@ -98,7 +98,7 @@ count=38
 28.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/9
 10.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/17
 26.set=DEX
-0.path=classes2.dex
+0.path=classes.dex
 15.set=ASSET
 14.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/22
 14.baseType=DIRECTORY
@@ -107,7 +107,7 @@ count=38
 4.path=classes.dex
 2.baseType=DIRECTORY
 6.set=ASSET
-0.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/2
+0.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/16
 8.path=flutter_assets/isolate_snapshot_data
 33.set=ASSET
 4.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/20
@@ -141,7 +141,7 @@ count=38
 29.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/15
 11.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/0
 36.set=DEX
-1.path=classes.dex
+1.path=classes2.dex
 25.set=DEX
 15.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/merged_assets/debug/out
 14.set=DEX
@@ -150,6 +150,6 @@ count=38
 17.baseType=DIRECTORY
 5.path=classes.dex
 5.baseType=DIRECTORY
-1.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/16
+1.base=/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/2
 9.path=classes.dex
 5.set=DEX
