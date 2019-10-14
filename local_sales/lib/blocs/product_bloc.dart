@@ -26,7 +26,7 @@ class ProductBloc extends BlocBase {
       _createdController.add(true);
     } else {
       unsavedData = {
-        "title": null, "description": null, "price": null, "images": [], "amount": null, "uid": null, "vendedor": null,
+        "title": null, "description": null, "price": null, "images": [], "amount": null, "uid": null, "vendedor": null, "categoria": null,
       };
 
       _createdController.add(false);
@@ -55,6 +55,9 @@ class ProductBloc extends BlocBase {
   }
   void saveImages(List images){
     unsavedData["images"] = images;
+  }
+  void saveCategoria(String categoria){
+    unsavedData["categoria"] = categoria;
   }
 
   Future<bool> saveProduct() async {

@@ -10,6 +10,8 @@ class ProductData{
   List images;
   List size;
   String salesperson;
+  String uid;
+  String categoria; //essa é o atributo
 
   ProductData.fromDocument(DocumentSnapshot snapshot){
     id = snapshot.documentID;
@@ -19,6 +21,7 @@ class ProductData{
     images = snapshot.data["images"];
     amount = snapshot.data["amount"];
     salesperson = snapshot.data["vendedor"];
-
+    uid = snapshot.data["uid"];
+    categoria = snapshot.data["categoria"];
   }
 }

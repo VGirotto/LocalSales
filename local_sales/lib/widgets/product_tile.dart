@@ -1,20 +1,23 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/datas/product_data.dart';
+import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/screens/product_screen.dart';
 
 class ProductTile extends StatelessWidget {
   final String type;
   final ProductData product;
-
-  ProductTile(this.type, this.product);
+  final _validation;
+  final DocumentSnapshot produtoSnap;
+  ProductTile(this.type, this.product, this._validation, this.produtoSnap);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
         Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context)=>ProductScreen(product)
+          MaterialPageRoute(           
+            builder: (context)=>(_validation == 0)?ProductScreen(product):cadastroProduto(categoriaID: product.categoria, product: produtoSnap),
           )
         );
       },

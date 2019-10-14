@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
+import 'package:local_sales/screens/login_screen.dart';
 import 'package:local_sales/widgets/drawer_tile.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -53,14 +54,42 @@ class CustomDrawer extends StatelessWidget {
                       bottom: 0.0,
                       child: ScopedModelDescendant<UserModel>(
                         builder: (context, child, model){
-                          return Text(
+                          /* return Text(
                             "Olá, ${model.currentUser() == null ? "" : model.userData["name"]}!",
                             style: 
                               TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold
                               ),
-                          );
+                          );*/
+                          
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                            "Olá, ${model.currentUser() == null ? "" : model.userData["name"]}!",
+                            style: 
+                              TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold
+                              ),
+                          ),
+                              GestureDetector(
+                                child: Text(
+                                  model.isLoggedIn() ? "Sair" : "",
+                                  style: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                onTap: (){
+                                  model.signOut();
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login()));
+                                },
+                              )
+                            ],
+                            );
                         }
                       )
                     ),
@@ -72,7 +101,7 @@ class CustomDrawer extends StatelessWidget {
               DrawerTile(Icons.list, "Categorias", pageController, 1),
               DrawerTile(Icons.account_circle, "Perfil", pageController, 2),
               DrawerTile(Icons.chat, "Chat", pageController, 3),
-              DrawerTile(Icons.playlist_add_check, "Histórico", pageController, 4),
+              DrawerTile(Icons.playlist_add_check, "Meus Produtos", pageController, 4),
               DrawerTile(Icons.settings, "Configurações", pageController, 5),
               DrawerTile(Icons.info_outline, "Sobre o app", pageController, 6),
             ],
