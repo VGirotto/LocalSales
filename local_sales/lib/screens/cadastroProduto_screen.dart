@@ -23,8 +23,10 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  final String categoriaID;
 
-  _cadastroProdutoState(String categoriaID, DocumentSnapshot product):
+
+  _cadastroProdutoState(this.categoriaID, DocumentSnapshot product):
   _productBloc = ProductBloc(categoriaID: categoriaID, product: product);
 
   @override
@@ -94,6 +96,7 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
         builder: (context, child, model) {
           _productBloc.saveVendedor(model.userData["name"]);
           _productBloc.saveUid(model.firebaseUser.uid);
+          _productBloc.saveCategoria(categoriaID);
           return Stack(
             children: <Widget>[
               Form(

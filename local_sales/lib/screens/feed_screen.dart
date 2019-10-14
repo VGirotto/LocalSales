@@ -73,7 +73,7 @@ class _FeedState extends State<Feed> {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Histórico"),
+            title: Text("Meus Produtos"),
             centerTitle: true,
           ),
           drawer: CustomDrawer(_pageController),
