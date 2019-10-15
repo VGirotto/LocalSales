@@ -22,7 +22,9 @@ class _FeedState extends State<Feed> {
 
   @override
   Widget build(BuildContext context) {
-    return PageView(
+    return new WillPopScope(
+      onWillPop: () async => false,
+      child: PageView(
       controller: _pageController,
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
@@ -99,6 +101,7 @@ class _FeedState extends State<Feed> {
         //Perfil(),
         //TODO: Adicionar os outros filhos
       ],
+    ),
     );
   }
 
