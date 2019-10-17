@@ -25,83 +25,82 @@ class _FeedState extends State<Feed> {
     return new WillPopScope(
       onWillPop: () async => false,
       child: PageView(
-      controller: _pageController,
-      physics: NeverScrollableScrollPhysics(),
-      children: <Widget>[
-        Scaffold(
-          body: HomeTab(),//
-          drawer: CustomDrawer(_pageController),
-          floatingActionButton: FloatingActionButton(
-            onPressed: (){
-              _showSimpleDialog();
-            },
-            child: Icon(Icons.add, color: Colors.orange),
-            backgroundColor: Colors.white,
+        controller: _pageController,
+        physics: NeverScrollableScrollPhysics(),
+        children: <Widget>[
+          Scaffold(
+            body: HomeTab(),//
+            drawer: CustomDrawer(_pageController),
+            floatingActionButton: FloatingActionButton(
+              onPressed: (){
+                _showSimpleDialog();
+              },
+              child: Icon(Icons.add, color: Colors.orange),
+              backgroundColor: Colors.white,
+            ),
           ),
-        ),
-        Scaffold(
-          appBar: AppBar(
-            title: Text("Categorias"),
-            centerTitle: true,
+          Scaffold(
+            appBar: AppBar(
+              title: Text("Categorias"),
+              centerTitle: true,
+            ),
+            drawer: CustomDrawer(_pageController),
+            body: ProductsTab(),
           ),
-          drawer: CustomDrawer(_pageController),
-          body: ProductsTab(),
-        ),
-        Scaffold(
-          appBar: AppBar(
-            title: Text("Informações do Usuário"),
-            centerTitle: true,
-            backgroundColor: Colors.deepOrangeAccent,
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.edit),
-                onPressed: () {
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => EditProfile()));
-                },
-              )
-            ],
+          Scaffold(
+            appBar: AppBar(
+              title: Text("Informações do Usuário"),
+              centerTitle: true,
+              backgroundColor: Colors.deepOrangeAccent,
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.edit),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => EditProfile()));
+                  },
+                )
+              ],
+            ),
+            drawer: CustomDrawer(_pageController),
+            body: Perfil(),//
           ),
-          drawer: CustomDrawer(_pageController),
-          body: Perfil(),//
-        ),
-        Scaffold(
-          appBar: AppBar(
-            title: Text("Chat"),
-            centerTitle: true,
+          Scaffold(
+            appBar: AppBar(
+              title: Text("Chat"),
+              centerTitle: true,
+            ),
+            drawer: CustomDrawer(_pageController),
+            body: ChatTab(),
           ),
-          drawer: CustomDrawer(_pageController),
-          body: ChatTab(),
-        ),
-        Scaffold(
-          appBar: AppBar(
-            title: Text("Meus Produtos"),
-            centerTitle: true,
+          Scaffold(
+            appBar: AppBar(
+              title: Text("Meus Produtos"),
+              centerTitle: true,
+            ),
+            drawer: CustomDrawer(_pageController),
+            body: LogTab(),
           ),
-          drawer: CustomDrawer(_pageController),
-          body: LogTab(),
-        ),
-        Scaffold(
-          appBar: AppBar(
-            title: Text("Configurações"),
-            centerTitle: true,
+          Scaffold(
+            appBar: AppBar(
+              title: Text("Configurações"),
+              centerTitle: true,
+            ),
+            drawer: CustomDrawer(_pageController),
+            body: ConfigurationTab(),
           ),
-          drawer: CustomDrawer(_pageController),
-          body: ConfigurationTab(),
-        ),
-        Scaffold(
-          appBar: AppBar(
-            title: Text("Sobre o app"),
-            centerTitle: true,
+          Scaffold(
+            appBar: AppBar(
+              title: Text("Sobre o app"),
+              centerTitle: true,
+            ),
+            drawer: CustomDrawer(_pageController),
+            body: AboutAppTab(),
           ),
-          drawer: CustomDrawer(_pageController),
-          body: AboutAppTab(),
-        ),
-
-        //Perfil(),
-        //TODO: Adicionar os outros filhos
-      ],
-    ),
+          //Perfil(),
+          //TODO: Adicionar os outros filhos
+        ],
+      ),
     );
   }
 

@@ -7,6 +7,18 @@ import 'package:local_sales/screens/cadastro_screen.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 
+class EmailFieldValidator{
+  static String validate(String value){
+    return value.isEmpty ? 'Email cannot be empty' : null;
+  }
+}
+
+class PasswordFieldValidator{
+  static String validate(String value){
+    return value.isEmpty ? 'Password cannot be empty' : null;
+  }
+}
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -51,7 +63,8 @@ class _LoginState extends State<Login> {
               Text('Local Sales',
                   style: TextStyle(fontSize: 30.0, color: Colors.orange),
                   textAlign: TextAlign.center),
-              TextField(
+              TextFormField(
+                validator: EmailFieldValidator.validate,
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
@@ -61,7 +74,9 @@ class _LoginState extends State<Login> {
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black, fontSize: 20.0),
               ),
-              TextField(
+              TextFormField
+                (
+                validator: PasswordFieldValidator.validate,
                 controller: _passController,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
