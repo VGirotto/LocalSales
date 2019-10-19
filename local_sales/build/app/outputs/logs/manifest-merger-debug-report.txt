@@ -13,6 +13,7 @@ MERGED from [:path_provider] /home/augusto/AndroidStudioProjects/LocalSales/loca
 MERGED from [:flutter_local_notifications] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:image_cropper] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/image_cropper/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:shared_preferences] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:image_picker] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-22:12
 MERGED from [:firebase_core] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
@@ -212,6 +213,8 @@ MERGED from [:image_cropper] /home/augusto/AndroidStudioProjects/LocalSales/loca
 MERGED from [:image_cropper] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/image_cropper/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44

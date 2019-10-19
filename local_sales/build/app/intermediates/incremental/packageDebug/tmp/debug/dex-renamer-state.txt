@@ -1,4 +1,4 @@
-#Sat Oct 19 01:32:16 BRT 2019
+#Sat Oct 19 18:36:18 BRT 2019
 base.10=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/18
 base.9=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/17
 base.8=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/16
@@ -10,6 +10,8 @@ base.3=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/inte
 base.2=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/10
 base.1=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/1
 base.0=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/0
+path.26=classes.dex
+path.25=classes.dex
 path.24=classes2.dex
 path.23=classes.dex
 path.9=classes.dex
@@ -45,6 +47,8 @@ path.13=classes.dex
 path.12=classes.dex
 path.11=classes.dex
 path.10=classes.dex
+renamed.26=classes27.dex
+renamed.25=classes26.dex
 renamed.24=classes25.dex
 renamed.23=classes24.dex
 renamed.22=classes23.dex
@@ -60,6 +64,8 @@ renamed.13=classes14.dex
 renamed.12=classes13.dex
 renamed.11=classes12.dex
 renamed.10=classes11.dex
+base.26=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/26
+base.25=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/25
 base.24=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/2
 base.23=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/9
 base.22=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/8
