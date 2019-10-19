@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/beatriz/.gradle/caches/transforms-2/files-2.1/b115afb2a81eb91bc26b7f0eefb2416a/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "/home/beatriz/.gradle/caches/transforms-2/files-2.1/c96bb7a8b59e261690a333684065bfc3/res/values-v16/values-v16.xml",
+                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/5ed83347f533d9d009d170237d67293a/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/755dc8f2c8f85a443258a45a614edbf3/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

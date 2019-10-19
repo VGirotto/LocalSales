@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/tabs/aboutapp_tab.dart';
 import 'package:local_sales/tabs/chat_tab.dart';
@@ -9,15 +10,15 @@ import 'package:local_sales/tabs/products_tab.dart';
 import 'package:local_sales/widgets/custom_drawer.dart';
 import 'package:local_sales/screens/editProfile_screen.dart';
 import 'package:local_sales/screens/perfil_screen.dart';
+import 'package:local_sales/tabs/chat_main_tab.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class Feed extends StatefulWidget {
-
   @override
   _FeedState createState() => _FeedState();
 }
 
 class _FeedState extends State<Feed> {
-
   final _pageController = PageController();
 
   @override
@@ -29,10 +30,10 @@ class _FeedState extends State<Feed> {
         physics: NeverScrollableScrollPhysics(),
         children: <Widget>[
           Scaffold(
-            body: HomeTab(),//
+            body: HomeTab(), //
             drawer: CustomDrawer(_pageController),
             floatingActionButton: FloatingActionButton(
-              onPressed: (){
+              onPressed: () {
                 _showSimpleDialog();
               },
               child: Icon(Icons.add, color: Colors.orange),
@@ -63,16 +64,21 @@ class _FeedState extends State<Feed> {
               ],
             ),
             drawer: CustomDrawer(_pageController),
-            body: Perfil(),//
+            body: Perfil(), //
           ),
           Scaffold(
-            appBar: AppBar(
-              title: Text("Chat"),
-              centerTitle: true,
-            ),
-            drawer: CustomDrawer(_pageController),
-            body: ChatTab(),
-          ),
+              appBar: AppBar(
+                title: Text("Chat"),
+                centerTitle: true,
+              ),
+              drawer: CustomDrawer(_pageController),
+              body: ScopedModelDescendant<UserModel>(
+                builder: (context, child, model) {
+                  return chat_main(model.userData['name']);
+
+                  //pJluW0eZ8IMLCH5EeUHvDipmmKz2
+                },
+              )),
           Scaffold(
             appBar: AppBar(
               title: Text("Meus Produtos"),
@@ -113,81 +119,114 @@ class _FeedState extends State<Feed> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: Text('Escolha a categoria para adicionar o produto:', textAlign: TextAlign.center,),
+            title: Text(
+              'Escolha a categoria para adicionar o produto:',
+              textAlign: TextAlign.center,
+            ),
             titlePadding: EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 10.0),
             children: <Widget>[
               SimpleDialogOption(
-                onPressed: () {
-                  _dismissDialog();
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Calçados",))
-                  );
-                },
-                child: new Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: const Text('Calçados', style: TextStyle(fontSize: 16.0),),
-                )
-              ),
+                  onPressed: () {
+                    _dismissDialog();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => cadastroProduto(
+                                  categoriaID: "Calçados",
+                                )));
+                  },
+                  child: new Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: const Text(
+                      'Calçados',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  )),
               SimpleDialogOption(
-                onPressed: () {
-                  _dismissDialog();
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Caronas",))
-                  );
-                },
-                child: new Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: const Text('Caronas', style: TextStyle(fontSize: 16.0),),
-                )
-              ),
+                  onPressed: () {
+                    _dismissDialog();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => cadastroProduto(
+                                  categoriaID: "Caronas",
+                                )));
+                  },
+                  child: new Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: const Text(
+                      'Caronas',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  )),
               SimpleDialogOption(
-                onPressed: () {
-                  _dismissDialog();
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Doces",))
-                  );
-                },
-                child: new Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: const Text('Doces', style: TextStyle(fontSize: 16.0),),
-                )
-              ),
+                  onPressed: () {
+                    _dismissDialog();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => cadastroProduto(
+                                  categoriaID: "Doces",
+                                )));
+                  },
+                  child: new Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: const Text(
+                      'Doces',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  )),
               SimpleDialogOption(
-                onPressed: () {
-                  _dismissDialog();
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Eletrônicos",))
-                  );
-                },
-                child: new Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: const Text('Eletrônicos', style: TextStyle(fontSize: 16.0),),
-                )
-              ),
+                  onPressed: () {
+                    _dismissDialog();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => cadastroProduto(
+                                  categoriaID: "Eletrônicos",
+                                )));
+                  },
+                  child: new Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: const Text(
+                      'Eletrônicos',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  )),
               SimpleDialogOption(
-                onPressed: () {
-                  _dismissDialog();
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Roupas",))
-                  );
-                },
-                child: new Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: const Text('Roupas', style: TextStyle(fontSize: 16.0),),
-                )
-              ),
+                  onPressed: () {
+                    _dismissDialog();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => cadastroProduto(
+                                  categoriaID: "Roupas",
+                                )));
+                  },
+                  child: new Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: const Text(
+                      'Roupas',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  )),
               SimpleDialogOption(
-                onPressed: () {
-                  _dismissDialog();
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => cadastroProduto(categoriaID: "Salgados",))
-                  );
-                },
-                child: new Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: const Text('Salgados', style: TextStyle(fontSize: 16.0),),
-                )
-              ),
+                  onPressed: () {
+                    _dismissDialog();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => cadastroProduto(
+                                  categoriaID: "Salgados",
+                                )));
+                  },
+                  child: new Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: const Text(
+                      'Salgados',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  )),
             ],
           );
         });

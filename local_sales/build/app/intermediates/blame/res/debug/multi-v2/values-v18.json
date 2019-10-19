@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/home/beatriz/.gradle/caches/transforms-2/files-2.1/c96bb7a8b59e261690a333684065bfc3/res/values-v18/values-v18.xml",
+                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/5ed83347f533d9d009d170237d67293a/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
