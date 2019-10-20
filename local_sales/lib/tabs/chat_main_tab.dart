@@ -13,20 +13,24 @@ import 'package:flutter/material.dart';
 
 class chat_main extends StatefulWidget {
 
-  String currentUserId;
+  final String currentUserId;
+  final String name;
 
-  chat_main(userData, {@required this.currentUserId});
+  chat_main(userData, {@required this.currentUserId,@required this.name});
 
 
   @override
-  _chat_mainState createState() => _chat_mainState();
+  _chat_mainState createState() => _chat_mainState(currentUserId: currentUserId,name: name);
 }
 
 class _chat_mainState extends State<chat_main>{
 
-  _chat_mainState({@required this.currentUserId});
+  final String name;
+  final String currentUserId;
 
-  String currentUserId;
+  _chat_mainState({@required this.currentUserId, @required this.name});
+
+
   final Color primaryColor = Colors.orange;
 
   Color themeColor = Colors.deepOrange;
@@ -34,10 +38,7 @@ class _chat_mainState extends State<chat_main>{
 
 
   Widget buildItem(BuildContext context, DocumentSnapshot document) {
-    print("entrou com ${document['name']}");
-    print("entrou com $currentUserId");
-
-    if (document['name'] == currentUserId) {
+    if (document['name'] == 'b') {
       return null;
     } else {
 
@@ -101,6 +102,7 @@ class _chat_mainState extends State<chat_main>{
                       peerId: document.documentID,
                       peerAvatar: document['photoUrl'],
                       namePressed: document.data['name'],
+                      id: currentUserId,
                     )));
           },
           color: Colors.transparent,
@@ -115,6 +117,8 @@ class _chat_mainState extends State<chat_main>{
 
   @override
   Widget build(BuildContext context) {
+    print("entrou com 1 - ${name}");
+    print("entrou com 2 - ${currentUserId}");
     return Container(
       child: StreamBuilder(
         stream: Firestore.instance.collection('users').snapshots(),

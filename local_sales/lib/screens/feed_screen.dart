@@ -74,9 +74,8 @@ class _FeedState extends State<Feed> {
               drawer: CustomDrawer(_pageController),
               body: ScopedModelDescendant<UserModel>(
                 builder: (context, child, model) {
-                  print(model.userData['name']);
-                  return chat_main(model.userData['name']);
-
+                  print(" \\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\\\ \n ${model.firebaseUser.uid} \n \\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\n");
+                  return chat_main(model.userData ,currentUserId: model.firebaseUser.uid, name: model.userData["name"]);
                   //pJluW0eZ8IMLCH5EeUHvDipmmKz2
                 },
               )),

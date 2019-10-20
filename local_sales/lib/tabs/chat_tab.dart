@@ -8,9 +8,12 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:local_sales/models/user_model.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:local_sales/screens/fullPhoto_screen.dart';
 import 'package:intl/intl.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 Color primaryColor = Colors.orange;
@@ -23,10 +26,11 @@ class Chat extends StatelessWidget {
   final String peerId;
   final String peerAvatar;
   final String namePressed;
+  final String id;
   Color primaryColor = Colors.orangeAccent;
 
 
-  Chat({Key key, @required this.peerId, @required this.peerAvatar,@required this.namePressed}) : super(key: key);
+  Chat({Key key, @required this.peerId, @required this.peerAvatar,@required this.namePressed,@required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => new Scaffold(
@@ -40,6 +44,7 @@ class Chat extends StatelessWidget {
       body: new ChatScreen(
         peerId: peerId,
         peerAvatar: peerAvatar,
+        id: id,
       ),
     );
 }
@@ -48,15 +53,16 @@ class Chat extends StatelessWidget {
 class ChatScreen extends StatefulWidget {
   final String peerId;
   final String peerAvatar;
+  final String id;
 
-  ChatScreen({Key key, @required this.peerId, @required this.peerAvatar}) : super(key: key);
+  ChatScreen({Key key, @required this.peerId, @required this.peerAvatar, @required this.id}) : super(key: key);
 
   @override
-  State createState() => new ChatScreenState(peerId: peerId, peerAvatar: peerAvatar);
+  State createState() => new ChatScreenState(peerId: peerId, peerAvatar: peerAvatar,id: id);
 }
 
 class ChatScreenState extends State<ChatScreen> {
-  ChatScreenState({Key key, @required this.peerId, @required this.peerAvatar});
+  ChatScreenState({Key key, @required this.peerId, @required this.peerAvatar,@required this.id});
 
   String peerId;
   String peerAvatar;
@@ -100,7 +106,9 @@ class ChatScreenState extends State<ChatScreen> {
 
   readLocal() async {
     prefs = await SharedPreferences.getInstance();
-    id = prefs.getString('id') ?? '';
+
+    print("ola meu querido id: ${id}");
+
     if (id.hashCode <= peerId.hashCode) {
       groupChatId = '$id-$peerId';
     } else {

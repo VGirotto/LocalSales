@@ -1,4 +1,4 @@
-#Sat Oct 19 19:57:20 BRT 2019
+#Sat Oct 19 21:51:19 BRT 2019
 base.10=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/18
 base.9=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/17
 base.8=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/16
