@@ -201,11 +201,11 @@ class ChatScreenState extends State<ChatScreen> {
               ? Container(
             child: Text(
               document['content'],
-              style: TextStyle(color: primaryColor),
+              style: TextStyle(color: Colors.white,
             ),
             padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
             width: 200.0,
-            decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(8.0)),
+            decoration: BoxDecoration(color: Colors.orange, borderRadius: BorderRadius.circular(8.0)),
             margin: EdgeInsets.only(bottom: isLastMessageRight(index) ? 20.0 : 10.0, right: 10.0),
           )
               : document['type'] == 1
@@ -276,29 +276,6 @@ class ChatScreenState extends State<ChatScreen> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                isLastMessageLeft(index)
-                    ? Material(
-                  child: CachedNetworkImage(
-                    placeholder: (context, url) => Container(
-                      child: CircularProgressIndicator(
-                        strokeWidth: 1.0,
-                        valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
-                      ),
-                      width: 35.0,
-                      height: 35.0,
-                      padding: EdgeInsets.all(10.0),
-                    ),
-                    imageUrl: peerAvatar,
-                    width: 35.0,
-                    height: 35.0,
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(18.0),
-                  ),
-                  clipBehavior: Clip.hardEdge,
-                )
-                    : Container(width: 35.0),
                 document['type'] == 0
                     ? Container(
                   child: Text(
@@ -731,5 +708,32 @@ class _ChatState extends State<Chat> {
 
 
 }
+
+
+isLastMessageLeft(index)
+                    ? Material(
+                  child: CachedNetworkImage(
+                    placeholder: (context, url) => Container(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 1.0,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+                      ),
+                      width: 35.0,
+                      height: 35.0,
+                      padding: EdgeInsets.all(10.0),
+                    ),
+                    imageUrl: peerAvatar,
+                    width: 35.0,
+                    height: 35.0,
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(18.0),
+                  ),
+                  clipBehavior: Clip.hardEdge,
+                )
+                    : Container(width: 35.0),
+
+
 
 */
