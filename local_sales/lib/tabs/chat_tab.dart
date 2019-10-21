@@ -203,12 +203,14 @@ class ChatScreenState extends State<ChatScreen> {
               document['content'],
               style: TextStyle(color: Colors.white,
             ),
+          ),
             padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
             width: 200.0,
             decoration: BoxDecoration(color: Colors.orange, borderRadius: BorderRadius.circular(8.0)),
             margin: EdgeInsets.only(bottom: isLastMessageRight(index) ? 20.0 : 10.0, right: 10.0),
           )
               : document['type'] == 1
+
           // Image
               ? Container(
             child: FlatButton(
@@ -265,7 +267,7 @@ class ChatScreenState extends State<ChatScreen> {
               fit: BoxFit.cover,
             ),
             margin: EdgeInsets.only(bottom: isLastMessageRight(index) ? 20.0 : 10.0, right: 10.0),
-          ),
+          )
         ],
         mainAxisAlignment: MainAxisAlignment.end,
       );

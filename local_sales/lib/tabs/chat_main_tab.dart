@@ -39,6 +39,7 @@ class _chat_mainState extends State<chat_main>{
 
   Widget buildItem(BuildContext context, DocumentSnapshot document) {
     if (document['name'] == 'b') {
+      //print("${name}");
       return null;
     } else {
 

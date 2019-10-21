@@ -54,15 +54,6 @@ class CustomDrawer extends StatelessWidget {
                       bottom: 0.0,
                       child: ScopedModelDescendant<UserModel>(
                         builder: (context, child, model){
-                          /* return Text(
-                            "Olá, ${model.currentUser() == null ? "" : model.userData["name"]}!",
-                            style: 
-                              TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold
-                              ),
-                          );*/
-                          
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[

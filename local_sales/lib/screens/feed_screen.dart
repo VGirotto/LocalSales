@@ -78,7 +78,8 @@ class _FeedState extends State<Feed> {
                   return chat_main(model.userData ,currentUserId: model.firebaseUser.uid, name: model.userData["name"]);
                   //pJluW0eZ8IMLCH5EeUHvDipmmKz2
                 },
-              )),
+              )
+          ),
           Scaffold(
             appBar: AppBar(
               title: Text("Meus Produtos"),
