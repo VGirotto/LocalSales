@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:local_sales/datas/product_data.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:local_sales/tabs/chat_tab.dart';
+import 'package:local_sales/models/user_model.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:flutter/cupertino.dart';
 
 class ProductScreen extends StatefulWidget {
   final ProductData product;
@@ -109,18 +113,32 @@ class _ProductScreenState extends State<ProductScreen> {
                     ),
                     Padding(
                         padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
-                        child: RaisedButton(
-                          color: Colors.deepOrange ,
-                          onPressed: (){},
-                          child: Text("Falar com Vendedor(a)",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white,
-                                fontSize: 18.0
-                            ),
-                          ),
-                        )
-                    )
-                  ],
+                        child: ScopedModelDescendant<UserModel>(
+                          builder: (context, child, model) {
+                            return RaisedButton(
+                              color: Colors.deepOrange,
+                              onPressed: () {
+                                Navigator.push(context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Chat(
+                                          peerId: product.uid,
+                                          peerAvatar: null,
+                                          namePressed: product.salesperson,
+                                          id: model.firebaseUser.uid,
+                                        )
+                                ));
+                              },
+                              child: Text("Falar com Vendedor(a)",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white,
+                                    fontSize: 18.0
+                                ),
+                              ),
+                            );
+                          }
+                          )
+                    )],
                 ),
               )
             ],
@@ -128,4 +146,5 @@ class _ProductScreenState extends State<ProductScreen> {
       ),
     );
   }
+
 }

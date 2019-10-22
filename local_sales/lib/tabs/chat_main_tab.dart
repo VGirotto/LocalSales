@@ -1,10 +1,6 @@
 import 'dart:core' as prefix0;
 import 'dart:core';
-import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:local_sales/models/user_model.dart';
-import 'package:scoped_model/scoped_model.dart';
 import 'package:local_sales/tabs/chat_tab.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,20 +26,41 @@ class _chat_mainState extends State<chat_main>{
 
   _chat_mainState({@required this.currentUserId, @required this.name});
 
-
   final Color primaryColor = Colors.orange;
 
   Color themeColor = Colors.deepOrange;
   Color greyColor = Colors.grey;
 
+  @override
+  Widget build(BuildContext context) {
+    print("entrou com 1 - $name");
+    print("entrou com 2 - $currentUserId");
+    return Container(
+      child: StreamBuilder(
+        stream: Firestore.instance.collection('users').snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(themeColor),
+              ),
+            );
+          } else {
+            return ListView.builder(
+              padding: EdgeInsets.all(10.0),
+              itemBuilder: (context, index) => buildItem(context, snapshot.data.documents[index]),
+              itemCount: snapshot.data.documents.length,
+            );
+          }
+        },
+      ),
+    );
+  }
+
 
   Widget buildItem(BuildContext context, DocumentSnapshot document) {
-    if (document['name'] == 'b') {
-      //print("${name}");
-      return null;
-    } else {
-
-      return Container(
+    //print(document['name']);
+    return document['name'] == name ? Container() : Container(
         child: OutlineButton(
           child: Row(
             children: <Widget>[
@@ -112,33 +129,6 @@ class _chat_mainState extends State<chat_main>{
         ),
         margin: EdgeInsets.only(bottom: 10.0, left: 5.0, right: 5.0),
       );
-    }
   }
 
-
-  @override
-  Widget build(BuildContext context) {
-    print("entrou com 1 - ${name}");
-    print("entrou com 2 - ${currentUserId}");
-    return Container(
-      child: StreamBuilder(
-        stream: Firestore.instance.collection('users').snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(themeColor),
-              ),
-            );
-          } else {
-            return ListView.builder(
-              padding: EdgeInsets.all(10.0),
-              itemBuilder: (context, index) => buildItem(context, snapshot.data.documents[index]),
-              itemCount: snapshot.data.documents.length,
-            );
-          }
-        },
-      ),
-    );
-  }
 }

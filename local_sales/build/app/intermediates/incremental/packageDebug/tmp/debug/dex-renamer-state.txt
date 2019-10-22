@@ -1,4 +1,4 @@
-#Mon Oct 21 16:11:26 BRT 2019
+#Tue Oct 22 15:51:58 BRT 2019
 base.10=/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/18
 base.9=/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/17
 base.8=/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/16

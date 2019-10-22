@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Oct 21 12:55:54 BRT 2019
+#Tue Oct 22 15:52:03 BRT 2019
 5.base=/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/3
 22.path=classes.dex
 32.set=NATIVE_RESOURCE

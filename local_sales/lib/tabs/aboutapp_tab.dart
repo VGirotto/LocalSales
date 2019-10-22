@@ -17,7 +17,8 @@ class AboutAppTab extends StatelessWidget {
             body: Center(
               child: Text(title),
             )
-        )
+        ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

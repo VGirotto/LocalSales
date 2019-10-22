@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/tabs/aboutapp_tab.dart';
-import 'package:local_sales/tabs/chat_tab.dart';
 import 'package:local_sales/tabs/configuration_tab.dart';
 import 'package:local_sales/tabs/home_tab.dart';
 import 'package:local_sales/tabs/log_tab.dart';
@@ -74,9 +73,8 @@ class _FeedState extends State<Feed> {
               drawer: CustomDrawer(_pageController),
               body: ScopedModelDescendant<UserModel>(
                 builder: (context, child, model) {
-                  print(" \\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\\\ \n ${model.firebaseUser.uid} \n \\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\n");
+                  print("\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\\\ \n ${model.firebaseUser.uid} \n \\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\n");
                   return chat_main(model.userData ,currentUserId: model.firebaseUser.uid, name: model.userData["name"]);
-                  //pJluW0eZ8IMLCH5EeUHvDipmmKz2
                 },
               )
           ),
@@ -102,10 +100,8 @@ class _FeedState extends State<Feed> {
               centerTitle: true,
             ),
             drawer: CustomDrawer(_pageController),
-            body: AboutAppTab(),
+            body: AboutAppTab(title: "Sobre o app"),
           ),
-          //Perfil(),
-          //TODO: Adicionar os outros filhos
         ],
       ),
     );
