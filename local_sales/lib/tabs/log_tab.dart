@@ -9,12 +9,11 @@ import 'package:scoped_model/scoped_model.dart';
 
 class UserDocument{
   String user;
+
+  UserDocument({@required this.user});
+
   getDocument(){
-    ScopedModelDescendant<UserModel>(builder: (context, child, model) {
-        user = model.firebaseUser.uid;
-        print(user);
-        }
-    );
+
     print(user);
     return Firestore.instance.collection("Produtos").
         document("Todos").collection("itens").
@@ -22,16 +21,15 @@ class UserDocument{
   }
 }
 
-
-
-
-
 class LogTab extends StatelessWidget {
-  LogTab();
+
+  String currentUserId;
+
+  LogTab({@required this.currentUserId});
 
   @override
   Widget build(BuildContext context) {
-    Future<QuerySnapshot> _resultado = UserDocument().getDocument();
+    Future<QuerySnapshot> _resultado = UserDocument(user: currentUserId).getDocument();
 
     return DefaultTabController(
           length: 1,

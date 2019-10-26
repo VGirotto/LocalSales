@@ -84,7 +84,11 @@ class _FeedState extends State<Feed> {
               centerTitle: true,
             ),
             drawer: CustomDrawer(_pageController),
-            body: LogTab(),
+            body: ScopedModelDescendant<UserModel>(
+              builder: (context, child, model){
+                return LogTab(currentUserId: model.firebaseUser.uid,);
+              }
+            )
           ),
           Scaffold(
             appBar: AppBar(
