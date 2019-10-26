@@ -103,7 +103,7 @@ class ChatScreenState extends State<ChatScreen> {
 
   readLocal() async {
     prefs = await SharedPreferences.getInstance();
-    id = prefs.getString('id') ?? '';
+    //id = prefs.getString('id') ?? '';
     print("ola meu querido id: ${id}");
 
     if (id.hashCode <= peerId.hashCode) {
@@ -386,6 +386,7 @@ class ChatScreenState extends State<ChatScreen> {
         isShowSticker = false;
       });
     } else {
+
       Firestore.instance.collection('users').document(id).updateData({'chattingWith': null});
       Navigator.pop(context);
     }

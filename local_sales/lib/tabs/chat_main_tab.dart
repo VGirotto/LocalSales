@@ -41,7 +41,7 @@ class _chat_mainState extends State<chat_main>{
   }
 
   void configLocalNotification() {
-    var initializationSettingsAndroid = new AndroidInitializationSettings('app_icon');
+    var initializationSettingsAndroid = new AndroidInitializationSettings('@mipmap/ic_launcher');
     var initializationSettingsIOS = new IOSInitializationSettings();
     var initializationSettings = new InitializationSettings(initializationSettingsAndroid, initializationSettingsIOS);
     flutterLocalNotificationsPlugin.initialize(initializationSettings);
