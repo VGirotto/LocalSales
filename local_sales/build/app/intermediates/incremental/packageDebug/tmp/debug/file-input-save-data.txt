@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Oct 26 19:49:51 BRT 2019
+#Sun Oct 27 00:56:55 BRT 2019
 5.base=/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/17
 22.path=flutter_assets/AssetManifest.json
 32.set=DEX

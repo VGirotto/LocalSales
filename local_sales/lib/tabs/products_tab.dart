@@ -22,6 +22,7 @@ class ProductsTab extends StatelessWidget {
               }).toList(),
               color: Colors.grey[500])
               .toList();
+          dividedTiles.removeLast();
           return ListView(
             children: dividedTiles,
           );
