@@ -1,6 +1,8 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:local_sales/blocs/exibeProdutos_bloc.dart';
 import 'package:local_sales/datas/product_data.dart';
 import 'package:local_sales/widgets/product_tile.dart';
 
@@ -14,6 +16,15 @@ class _HomeTabState extends State<HomeTab>{
   Widget _tituloAppBar = new Text( 'Produtos' );
   CollectionReference _firestore = Firestore.instance.collection("Produtos").document("Todos").collection("itens");
   Future<QuerySnapshot> _resultado = Firestore.instance.collection("Produtos").document("Todos").collection("itens").getDocuments();
+
+  ExibeProdutosBloc _exibeProdutosBloc;
+
+  @override
+  void initState(){
+    super.initState();
+
+    _exibeProdutosBloc = ExibeProdutosBloc();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +43,7 @@ class _HomeTabState extends State<HomeTab>{
       return saida;
     }*/
 
-    void onChangedSearch(String search){
+    /*void onChangedSearch(String search){
       setState(() {
         if(search.trim().isEmpty){
           this._resultado = this._firestore.getDocuments();
@@ -41,7 +52,8 @@ class _HomeTabState extends State<HomeTab>{
           this._resultado = this._firestore.where('title', isEqualTo: search).getDocuments();
           print(search);
         }  
-      });}
+      });
+    }*/
 
     void _searchPressed(){
       setState((){
@@ -52,14 +64,14 @@ class _HomeTabState extends State<HomeTab>{
               prefixIcon: new Icon(Icons.search),
               hintText: 'Pesquisa...'
             ),
-            onChanged: onChangedSearch
+            onChanged: _exibeProdutosBloc.onChangedSearch
           );
         }else{
           this._icone = new Icon(Icons.search);
           this._tituloAppBar = new Text("Produtos");
         }
       });
-    };
+    }
 
     return
       Stack(
@@ -85,38 +97,45 @@ class _HomeTabState extends State<HomeTab>{
                   ],
                 ),
               ),
-              body: FutureBuilder<QuerySnapshot>(
-                future: _resultado,
-                builder: (context, snapshot){
-                  if(!snapshot.hasData)
-                    return Center(child: CircularProgressIndicator(),);
-                  else
-                    return TabBarView(
-                      children: [
-                        GridView.builder(
-                          padding: EdgeInsets.all(4.0),
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 4,
-                            crossAxisSpacing: 4,
-                            childAspectRatio: 0.65,
+              body: BlocProvider<ExibeProdutosBloc>(
+                bloc: _exibeProdutosBloc,
+                child: StreamBuilder<List>(
+                  stream: _exibeProdutosBloc.outProducts,
+                  builder: (context, snapshot){
+                    if(!snapshot.hasData)
+                      return Center(child: CircularProgressIndicator(),);
+                    else if(snapshot.data.length == 0)
+                      return Center(
+                        child: Text("Nenhum produto encontrado...")
+                      );
+                    else
+                      return TabBarView(
+                        children: [
+                          GridView.builder(
+                            padding: EdgeInsets.all(4.0),
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 4,
+                              crossAxisSpacing: 4,
+                              childAspectRatio: 0.65,
+                            ),
+                            itemCount: snapshot.data.length,
+                            itemBuilder: (context, index){
+                              return ProductTile("grid", ProductData.fromDocument(snapshot.data[index]), 0, /*snapshot.data[index]*/);
+                            },
                           ),
-                          itemCount: snapshot.data.documents.length,
-                          itemBuilder: (context, index){
-                            return ProductTile("grid", ProductData.fromDocument(snapshot.data.documents[index]), 0, snapshot.data.documents[index]);
-                          },
-                        ),
-                        ListView.builder(
-                          padding: EdgeInsets.all(4.0),
-                          itemCount: snapshot.data.documents.length,
-                          itemBuilder: (context, index){
-                            return ProductTile("list", ProductData.fromDocument(snapshot.data.documents[index]), 0, snapshot.data.documents[index]);
-                          }
-                        ),
-                      ],
-                    );
-                },
-              ),
+                          ListView.builder(
+                            padding: EdgeInsets.all(4.0),
+                            itemCount: snapshot.data.length,
+                            itemBuilder: (context, index){
+                              return ProductTile("list", ProductData.fromDocument(snapshot.data[index]), 0, /*snapshot.data[index]*/);
+                            }
+                          ),
+                        ],
+                      );
+                  }
+                )
+              )
             ),
           ),
           Container(
@@ -130,7 +149,6 @@ class _HomeTabState extends State<HomeTab>{
               ],
             ),
           ),
-
         ],
       );
     //onRefresh: refresh;

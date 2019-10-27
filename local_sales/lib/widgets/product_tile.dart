@@ -8,19 +8,19 @@ class ProductTile extends StatelessWidget {
   final String type;
   final ProductData product;
   final _validation;
-  final DocumentSnapshot produtoSnap;
-  ProductTile(this.type, this.product, this._validation, this.produtoSnap);
+  //final DocumentSnapshot produtoSnap;
+  ProductTile(this.type, this.product, this._validation/*, this.produtoSnap*/);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      /*onTap: (){
         Navigator.of(context).push(
           MaterialPageRoute(           
             builder: (context)=>(_validation == 0)?ProductScreen(product):cadastroProduto(categoriaID: product.categoria, product: produtoSnap),
           )
         );
-      },
+      },*/
         child: Card(
             child: type == "grid"
                 ? Column(
