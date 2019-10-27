@@ -46,11 +46,11 @@ class ExibeProdutosBloc extends BlocBase{
             break;
           case DocumentChangeType.modified:
             _produtos[pid].addAll(change.document.data);
-            _productsController.add(_produtos.entries.toList());
+            _productsController.add(_produtos.values.toList());
             break;
           case DocumentChangeType.removed:
             _produtos.remove(pid);
-            _productsController.add(_produtos.entries.toList());
+            _productsController.add(_produtos.values.toList());
             break;
         } 
       });

@@ -14,13 +14,13 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      /*onTap: (){
+      onTap: (){
         Navigator.of(context).push(
           MaterialPageRoute(           
-            builder: (context)=>(_validation == 0)?ProductScreen(product):cadastroProduto(categoriaID: product.categoria, product: produtoSnap),
+            builder: (context)=>(_validation == 0)?ProductScreen(product):/*cadastroProduto(categoriaID: product.categoria, product: produtoSnap)*/Container(),
           )
         );
-      },*/
+      },
         child: Card(
             child: type == "grid"
                 ? Column(
