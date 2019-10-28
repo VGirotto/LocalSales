@@ -84,7 +84,14 @@ class _HomeTabState extends State<HomeTab>{
                 actions: <Widget>[
                   IconButton(
                     icon: _icone,
-                    onPressed: _searchPressed
+                    onPressed: (){
+                      if(this._icone.icon == Icons.search){
+                        _searchPressed();
+                      }else{
+                        _exibeProdutosBloc.onChangedSearch("");
+                        _searchPressed();
+                      }
+                    },  
                   )
                 ],
                 title: _tituloAppBar,
