@@ -121,14 +121,14 @@ class _HomeTabState extends State<HomeTab>{
                             ),
                             itemCount: snapshot.data.length,
                             itemBuilder: (context, index){
-                              return ProductTile("grid", ProductData.fromDocument(snapshot.data[index]), 0, /*snapshot.data[index]*/);
+                              return ProductTile("grid", ProductData.fromDocument(snapshot.data[index]), 0, snapshot.data[index]);
                             },
                           ),
                           ListView.builder(
                             padding: EdgeInsets.all(4.0),
                             itemCount: snapshot.data.length,
                             itemBuilder: (context, index){
-                              return ProductTile("list", ProductData.fromDocument(snapshot.data[index]), 0, /*snapshot.data[index]*/);
+                              return ProductTile("list", ProductData.fromDocument(snapshot.data[index]), 0, snapshot.data[index]);
                             }
                           ),
                         ],

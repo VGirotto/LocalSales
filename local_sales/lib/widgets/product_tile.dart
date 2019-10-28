@@ -8,8 +8,9 @@ class ProductTile extends StatelessWidget {
   final String type;
   final ProductData product;
   final _validation;
+  final dynamic produtoSnap;
   //final DocumentSnapshot produtoSnap;
-  ProductTile(this.type, this.product, this._validation/*, this.produtoSnap*/);
+  ProductTile(this.type, this.product, this._validation, this.produtoSnap);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class ProductTile extends StatelessWidget {
       onTap: (){
         Navigator.of(context).push(
           MaterialPageRoute(           
-            builder: (context)=>(_validation == 0)?ProductScreen(product):/*cadastroProduto(categoriaID: product.categoria, product: produtoSnap)*/Container(),
+            builder: (context)=>(_validation == 0)?ProductScreen(product):cadastroProduto(categoriaID: product.categoria, product: produtoSnap),
           )
         );
       },
