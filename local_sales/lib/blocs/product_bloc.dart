@@ -68,12 +68,12 @@ class ProductBloc extends BlocBase {
         await _uploadImages (product.documentID);
         await product.reference.updateData(unsavedData);
       } else {
-        DocumentReference dr = await Firestore.instance.collection("Produtos")
-            .document(categoriaID).collection("itens").add(Map.from(unsavedData)..remove("images"));
+        //DocumentReference dr = await Firestore.instance.collection("Produtos")
+          //  .document(categoriaID).collection("itens").add(Map.from(unsavedData)..remove("images"));
         DocumentReference drTodos = await Firestore.instance.collection("Produtos")
             .document("Todos").collection("itens").add(Map.from(unsavedData)..remove("images"));
-        await _uploadImages(dr.documentID);
-        await dr.updateData(unsavedData);
+        await _uploadImages(drTodos.documentID);
+        //await dr.updateData(unsavedData);
         await drTodos.updateData(unsavedData);
       }
 
