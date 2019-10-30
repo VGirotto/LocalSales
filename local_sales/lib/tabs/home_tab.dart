@@ -1,7 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:local_sales/blocs/exibeProdutos_bloc.dart';
 import 'package:local_sales/datas/product_data.dart';
 import 'package:local_sales/widgets/product_tile.dart';
@@ -14,9 +13,6 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab>{
   Icon _icone = new Icon(Icons.search);
   Widget _tituloAppBar = new Text( 'Produtos' );
-  CollectionReference _firestore = Firestore.instance.collection("Produtos").document("Todos").collection("itens");
-  Future<QuerySnapshot> _resultado = Firestore.instance.collection("Produtos").document("Todos").collection("itens").getDocuments();
-
   ExibeProdutosBloc _exibeProdutosBloc;
 
   @override
@@ -28,32 +24,6 @@ class _HomeTabState extends State<HomeTab>{
 
   @override
   Widget build(BuildContext context) {
-
-    /*Query _filter(String search){
-      setState(() {
-        CollectionReference produtosFiltrados = this._firestore;
-
-        this.saida = produtosFiltrados.where('itens.title', isEqualTo: search);  
-      });
-      /*CollectionReference produtosFiltrados = this._firestore;
-      Query saida;
-
-      saida = produtosFiltrados.where('itens.title', isEqualTo: search);*/
-      
-      return saida;
-    }*/
-
-    /*void onChangedSearch(String search){
-      setState(() {
-        if(search.trim().isEmpty){
-          this._resultado = this._firestore.getDocuments();
-          print("ok");
-        }else{
-          this._resultado = this._firestore.where('title', isEqualTo: search).getDocuments();
-          print(search);
-        }  
-      });
-    }*/
 
     void _searchPressed(){
       setState((){
