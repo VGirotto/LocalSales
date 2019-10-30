@@ -1,4 +1,4 @@
-#Mon Oct 28 11:18:51 BRT 2019
+#Tue Oct 29 20:51:03 BRT 2019
 base.10=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\15
 base.9=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\18
 base.8=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\23
