@@ -8,7 +8,8 @@ class ProductTile extends StatelessWidget {
   final String type;
   final ProductData product;
   final _validation;
-  final DocumentSnapshot produtoSnap;
+  final dynamic produtoSnap;
+  //final DocumentSnapshot produtoSnap;
   ProductTile(this.type, this.product, this._validation, this.produtoSnap);
 
   @override

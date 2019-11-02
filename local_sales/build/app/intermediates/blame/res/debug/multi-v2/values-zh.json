@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh/values-zh.xml",
+            "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/686647c189121cc47951577c47f0c754/res/values-zh/values-zh.xml",
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/1263b4ea538e37a1aa8db3d50e41cfb3/res/values-zh/values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
