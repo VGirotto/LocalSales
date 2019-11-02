@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-#Fri Nov 01 23:21:34 BRT 2019
+#Sat Nov 02 13:21:15 BRT 2019
 path.38=classes.dex
 base.10=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/35
 path.37=classes.dex
@@ -28,21 +27,6 @@ path.29=classes.dex
 path.28=classes.dex
 path.27=classes.dex
 path.26=classes.dex
-=======
-#Tue Oct 29 20:51:03 BRT 2019
-base.10=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\15
-base.9=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\18
-base.8=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\23
-base.7=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\11
-base.6=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\25
-base.5=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\9
-base.4=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\21
-base.3=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\5
-base.2=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\7
-base.1=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\17
-base.0=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\19
-path.26=classes2.dex
->>>>>>> origin
 path.25=classes.dex
 path.24=classes.dex
 path.23=classes.dex
@@ -50,15 +34,25 @@ path.9=classes.dex
 path.22=classes.dex
 path.8=classes.dex
 path.21=classes.dex
+renamed.39=classes40.dex
 path.7=classes.dex
 path.20=classes.dex
+renamed.38=classes39.dex
 path.6=classes.dex
+renamed.37=classes38.dex
 path.5=classes.dex
+renamed.36=classes37.dex
 path.4=classes.dex
+renamed.35=classes36.dex
 path.3=classes.dex
+renamed.34=classes35.dex
 path.2=classes.dex
+renamed.33=classes34.dex
 path.1=classes.dex
+renamed.32=classes33.dex
 path.0=classes.dex
+renamed.31=classes32.dex
+renamed.30=classes31.dex
 renamed.9=classes10.dex
 renamed.8=classes9.dex
 renamed.7=classes8.dex
@@ -78,7 +72,10 @@ renamed.0=classes.dex
 path.13=classes.dex
 path.12=classes.dex
 path.11=classes.dex
+renamed.29=classes30.dex
 path.10=classes.dex
+renamed.28=classes29.dex
+renamed.27=classes28.dex
 renamed.26=classes27.dex
 renamed.25=classes26.dex
 renamed.24=classes25.dex
@@ -86,13 +83,10 @@ renamed.23=classes24.dex
 renamed.22=classes23.dex
 renamed.21=classes22.dex
 renamed.20=classes21.dex
-<<<<<<< HEAD
 base.43=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/2
 base.42=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/18
 base.41=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/16
 base.40=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/38
-=======
->>>>>>> origin
 renamed.19=classes20.dex
 renamed.18=classes19.dex
 renamed.17=classes18.dex
@@ -103,7 +97,6 @@ renamed.13=classes14.dex
 renamed.12=classes13.dex
 renamed.11=classes12.dex
 renamed.10=classes11.dex
-<<<<<<< HEAD
 base.39=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/14
 base.38=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/36
 base.37=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/28
@@ -138,21 +131,3 @@ base.13=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_s
 base.12=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/21
 path.39=classes.dex
 base.11=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/13
-=======
-base.26=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
-base.25=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\24
-base.24=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\16
-base.23=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
-base.22=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\20
-base.21=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\12
-base.20=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\22
-base.19=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\14
-base.18=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\6
-base.17=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\8
-base.16=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\10
-base.15=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
-base.14=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\4
-base.13=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\1
-base.12=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\13
-base.11=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\3
->>>>>>> origin

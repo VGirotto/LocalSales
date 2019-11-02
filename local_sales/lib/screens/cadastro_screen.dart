@@ -371,7 +371,7 @@ class _CadastroState extends State<Cadastro> {
                               "birth": _birthController.text,
                               "picpay": _picpay.text,
                               "phone": _phone.text,
-
+                              "conversou": [],
                             };
 
                             model.signUp(

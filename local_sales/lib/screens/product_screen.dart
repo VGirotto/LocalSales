@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/datas/product_data.dart';
 import 'package:carousel_pro/carousel_pro.dart';
@@ -19,6 +20,12 @@ class _ProductScreenState extends State<ProductScreen> {
   final ProductData product;
 
   _ProductScreenState(this.product);
+
+  List users = new List();
+  List users2 = new List();
+  Map<String, dynamic> usuarios;
+  Map<String, dynamic> usuarios2;
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +124,51 @@ class _ProductScreenState extends State<ProductScreen> {
                           builder: (context, child, model) {
                             return RaisedButton(
                               color: Colors.deepOrange,
-                              onPressed: () {
+                              onPressed: () async {
+
+                                    bool jaExiste = false;
+
+                                    //          Salva o id do usuário atual na lista do vendedor
+
+                                    DocumentSnapshot docUser =
+                                    await Firestore.instance.collection("users").document(product.uid).get();  //pega informações do vendedor
+
+                                    usuarios = Map.of(docUser.data);
+                                    users = List.of(docUser.data["conversou"]);  //pega as informações
+
+                                    for(int i = 0; i < users.length; i++){    //verifica se o id já existe na lista
+                                      if(users[i] == model.firebaseUser.uid)
+                                          jaExiste = true;
+                                    }
+                                    
+                                    if(jaExiste == false){  //se o id não existe, então salva os dois ids já
+
+                                      users.add(model.firebaseUser.uid);
+                                      saveUsers(users);   //atualiza as informações
+
+                                      Firestore.instance.collection('users')    //coloca no firebase
+                                      .document(product.uid)
+                                      .updateData(usuarios);
+                                    
+
+                                      //          Salva o id do vendedor na lista do usuário atual
+
+                                      docUser =
+                                      await Firestore.instance.collection("users").document(model.firebaseUser.uid).get();  //pega informações do usuário atual
+
+                                      usuarios2 = Map.of(model.userData);
+                                      users2 = List.of(docUser.data["conversou"]);  //pega as informações
+                                      
+                                      
+                                      users2.add(product.uid);
+                                      saveUsers2(users2);   //atualiza as informações
+
+                                      Firestore.instance.collection('users')    //coloca no firebase
+                                      .document(model.firebaseUser.uid)
+                                      .updateData(usuarios2);
+                                    }
+
+
                                 Navigator.push(context,
                                 MaterialPageRoute(
                                     builder: (context) =>
@@ -145,6 +196,14 @@ class _ProductScreenState extends State<ProductScreen> {
           )
       ),
     );
+  }
+
+  void saveUsers2(List users) {
+    usuarios2["conversou"] = users;
+  }
+
+  void saveUsers(List users) {
+    usuarios["conversou"] = users;
   }
 
 }

@@ -1,6 +1,5 @@
 #Internal package file, do not edit.
-<<<<<<< HEAD
-#Fri Nov 01 23:21:39 BRT 2019
+#Sat Nov 02 13:21:18 BRT 2019
 56.path=classes.dex
 5.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/23
 42.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/31
@@ -19,25 +18,10 @@
 39.set=DEX
 26.path=classes.dex
 56.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/40
-=======
-#Sat Oct 26 18:44:35 BRT 2019
-5.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\12
-22.path=classes.dex
-32.set=NATIVE_RESOURCE
-32.path=lib/armeabi-v7a/libflutter.so
-36.baseType=DIRECTORY
-18.baseType=DIRECTORY
-27.baseType=DIRECTORY
-9.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\6
-21.set=DEX
-39.set=ASSET
-26.path=classes.dex
->>>>>>> origin
 6.baseType=DIRECTORY
-36.path=flutter_assets/isolate_snapshot_data
+36.path=classes.dex
 10.set=DEX
 28.set=DEX
-<<<<<<< HEAD
 22.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/36
 32.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/29
 12.path=flutter_assets/vm_snapshot_data
@@ -46,20 +30,10 @@
 26.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/22
 36.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/15
 1.set=NATIVE_RESOURCE
-=======
-22.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\23
-32.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\mergeJniLibs\\debug\\0
-12.path=classes.dex
-17.set=DEX
-26.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\9
-36.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-1.set=DEX
->>>>>>> origin
 37.baseType=DIRECTORY
 28.baseType=DIRECTORY
 16.path=classes.dex
 19.baseType=DIRECTORY
-<<<<<<< HEAD
 56.baseType=DIRECTORY
 12.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 8.set=ASSET
@@ -72,21 +46,10 @@
 6.path=flutter_assets/fonts/MaterialIcons-Regular.ttf
 47.baseType=DIRECTORY
 43.path=classes.dex
-=======
-12.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
-8.set=DEX
-7.baseType=DIRECTORY
-35.set=ASSET
-2.path=flutter_assets/fonts/MaterialIcons-Regular.ttf
-16.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\1
-24.set=DEX
-6.path=classes2.dex
->>>>>>> origin
 38.baseType=DIRECTORY
 29.baseType=DIRECTORY
 10.baseType=DIRECTORY
 13.set=DEX
-<<<<<<< HEAD
 53.path=classes.dex
 2.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 8.baseType=DIRECTORY
@@ -104,23 +67,12 @@
 49.set=DEX
 47.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/18
 48.baseType=DIRECTORY
-=======
-2.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-8.baseType=DIRECTORY
-6.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
-4.set=DEX
-23.path=classes.dex
-33.path=flutter_assets/AssetManifest.json
-17.path=classes.dex
-31.set=DEX
->>>>>>> origin
 39.baseType=DIRECTORY
 20.baseType=DIRECTORY
-27.path=flutter_assets/images/Logo.png
+27.path=classes.dex
 37.path=classes.dex
 20.set=DEX
 38.set=DEX
-<<<<<<< HEAD
 23.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/12
 9.baseType=DIRECTORY
 33.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/19
@@ -131,23 +83,11 @@ count=57
 27.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/42
 16.set=DEX
 37.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/21
-=======
-23.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\11
-9.baseType=DIRECTORY
-33.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-13.path=classes.dex
-17.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\13
-27.set=ASSET
-count=40
-27.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-16.set=DEX
-37.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\17
->>>>>>> origin
 11.baseType=DIRECTORY
+49.baseType=DIRECTORY
 21.baseType=DIRECTORY
 30.baseType=DIRECTORY
 0.set=DEX
-<<<<<<< HEAD
 13.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/4
 56.set=DEX
 0.baseType=DIRECTORY
@@ -186,36 +126,12 @@ count=40
 48.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/38
 28.path=classes.dex
 30.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/1
-=======
-13.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\4
-0.baseType=DIRECTORY
-7.set=DEX
-3.path=classes.dex
-34.set=NATIVE_RESOURCE
-7.path=classes.dex
-23.set=DEX
-12.baseType=DIRECTORY
-3.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
-22.baseType=DIRECTORY
-31.baseType=DIRECTORY
-20.path=classes.dex
-12.set=DEX
-30.path=flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
-7.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\22
-19.set=DEX
-24.path=classes.dex
-34.path=lib/x86/libflutter.so
-3.set=DEX
-18.path=flutter_assets/FontManifest.json
-20.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\15
-28.path=classes.dex
-30.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
->>>>>>> origin
 10.path=classes.dex
 13.baseType=DIRECTORY
+50.baseType=DIRECTORY
+41.baseType=DIRECTORY
 38.path=classes.dex
 32.baseType=DIRECTORY
-<<<<<<< HEAD
 30.set=DEX
 48.set=DEX
 24.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/26
@@ -231,28 +147,14 @@ count=40
 0.path=classes.dex
 15.set=ASSET
 14.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
-=======
-30.set=ASSET
-24.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\25
-34.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\mergeJniLibs\\debug\\0
-1.baseType=DIRECTORY
-14.path=flutter_assets/kernel_blob.bin
-37.set=DEX
-18.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-28.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\21
-10.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\8
-26.set=DEX
-38.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\19
-0.path=classes.dex
-15.set=ASSET
-14.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
->>>>>>> origin
 14.baseType=DIRECTORY
 23.baseType=DIRECTORY
+51.baseType=DIRECTORY
+42.baseType=DIRECTORY
 33.baseType=DIRECTORY
+55.set=DEX
 4.path=classes.dex
 2.baseType=DIRECTORY
-<<<<<<< HEAD
 41.path=classes.dex
 6.set=ASSET
 51.path=classes.dex
@@ -264,19 +166,13 @@ count=40
 55.path=classes.dex
 4.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/17
 41.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/7
-=======
-6.set=DEX
-0.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\24
-8.path=classes.dex
-33.set=ASSET
-4.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\20
->>>>>>> origin
 15.baseType=DIRECTORY
 24.baseType=DIRECTORY
 21.path=classes.dex
 22.set=DEX
+52.baseType=DIRECTORY
+43.baseType=DIRECTORY
 34.baseType=DIRECTORY
-<<<<<<< HEAD
 51.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/dexMerger/debug/34
 49.path=classes.dex
 31.path=lib/x86/libflutter.so
@@ -317,51 +213,19 @@ count=40
 1.path=lib/armeabi-v7a/libflutter.so
 25.set=DEX
 15.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
-=======
-31.path=classes.dex
-8.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\14
-11.set=DEX
-29.set=DEX
-3.baseType=DIRECTORY
-25.path=lib/x86_64/libflutter.so
-35.path=flutter_assets/images/Augusto.jpg
-18.set=ASSET
-19.path=classes.dex
-21.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\18
-29.path=classes.dex
-31.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\7
-11.path=classes.dex
-2.set=ASSET
-39.path=flutter_assets/vm_snapshot_data
-25.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\mergeJniLibs\\debug\\0
-16.baseType=DIRECTORY
-25.baseType=DIRECTORY
-35.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-9.set=DEX
-15.path=flutter_assets/LICENSE
-19.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\3
-4.baseType=DIRECTORY
-29.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\5
-11.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\10
-36.set=ASSET
-39.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
-1.path=classes.dex
-25.set=NATIVE_RESOURCE
-15.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
->>>>>>> origin
 14.set=ASSET
 35.baseType=DIRECTORY
 26.baseType=DIRECTORY
 17.baseType=DIRECTORY
+54.baseType=DIRECTORY
+45.baseType=DIRECTORY
 5.path=classes.dex
+42.path=classes.dex
+52.path=classes.dex
 5.baseType=DIRECTORY
-<<<<<<< HEAD
 1.base=/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/transforms/mergeJniLibs/debug/0
 54.set=DEX
 9.path=classes.dex
 46.path=flutter_assets/isolate_snapshot_data
-=======
-1.base=C\:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\16
-9.path=classes.dex
->>>>>>> origin
 5.set=DEX
+43.set=DEX

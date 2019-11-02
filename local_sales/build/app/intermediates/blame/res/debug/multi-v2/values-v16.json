@@ -1,14 +1,20 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/Kenji/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
-=======
-            "outputFile": "C:\\Users\\Claud\\Documents\\EngSoftw\\LocalSales\\local_sales\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
->>>>>>> origin
             "map": [
                 {
-                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\429ad2222eeb910a2082b32daa49f0a4\\res\\values-v16\\values-v16.xml",
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/b56d2647aa92e5356c7927841a467683/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/361c0fb8eef67437852274cc536d3af3/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -24,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Claud\\.gradle\\caches\\transforms-2\\files-2.1\\b3bc2e3aa4d9c28b490f30a81df4edc0\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]
