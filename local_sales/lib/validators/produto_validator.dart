@@ -8,6 +8,7 @@ class ProductValidator{
 
   String validateTitle(String text){
     if(text.isEmpty) return "Preencha o nome do produto";
+    else if(text.length > 30) return "Nome muito longo";
     return null;
   }
 

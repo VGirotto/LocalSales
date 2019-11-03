@@ -39,7 +39,7 @@ class CategoryScreen extends StatelessWidget {
                           crossAxisCount: 2,
                           mainAxisSpacing: 4.0,
                           crossAxisSpacing: 4.0,
-                          childAspectRatio: 0.65,
+                          childAspectRatio: 0.61,
                         ),
                         itemCount: snapshot.data.documents.length,
                         itemBuilder: (context, index){

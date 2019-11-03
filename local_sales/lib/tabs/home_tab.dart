@@ -94,7 +94,7 @@ class _HomeTabState extends State<HomeTab>{
                               crossAxisCount: 2,
                               mainAxisSpacing: 4,
                               crossAxisSpacing: 4,
-                              childAspectRatio: 0.65,
+                              childAspectRatio: 0.61,
                             ),
                             itemCount: snapshot.data.length,
                             itemBuilder: (context, index){

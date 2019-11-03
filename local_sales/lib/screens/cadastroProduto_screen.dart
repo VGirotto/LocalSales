@@ -144,7 +144,7 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
                           validator: validatePrice,
                       ),
                         TextFormField(
-                          initialValue: snapshot.data["amount"]?.toStringAsFixed(2),
+                          initialValue: snapshot.data["amount"]?.toString(),
                           style: _fieldStyle,
                           keyboardType: TextInputType.number,
                           decoration: _buildDecoration("Quantidade"),
