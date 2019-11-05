@@ -134,6 +134,12 @@ class UserModel extends Model {
     print("entrou aqui");
   }
 
+  Future<Null> loadUserData() async {
+    DocumentSnapshot docUser =
+        await Firestore.instance.collection("users").document(firebaseUser.uid).get();
+        userData = docUser.data;
+  }
+
   Future<Null> _loadCurrentUser() async {
     if(firebaseUser == null)
       firebaseUser = await _auth.currentUser();
