@@ -1,4 +1,4 @@
-    import 'dart:convert';
+import 'dart:convert';
 import 'dart:core' as prefix0;
 import 'dart:core';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -124,6 +124,7 @@ class _chat_mainState extends State<chat_main>{
     return Container(
       child: ScopedModelDescendant<UserModel>(
         builder: (context, child, model){
+          model.loadUserData();
           List ids = new List();
           ids = model.userData["conversou"];
           int aux = 0;
@@ -132,7 +133,7 @@ class _chat_mainState extends State<chat_main>{
             if(document['id'] == ids[i]) aux=1;
           }
 
-          if (aux == 1) {
+          if (aux == 1 && document['id'] != currentUserId) {
             return Container(
               child: OutlineButton(
                 child: Row(
@@ -210,8 +211,6 @@ class _chat_mainState extends State<chat_main>{
       ),
     
     );
-
-    //DocumentSnapshot future = await Firestore.instance.collection("users").document(currentUserId).get();
     
   }
 }
