@@ -19,6 +19,7 @@ class ProductBloc extends BlocBase {
   Map<String, dynamic> unsavedData;
 
   ProductBloc({this.categoriaID, this.product}){
+    //_addProductsListener();
     if(product != null){
       unsavedData = Map.of(product.data);
       unsavedData['images'] = List.of(product.data["images"]);
@@ -34,6 +35,7 @@ class ProductBloc extends BlocBase {
     _dataController.add(unsavedData);
 
   }
+
 
   void saveTitle(String title){
     unsavedData["title"] = title;
@@ -105,7 +107,6 @@ class ProductBloc extends BlocBase {
 
   void deleteProduct(){
     product.reference.delete();
-
   }
 
   @override
@@ -113,5 +114,6 @@ class ProductBloc extends BlocBase {
     _dataController.close();
     _loadingController.close();
     _createdController.close();
+
   }
 }

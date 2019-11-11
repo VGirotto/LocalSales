@@ -1,4 +1,7 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:local_sales/blocs/exibeProdutos_bloc.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/tabs/aboutapp_tab.dart';
@@ -19,94 +22,100 @@ class Feed extends StatefulWidget {
 
 class _FeedState extends State<Feed> {
   final _pageController = PageController();
-
+  ExibeProdutosBloc _exibeprodutos;
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
       onWillPop: () async => false,
-      child: PageView(
-        controller: _pageController,
-        physics: NeverScrollableScrollPhysics(),
-        children: <Widget>[
-          Scaffold(
-            body: HomeTab(), //
-            drawer: CustomDrawer(_pageController),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                _showSimpleDialog();
-              },
-              child: Icon(Icons.add, color: Colors.orange),
-              backgroundColor: Colors.white,
+      child: BlocProvider<ExibeProdutosBloc>(
+        bloc: _exibeprodutos,
+        child: PageView(
+          controller: _pageController,
+          physics: NeverScrollableScrollPhysics(),
+          children: <Widget>[
+            Scaffold(
+              body: HomeTab(), //
+              drawer: CustomDrawer(_pageController),
+              floatingActionButton: _buildFloating(),
             ),
-          ),
-          Scaffold(
-            appBar: AppBar(
-              title: Text("Categorias"),
-              centerTitle: true,
-            ),
-            drawer: CustomDrawer(_pageController),
-            body: ProductsTab(),
-          ),
-          Scaffold(
-            appBar: AppBar(
-              title: Text("Informações do Usuário"),
-              centerTitle: true,
-              backgroundColor: Colors.deepOrangeAccent,
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.edit),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => EditProfile()));
-                  },
-                )
-              ],
-            ),
-            drawer: CustomDrawer(_pageController),
-            body: Perfil(), //
-          ),
-          Scaffold(
+            Scaffold(
               appBar: AppBar(
-                title: Text("Chat"),
+                title: Text("Categorias"),
                 centerTitle: true,
               ),
               drawer: CustomDrawer(_pageController),
-              body: ScopedModelDescendant<UserModel>(
-                builder: (context, child, model) {
-                  print("\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\\\ \n ${model.firebaseUser.uid} \n \\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\n");
-                  return chat_main(model.userData ,currentUserId: model.firebaseUser.uid, name: model.userData["name"]);
-                },
-              )
-          ),
-          Scaffold(
-            appBar: AppBar(
-              title: Text("Meus Produtos"),
-              centerTitle: true,
+              body: ProductsTab(),
             ),
-            drawer: CustomDrawer(_pageController),
-            body: ScopedModelDescendant<UserModel>(
-              builder: (context, child, model){
-                return LogTab(currentUserId: model.firebaseUser.uid,);
-              }
-            )
-          ),
-          Scaffold(
-            appBar: AppBar(
-              title: Text("Configurações"),
-              centerTitle: true,
+            Scaffold(
+              appBar: AppBar(
+                title: Text("Informações do Usuário"),
+                centerTitle: true,
+                backgroundColor: Colors.deepOrangeAccent,
+                actions: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.edit),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => EditProfile()));
+                    },
+                  )
+                ],
+              ),
+              drawer: CustomDrawer(_pageController),
+              body: Perfil(), //
             ),
-            drawer: CustomDrawer(_pageController),
-            body: ConfigurationTab(),
-          ),
-          Scaffold(
-            appBar: AppBar(
-              title: Text("Sobre o app"),
-              centerTitle: true,
+            Scaffold(
+                appBar: AppBar(
+                  title: Text("Chat"),
+                  centerTitle: true,
+                ),
+                drawer: CustomDrawer(_pageController),
+                body: ScopedModelDescendant<UserModel>(
+                  builder: (context, child, model) {
+                    print("\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\\\\\ \n ${model.firebaseUser.uid} \n \\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n \\\\\\\\\\\\\\\\\\\\\n");
+                    return chat_main(model.userData ,currentUserId: model.firebaseUser.uid, name: model.userData["name"]);
+                  },
+                )
             ),
-            drawer: CustomDrawer(_pageController),
-            body: AboutAppTab(title: "Sobre o app"),
-          ),
-        ],
+            Scaffold(
+                appBar: AppBar(
+                  title: Text("Meus Produtos"),
+                  centerTitle: true,
+                ),
+                drawer: CustomDrawer(_pageController),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {
+                    _showSimpleDialog();
+                  },
+                  child: Icon(Icons.add, color: Colors.orange),
+                  backgroundColor: Colors.white,
+                ),
+                body: ScopedModelDescendant<UserModel>(
+                    builder: (context, child, model){
+                      return LogTab(currentUserId: model.firebaseUser.uid,);
+                    }
+
+                )
+            ),
+            Scaffold(
+              appBar: AppBar(
+                title: Text("Configurações"),
+                centerTitle: true,
+              ),
+              drawer: CustomDrawer(_pageController),
+              body: ConfigurationTab(),
+            ),
+            Scaffold(
+              appBar: AppBar(
+                title: Text("Sobre o app"),
+                centerTitle: true,
+              ),
+              drawer: CustomDrawer(_pageController),
+              body: AboutAppTab(title: "Sobre o app"),
+            ),
+          ],
+        ),
+
       ),
     );
   }
@@ -232,4 +241,44 @@ class _FeedState extends State<Feed> {
           );
         });
   }
+
+  Widget _buildFloating(){
+    return SpeedDial(
+      child: Icon(Icons.sort, color: Colors.orange),
+      backgroundColor: Colors.white,
+      overlayColor: Colors.black,
+      overlayOpacity: 0.6,
+      children: [
+        SpeedDialChild(
+          child: Icon(Icons.arrow_downward, color: Colors.orange),
+          backgroundColor: Colors.white,
+          label: "Menor preço",
+          labelStyle: TextStyle(fontSize: 14),
+          onTap: (){
+            _exibeprodutos.setOrderCriteria(SortCriteria.least_expensive); //erro
+          }
+        ),
+        SpeedDialChild(
+            child: Icon(Icons.reorder, color: Colors.orange),
+            backgroundColor: Colors.white,
+            label: "Ordem alfabética",
+            labelStyle: TextStyle(fontSize: 14),
+            onTap: (){
+
+            }
+        ),
+        SpeedDialChild(
+            child: Icon(Icons.calendar_today, color: Colors.orange),
+            backgroundColor: Colors.white,
+            label: "Últimos adicionados",
+            labelStyle: TextStyle(fontSize: 14),
+            onTap: (){
+
+            }
+        ),
+      ],
+    );
+  }
+
 }
+

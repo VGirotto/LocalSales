@@ -18,7 +18,6 @@ class _HomeTabState extends State<HomeTab>{
   @override
   void initState(){
     super.initState();
-
     _exibeProdutosBloc = ExibeProdutosBloc();
   }
 
