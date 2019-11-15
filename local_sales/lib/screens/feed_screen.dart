@@ -1,7 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:local_sales/blocs/exibeProdutos_bloc.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/tabs/aboutapp_tab.dart';
@@ -14,6 +13,8 @@ import 'package:local_sales/screens/editProfile_screen.dart';
 import 'package:local_sales/screens/perfil_screen.dart';
 import 'package:local_sales/tabs/chat_main_tab.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:local_sales/blocs/teste_bloc.dart';
+//import 'package:local_sales/blocs/exibeProdutos_bloc.dart';
 
 class Feed extends StatefulWidget {
   @override
@@ -22,12 +23,19 @@ class Feed extends StatefulWidget {
 
 class _FeedState extends State<Feed> {
   final _pageController = PageController();
-  ExibeProdutosBloc _exibeprodutos;
+  TesteBloc _exibeprodutos;
+
+  @override
+  void initState(){
+    super.initState();
+    _exibeprodutos = TesteBloc();
+  }
+
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
       onWillPop: () async => false,
-      child: BlocProvider<ExibeProdutosBloc>(
+      child: BlocProvider<TesteBloc>(
         bloc: _exibeprodutos,
         child: PageView(
           controller: _pageController,
@@ -87,8 +95,8 @@ class _FeedState extends State<Feed> {
                   onPressed: () {
                     _showSimpleDialog();
                   },
-                  child: Icon(Icons.add, color: Colors.orange),
-                  backgroundColor: Colors.white,
+                  child: Icon(Icons.add, color: Colors.white),
+                  backgroundColor: Colors.orange,
                 ),
                 body: ScopedModelDescendant<UserModel>(
                     builder: (context, child, model){
@@ -115,7 +123,6 @@ class _FeedState extends State<Feed> {
             ),
           ],
         ),
-
       ),
     );
   }
@@ -142,8 +149,8 @@ class _FeedState extends State<Feed> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => cadastroProduto(
-                                  categoriaID: "Calçados",
-                                )));
+                              categoriaID: "Calçados",
+                            )));
                   },
                   child: new Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
@@ -159,8 +166,8 @@ class _FeedState extends State<Feed> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => cadastroProduto(
-                                  categoriaID: "Caronas",
-                                )));
+                              categoriaID: "Caronas",
+                            )));
                   },
                   child: new Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
@@ -176,8 +183,8 @@ class _FeedState extends State<Feed> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => cadastroProduto(
-                                  categoriaID: "Doces",
-                                )));
+                              categoriaID: "Doces",
+                            )));
                   },
                   child: new Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
@@ -193,8 +200,8 @@ class _FeedState extends State<Feed> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => cadastroProduto(
-                                  categoriaID: "Eletrônicos",
-                                )));
+                              categoriaID: "Eletrônicos",
+                            )));
                   },
                   child: new Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
@@ -210,8 +217,8 @@ class _FeedState extends State<Feed> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => cadastroProduto(
-                                  categoriaID: "Roupas",
-                                )));
+                              categoriaID: "Roupas",
+                            )));
                   },
                   child: new Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
@@ -227,8 +234,8 @@ class _FeedState extends State<Feed> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => cadastroProduto(
-                                  categoriaID: "Salgados",
-                                )));
+                              categoriaID: "Salgados",
+                            )));
                   },
                   child: new Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
@@ -250,13 +257,14 @@ class _FeedState extends State<Feed> {
       overlayOpacity: 0.6,
       children: [
         SpeedDialChild(
-          child: Icon(Icons.arrow_downward, color: Colors.orange),
-          backgroundColor: Colors.white,
-          label: "Menor preço",
-          labelStyle: TextStyle(fontSize: 14),
-          onTap: (){
-            _exibeprodutos.setOrderCriteria(SortCriteria.least_expensive); //erro
-          }
+            child: Icon(Icons.arrow_downward, color: Colors.orange),
+            backgroundColor: Colors.white,
+            label: "Menor preço",
+            labelStyle: TextStyle(fontSize: 14),
+            onTap: (){
+              print("oi");
+              _exibeprodutos.setOrderCriteria(SortCriteria.least_expensive);
+            }
         ),
         SpeedDialChild(
             child: Icon(Icons.reorder, color: Colors.orange),
@@ -264,7 +272,7 @@ class _FeedState extends State<Feed> {
             label: "Ordem alfabética",
             labelStyle: TextStyle(fontSize: 14),
             onTap: (){
-
+              _exibeprodutos.setOrderCriteria(SortCriteria.alphabetical_order);
             }
         ),
         SpeedDialChild(
@@ -273,7 +281,7 @@ class _FeedState extends State<Feed> {
             label: "Últimos adicionados",
             labelStyle: TextStyle(fontSize: 14),
             onTap: (){
-
+              _exibeprodutos.setOrderCriteria(SortCriteria.insertion_data);
             }
         ),
       ],

@@ -28,6 +28,7 @@ class ExibeProdutosBloc extends BlocBase {
   void _sort(){
     switch(_criteria){
       case SortCriteria.least_expensive:
+        print('ola');
         _produtos.values.toList().sort((a,b){ ///erro aqui na minha opiniao
           double pa = a["price"];
           double pb = b["price"];
