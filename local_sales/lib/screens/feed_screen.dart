@@ -31,13 +31,6 @@ class _FeedState extends State<Feed> {
           Scaffold(
             body: HomeTab(), //
             drawer: CustomDrawer(_pageController),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                _showSimpleDialog();
-              },
-              child: Icon(Icons.add, color: Colors.orange),
-              backgroundColor: Colors.white,
-            ),
           ),
           Scaffold(
             appBar: AppBar(
@@ -88,7 +81,14 @@ class _FeedState extends State<Feed> {
               builder: (context, child, model){
                 return LogTab(currentUserId: model.firebaseUser.uid,);
               }
-            )
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                _showSimpleDialog();
+              },
+              child: Icon(Icons.add, color: Colors.orange),
+              backgroundColor: Colors.white,
+            ),
           ),
           Scaffold(
             appBar: AppBar(

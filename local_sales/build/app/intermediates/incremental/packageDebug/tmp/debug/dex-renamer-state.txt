@@ -1,4 +1,4 @@
-#Sun Nov 03 16:36:56 BRST 2019
+#Sat Nov 16 21:07:09 BRST 2019
 base.10=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\25
 base.9=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\17
 base.8=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\1
@@ -74,8 +74,8 @@ base.20=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\a
 base.19=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\24
 base.18=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 base.17=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\22
-base.16=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
-base.15=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\20
+base.16=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\20
+base.15=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
 base.14=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\9
 base.13=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\5
 base.12=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\7

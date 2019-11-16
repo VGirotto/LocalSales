@@ -1,6 +1,7 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:local_sales/blocs/exibeProdutos_bloc.dart';
 import 'package:local_sales/datas/product_data.dart';
 import 'package:local_sales/widgets/product_tile.dart';
@@ -43,6 +44,44 @@ class _HomeTabState extends State<HomeTab>{
       });
     }
 
+    Widget _buildFloating(){
+      return SpeedDial(
+        child: Icon(Icons.sort, color: Colors.orange),
+        backgroundColor: Colors.white,
+        overlayColor: Colors.black,
+        overlayOpacity: 0.6,
+        children: [
+          SpeedDialChild(
+            child: Icon(Icons.arrow_downward, color: Colors.orange),
+            backgroundColor: Colors.white,
+            label: "Menor preço",
+            labelStyle: TextStyle(fontSize: 14),
+            onTap: _exibeProdutosBloc.onTappedMenor/*{
+              print("oi");
+              _exibeprodutos.setOrderCriteria(SortCriteria.least_expensive);
+            }*/
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.reorder, color: Colors.orange),
+            backgroundColor: Colors.white,
+            label: "Ordem alfabética",
+            labelStyle: TextStyle(fontSize: 14),
+            onTap: (){
+              //_exibeprodutos.setOrderCriteria(SortCriteria.alphabetical_order);
+            }
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.calendar_today, color: Colors.orange),
+            backgroundColor: Colors.white,
+            label: "Últimos adicionados",
+            labelStyle: TextStyle(fontSize: 14),
+            onTap: (){
+              //_exibeprodutos.setOrderCriteria(SortCriteria.insertion_data);
+            }
+          ),
+        ],
+      );
+    }
     return
       Stack(
         children: <Widget>[
@@ -74,6 +113,7 @@ class _HomeTabState extends State<HomeTab>{
                   ],
                 ),
               ),
+              floatingActionButton: _buildFloating(),
               body: BlocProvider<ExibeProdutosBloc>(
                 bloc: _exibeProdutosBloc,
                 child: StreamBuilder<List>(
@@ -131,4 +171,3 @@ class _HomeTabState extends State<HomeTab>{
     //onRefresh: refresh;
   }
 }
-

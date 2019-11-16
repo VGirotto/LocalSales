@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 03 16:38:07 BRST 2019
+#Sat Nov 16 21:07:32 BRST 2019
 5.base=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\16
 22.path=lib/armeabi-v7a/libflutter.so
 32.set=NATIVE_RESOURCE
@@ -31,7 +31,7 @@
 7.baseType=DIRECTORY
 35.set=ASSET
 2.path=flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
-16.base=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\20
+16.base=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
 24.set=DEX
 6.path=flutter_assets/isolate_snapshot_data
 38.baseType=DIRECTORY
@@ -151,7 +151,7 @@ count=40
 39.base=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 1.path=flutter_assets/LICENSE
 25.set=DEX
-15.base=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\2
+15.base=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\20
 14.set=ASSET
 35.baseType=DIRECTORY
 26.baseType=DIRECTORY

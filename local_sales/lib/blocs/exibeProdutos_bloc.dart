@@ -2,6 +2,8 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:rxdart/rxdart.dart';
 
+//enum SortCriteria {least_expensive, alphabetical_order, insertion_data}
+
 class ExibeProdutosBloc extends BlocBase{
   
   final _productsController = BehaviorSubject<List>();
@@ -32,6 +34,24 @@ class ExibeProdutosBloc extends BlocBase{
     });
 
     return filteredUsers;
+  }
+
+  void onTappedMenor(){
+    _productsController.add(_menorPreco());
+  }
+
+  List<Map<String, dynamic>> _menorPreco(){
+    List<Map<String, dynamic>> menorPreco = List.from(_produtos.values.toList());
+
+    menorPreco.sort((a,b){
+      double pa = a["price"];
+      double pb = b["price"];
+      if (pa > pb) return 1;
+      else if (pa < pb) return -1;
+      else return 0;
+    });
+
+    return menorPreco;
   }
 
   void _addProductListener(){
