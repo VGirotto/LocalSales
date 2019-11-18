@@ -1,6 +1,7 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:diacritic/diacritic.dart';
 
 //enum SortCriteria {least_expensive, alphabetical_order, insertion_data}
 
@@ -64,7 +65,7 @@ class ExibeProdutosBloc extends BlocBase{
     alfa.sort((a,b){
       String pa = a["title"];
       String pb = b["title"];
-      return pa.compareTo(pb);
+      return removeDiacritics(pa.toUpperCase()).compareTo(removeDiacritics(pb.toUpperCase()));
     });
 
     return alfa;
