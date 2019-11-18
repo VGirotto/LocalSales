@@ -26,7 +26,7 @@ class ProductBloc extends BlocBase {
       _createdController.add(true);
     } else {
       unsavedData = {
-        "title": null, "description": null, "price": null, "images": [], "amount": null, "uid": null, "vendedor": null, "categoria": null,
+        "title": null, "description": null, "price": null, "images": [], "amount": null, "uid": null, "vendedor": null, "categoria": null, "timestamp": null
       };
 
       _createdController.add(false);
@@ -70,6 +70,7 @@ class ProductBloc extends BlocBase {
       } else {
         //DocumentReference dr = await Firestore.instance.collection("Produtos")
           //  .document(categoriaID).collection("itens").add(Map.from(unsavedData)..remove("images"));
+        unsavedData["timestamp"] = DateTime.now().millisecondsSinceEpoch.toString();
         DocumentReference drTodos = await Firestore.instance.collection("Produtos")
             .document("Todos").collection("itens").add(Map.from(unsavedData)..remove("images"));
         await _uploadImages(drTodos.documentID);

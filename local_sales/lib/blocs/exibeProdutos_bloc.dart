@@ -54,6 +54,40 @@ class ExibeProdutosBloc extends BlocBase{
     return menorPreco;
   }
 
+  void onTappedAlfabeto(){
+    _productsController.add(_alfabeto());
+  }
+
+  List<Map<String, dynamic>> _alfabeto(){
+    List<Map<String, dynamic>> alfa = List.from(_produtos.values.toList());
+
+    alfa.sort((a,b){
+      String pa = a["title"];
+      String pb = b["title"];
+      return pa.compareTo(pb);
+    });
+
+    return alfa;
+  }
+
+    void onTappedInsertion(){
+    _productsController.add(_recenteInsertion());
+  }
+
+  List<Map<String, dynamic>> _recenteInsertion(){
+    List<Map<String, dynamic>> inserOrdem = List.from(_produtos.values.toList());
+
+    inserOrdem.sort((a,b){
+      int pa = int.parse(a["timestamp"]);
+      int pb = int.parse(b["timestamp"]);
+      if (pa < pb) return 1;
+      else if (pa > pb) return -1;
+      else return 0;
+    });
+
+    return inserOrdem;
+  }
+
   void _addProductListener(){
     _firestore.collection("Produtos").document("Todos").collection("itens").snapshots().listen((snapshot){
       snapshot.documentChanges.forEach((change){

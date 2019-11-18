@@ -66,18 +66,18 @@ class _HomeTabState extends State<HomeTab>{
             backgroundColor: Colors.white,
             label: "Ordem alfabética",
             labelStyle: TextStyle(fontSize: 14),
-            onTap: (){
+            onTap:  _exibeProdutosBloc.onTappedAlfabeto
+            //(){
               //_exibeprodutos.setOrderCriteria(SortCriteria.alphabetical_order);
-            }
+            //}
           ),
           SpeedDialChild(
             child: Icon(Icons.calendar_today, color: Colors.orange),
             backgroundColor: Colors.white,
             label: "Últimos adicionados",
             labelStyle: TextStyle(fontSize: 14),
-            onTap: (){
-              //_exibeprodutos.setOrderCriteria(SortCriteria.insertion_data);
-            }
+            onTap: _exibeProdutosBloc.onTappedInsertion
+            
           ),
         ],
       );
