@@ -228,6 +228,23 @@ class _FeedState extends State<Feed> {
                       style: TextStyle(fontSize: 16.0),
                     ),
                   )),
+              SimpleDialogOption(
+                  onPressed: () {
+                    _dismissDialog();
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => cadastroProduto(
+                              categoriaID: "Outros",
+                            )));
+                  },
+                  child: new Padding(
+                    padding: EdgeInsets.only(bottom: 8.0),
+                    child: const Text(
+                      'Outros',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  )),
             ],
           );
         });
