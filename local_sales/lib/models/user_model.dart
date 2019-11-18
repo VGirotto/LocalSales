@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-
+import 'dart:async';
 
 
 class UserModel extends Model {
@@ -59,6 +59,12 @@ class UserModel extends Model {
         .then((auth) async {
       firebaseUser = auth.user;
 
+      try {
+       await firebaseUser.sendEmailVerification();
+      } catch (e) {
+        print("An error occured while trying to send email verification");
+        print(e.message);
+     }
 
       await _saveUserData(userData);
 
@@ -85,8 +91,9 @@ class UserModel extends Model {
     notifyListeners();
 
    _auth.signInWithEmailAndPassword(email: email, password: pass).then((user) async {
-
      firebaseUser = user.user;
+
+     if (!firebaseUser.isEmailVerified) return null;
 
     await _loadCurrentUser();
 

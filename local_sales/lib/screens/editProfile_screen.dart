@@ -83,11 +83,11 @@ class _EditProfileState extends State<EditProfile> with TickerProviderStateMixin
                           new Center(
                             child: new CircleAvatar(
                               radius: 80.0,
-                              backgroundColor: const Color(0xFF778899),
+                              backgroundColor: Colors.orangeAccent,
                             ),
                           ),
                           new Center(
-                            child: new Image.asset("assets/photo_camera.png"),
+                            child: new Image.asset("local_sales/imagens/photo_camera.png"),
                           ),
 
                         ],
