@@ -44,7 +44,7 @@ class _FeedState extends State<Feed> {
             appBar: AppBar(
               title: Text("Informações do Usuário"),
               centerTitle: true,
-              backgroundColor: Colors.deepOrangeAccent,
+              backgroundColor: Colors.orange,
               actions: <Widget>[
                 IconButton(
                   icon: Icon(Icons.edit),
