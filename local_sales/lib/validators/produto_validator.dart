@@ -29,7 +29,7 @@ class ProductValidator{
   }
 
   String validateAmount(String text){
-    if(text.isEmpty || text.contains('.') || text.contains(',')) return "Preencha a quantidade de itens corretamente";
+    if(text.isEmpty || text.contains('.') || text.contains(',')) return "Preencha a quantidade de itens corretamente. Não utilize ponto ou vírgula.";
     return null;
   }
 

@@ -1,10 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
-
-
-
-import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 bool isSwitched = false;
@@ -17,12 +13,16 @@ class EditProfile extends StatefulWidget {
 
 class _EditProfileState extends State<EditProfile> {
 
+  final _formKey = GlobalKey<FormState>();
+  final date = new RegExp(r"\d\d\/\d\d\/\d\d\d\d");
 
   static TextEditingController _PicPay = new TextEditingController();
   static TextEditingController _phone  = new TextEditingController();
   static TextEditingController _birth  = new TextEditingController();
   static TextEditingController _name   = new TextEditingController();
   static TextEditingController _email  = new TextEditingController();
+
+  Map<String, dynamic> new_data =  Map();
 
   @override
   Widget build(BuildContext context) {
@@ -33,141 +33,166 @@ class _EditProfileState extends State<EditProfile> {
           backgroundColor: Colors.orange,
         ),
         body: new SingleChildScrollView(
-          child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new Align(
-                      alignment: Alignment.topCenter,
-                      child: Container(
-                          width: 190.0,
-                          height: 190.0,
-                          decoration: new BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: new DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage("images/Augusto.jpg")))))),
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new Align(
-                      alignment: Alignment.center,
-                      child: ScopedModelDescendant<UserModel>(
-                                builder: (context, child, model){
-                                  return Text(
-                                    "${model.currentUser() == null ? "Fail" : model.userData["name"]}",
+          child: ScopedModelDescendant<UserModel>(
+            builder: (context, child, model){
+              model.loadUserData();
+              //new_data = model.userData;
+              return Form(
+                key: _formKey,
+                child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  new Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: new Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                              width: 190.0,
+                              height: 190.0,
+                              decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: new DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: AssetImage("images/Augusto.jpg")))))),
+                  new Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: new Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                                    "${model.userData["name"]}",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(fontSize: 15, color: Colors.black45),
-                                  );
-                                }
-                            )
-                  )
-              ),
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new TextFormField(
-                    controller: _name,
-                    keyboardType: TextInputType.text,
-                    decoration: new InputDecoration(
-                        labelText: "Nome"
-                    ),
-                  )
-              ),
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new TextFormField(
-                    controller: _email,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: new InputDecoration(
-
-                        labelText: "Endereço de Email"
-                    ),
-                  )
-              ),
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new TextField(
-                    controller: _birth,
-                    enabled: true,
-                    decoration: new InputDecoration(
-                      labelText: 'Data de Nascimento',
-                    ),
-                  )),
-
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
-                  controller: _phone,
-                  keyboardType: TextInputType.phone,
-                  decoration: new InputDecoration(
-                      labelText: 'Telefone'
-                  ),
-                ),
-              ),
-              new Padding(padding: EdgeInsets.all(10.0),
-                  child: new Row(
-                    children: <Widget>[
-                      Text(
-                          "PicPay",
-                          textAlign: TextAlign.left
-                      ),
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Switch(
-                          value: isSwitched,
-                          onChanged: (value) {
-                            setState(() {
-                              isSwitched = value;
-                            });
-                          },
-                          activeTrackColor: Colors.deepOrangeAccent,
-                          activeColor: Colors.deepOrange,
-                        ),
+                                  )
                       )
-                    ],
-                  )
-              ),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
-                  controller: _PicPay,
-                  enabled: isSwitched,
-                  decoration: new InputDecoration(
-                      hintText: 'PicPay User',
-                      labelText: '@nickname'
                   ),
-                ),
-              ),
-              new Padding(padding: EdgeInsets.all(10.0),
-                child: RaisedButton(
-                  color: Colors.deepOrange,
-                  child: Text("Submeter",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white,
-                        fontSize: 18.0
+                  new Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: new TextFormField(
+                        initialValue: model.userData["name"],
+                        onSaved: model.saveName,
+                       // controller: _name,
+                        keyboardType: TextInputType.text,
+                        decoration: new InputDecoration(
+                            labelText: "Nome"
+                        ),
+                        validator: (text) {
+                          if (text.isEmpty)
+                            return "Nome Inválido!";
+                        },
+                      )
+                  ),
+                  new Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: new TextFormField(
+                        initialValue: model.userData["email"],
+                        onSaved: model.saveEmail,
+                        //controller: _email,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: new InputDecoration(
+                            labelText: "Endereço de Email"
+                        ),
+                        validator: (text) {
+                          if (text.isEmpty || !text.contains("@"))
+                            return "E-mail inválido!";
+                          return null;
+                       },
+                      )
+                  ),
+                  new Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: new TextFormField(
+                        initialValue: model.userData["birth"],
+                        onSaved: model.saveBirth,
+                        //controller: _birth,
+                        enabled: true,
+                        decoration: new InputDecoration(
+                          labelText: 'Data de Nascimento',
+                        ),
+                        validator: (text) {
+                        if (text.isEmpty || (!date.hasMatch(text)))
+                          return "Data Inválida!";
+                      },
+                      )),
+
+                  new Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: TextFormField(
+                      initialValue: model.userData["phone"],
+                      onSaved: UserModel().savePhone,
+                      //controller: _phone,
+                      keyboardType: TextInputType.phone,
+                      decoration: new InputDecoration(
+                          labelText: 'Telefone'
+                      ),
+                      validator: (text) {
+                        if (text.isEmpty)
+                          return "Telefone Inválido!";
+                      },
                     ),
                   ),
-                  onPressed: () async{
+                  new Padding(padding: EdgeInsets.all(10.0),
+                      child: new Row(
+                        children: <Widget>[
+                          Text(
+                              "PicPay",
+                              textAlign: TextAlign.left
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Switch(
+                              value: isSwitched,
+                              onChanged: (value) {
+                                setState(() {
+                                  isSwitched = value;
+                                });
+                              },
+                              activeTrackColor: Colors.deepOrangeAccent,
+                              activeColor: Colors.deepOrange,
+                            ),
+                          )
+                        ],
+                      )
+                  ),
+                  new Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: TextFormField(
+                      initialValue: model.userData["picpay"],
+                      onSaved: model.savePicpay,
+                      //controller: _PicPay,
+                      enabled: isSwitched,
+                      decoration: new InputDecoration(
+                          hintText: 'PicPay User',
+                          labelText: '@nickname'
+                      ),
+                    ),
+                  ),
+                  new Padding(padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      color: Colors.deepOrange,
+                      child: Text("Submeter",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white,
+                            fontSize: 18.0
+                        ),
+                      ),
+                      onPressed: () async {
+                        if(_formKey.currentState.validate()){
+                          _formKey.currentState.save();
 
-                    Map<String, dynamic> new_data = {
-                      "name": _name.text,
-                      "email": _email.text,
-                      "birth": _birth.text,
-                      "picpay": _PicPay.text,
-                      "phone": _phone.text,
-                    };
+                          new_data = model.userData;
 
-                    print(new_data);
+                          await Firestore.instance.collection("users").document(model.firebaseUser.uid).updateData(new_data);
 
-                    await UserModel().update_base(userData: new_data);
-
-                    Navigator.pop(context);
-
-                  },
-                ),)
-            ],
-          ),
+                          Navigator.pop(context);
+                        }
+                      },
+                    ),)
+                ],
+              ),
+              );
+            }
+        )
         )
     );
   }

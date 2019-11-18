@@ -12,7 +12,6 @@ class UserModel extends Model {
 
   FirebaseUser firebaseUser; //Declara uma variável do tipo FirebaseUser
   Map<String, dynamic> userData =
-
       Map(); //Um map que guarda dois valores. O setData do firebase recebe maps como paramêtros.
 
   bool isLoading = false;
@@ -152,6 +151,26 @@ class UserModel extends Model {
       }
     }
     notifyListeners();
+  }
+
+  void saveName(String text) {
+    userData["name"] = text;
+  }
+
+    void saveEmail(String text){
+    userData["email"] = text;
+  }
+
+    void saveBirth(String text){
+    userData["birth"] = text;
+  }
+
+    void savePhone(String text){
+    userData["phone"] = text;
+  }
+
+    void savePicpay(String text){
+    userData["picpay"] = text;
   }
 
 }
