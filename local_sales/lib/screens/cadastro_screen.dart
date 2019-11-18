@@ -171,7 +171,7 @@ class _CadastroState extends State<Cadastro> {
                           color: Colors.orange,
                         ),
                         Text(
-                          "Informações Pessoais",
+                          "Informações Pessoais:",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.black,
@@ -183,85 +183,29 @@ class _CadastroState extends State<Cadastro> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        GestureDetector(
-                          child: Container(
-                            child: Row(
-                              children: <Widget>[
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: _img_path != null
-                                            ? AssetImage(_img_path)
-                                            : NetworkImage(
-                                                "https://logodetimes.com/wp-content/uploads/corinthians-capa.jpg"),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  child: Container(
-                                    width: 250,
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: TextFormField(
-                                      controller: _nameController,
-                                      keyboardType: TextInputType.text,
-                                      decoration: InputDecoration(
-                                          labelStyle:
-                                              TextStyle(color: Colors.black),
-                                          hintText: "Fulano da Silva",
-                                          labelText: 'Nome',
-                                          prefixIcon: Icon(
-                                            Icons.contacts,
-                                            size: 30,
-                                            color: Colors.orange,
-                                          )),
-                                      validator: (text) {
-                                        if (text.isEmpty)
-                                          return "Nome Inválido!";
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                child: SimpleDialog(
-                                  title: Text("Salveee"),
-                                  children: <Widget>[
-                                    Text(
-                                      "Só mostrando que aqui vai abrir a galeria pra trocar a foto :D",
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                      ),
-                                    )
-                                  ],
-                                ));
-                          },
-                        ),
-                        SizedBox(
-                          width: 100.0,
-                          child: Container(
-                            padding: EdgeInsets.only(top: 5, left: 15),
-                            child: Text(
-                              "      Foto",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black,
-                              ),
-                            ),
+                        Container(
+                          width: 250,
+                          padding: EdgeInsets.only(left: 10),
+                          child: TextFormField(
+                            controller: _nameController,
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                                labelStyle:
+                                TextStyle(color: Colors.black),
+                                hintText: "Fulano da Silva",
+                                labelText: 'Nome',
+                                prefixIcon: Icon(
+                                  Icons.contacts,
+                                  size: 30,
+                                  color: Colors.orange,
+                                )),
+                            validator: (text) {
+                              if (text.isEmpty)
+                                return "Nome Inválido!";
+                            },
                           ),
                         ),
+
                       ],
                     ),
                   ),
@@ -372,6 +316,7 @@ class _CadastroState extends State<Cadastro> {
                               "picpay": _picpay.text,
                               "phone": _phone.text,
                               "conversou": [],
+                              "fotos": [],
                             };
 
                             model.signUp(

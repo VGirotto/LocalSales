@@ -1,28 +1,62 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
-
+import 'package:local_sales/image/image_picker_handler.dart';
 
 
 import 'package:local_sales/models/user_model.dart';
+import 'package:local_sales/widgets/Images_widgets.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 bool isSwitched = false;
 
 
 class EditProfile extends StatefulWidget {
+
+  EditProfile({Key key, this.title}) : super(key: key);
+  final String title;
+
   @override
   _EditProfileState createState() => _EditProfileState();
 }
 
-class _EditProfileState extends State<EditProfile> {
+class _EditProfileState extends State<EditProfile> with TickerProviderStateMixin, ImagePickerListener{
 
+  File _image;
+  AnimationController _controller;
+  ImagePickerHandler imagePicker;
 
   static TextEditingController _PicPay = new TextEditingController();
   static TextEditingController _phone  = new TextEditingController();
   static TextEditingController _birth  = new TextEditingController();
   static TextEditingController _name   = new TextEditingController();
   static TextEditingController _email  = new TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = new AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+    imagePicker=new ImagePickerHandler(this,_controller);
+    imagePicker.init();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  userImage(File _image) {
+    setState(() {
+      this._image = _image;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +71,46 @@ class _EditProfileState extends State<EditProfile> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              new Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: new Align(
-                      alignment: Alignment.topCenter,
-                      child: Container(
-                          width: 190.0,
-                          height: 190.0,
-                          decoration: new BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: new DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage("images/Augusto.jpg")))))),
+              new ScopedModelDescendant<UserModel>
+                (builder: (context, child, model){
+                  return new GestureDetector(
+                    onTap: () => imagePicker.showDialog(context),
+                    child: new Center(
+                      child: _image == null
+                          ? new Stack(
+                        children: <Widget>[
+
+                          new Center(
+                            child: new CircleAvatar(
+                              radius: 80.0,
+                              backgroundColor: const Color(0xFF778899),
+                            ),
+                          ),
+                          new Center(
+                            child: new Image.asset("assets/photo_camera.png"),
+                          ),
+
+                        ],
+                      )
+                          : new Container(
+                        height: 160.0,
+                        width: 160.0,
+                        decoration: new BoxDecoration(
+                          color: const Color(0xff7c94b6),
+                          image: new DecorationImage(
+                            image: new ExactAssetImage(_image.path),
+                            fit: BoxFit.cover,
+                          ),
+                          border:
+                          Border.all(color: Colors.red, width: 5.0),
+                          borderRadius:
+                          new BorderRadius.all(const Radius.circular(80.0)),
+                        ),
+                      ),
+                    ),
+                  );
+                }
+              ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new Align(
