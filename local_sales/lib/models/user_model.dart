@@ -3,8 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-
-
+import 'dart:async';
 
 class UserModel extends Model {
   FirebaseAuth _auth = FirebaseAuth
@@ -28,19 +27,16 @@ class UserModel extends Model {
 
   Future<FirebaseUser> currentUser() async {
     FirebaseUser user = await _auth.currentUser();
-    if(user != null)
+    if (user != null)
       return user;
     else
       return null;
   }
 
-  void update_base({@required Map<String, dynamic> userData}) async{
-
+  void update_base({@required Map<String, dynamic> userData}) async {
     firebaseUser = await currentUser();
     await _saveUserData(userData);
-
   }
-
 
   void signUp(
       {@required Map<String, dynamic> userData,
@@ -50,25 +46,26 @@ class UserModel extends Model {
     isLoading = true;
     notifyListeners();
 
-
-
     _auth
         .createUserWithEmailAndPassword(
             email: userData["email"], password: pass)
         .then((auth) async {
       firebaseUser = auth.user;
 
+      try {
+        await firebaseUser.sendEmailVerification();
+      } catch (e) {
+        print("An error occured while trying to send email verification");
+        print(e.message);
+      }
 
       await _saveUserData(userData);
-
-
 
       onSucess();
 
       isLoading = false;
       notifyListeners();
     }).catchError((e) {
-
       print(e); //printa o erro para debug
 
       onFail();
@@ -77,30 +74,31 @@ class UserModel extends Model {
     });
   }
 
-  void signIn({@required String email,@required String pass,
-    @required VoidCallback onSucess,@required VoidCallback onFail}) async {
-
+  void signIn(
+      {@required String email,
+      @required String pass,
+      @required VoidCallback onSucess,
+      @required VoidCallback onFail}) async {
     isLoading = true;
     notifyListeners();
 
-   _auth.signInWithEmailAndPassword(email: email, password: pass).then((user) async {
+    //if (!firebaseUser.isEmailVerified) return null;
 
-     firebaseUser = user.user;
+    _auth
+        .signInWithEmailAndPassword(email: email, password: pass)
+        .then((user) async {
+      firebaseUser = user.user;
 
-    await _loadCurrentUser();
+      await _loadCurrentUser();
 
-
-     onSucess();
-     isLoading = false;
-     notifyListeners();
-
-   }).catchError((e){
-
-     onFail();
-     isLoading = false;
+      onSucess();
+      isLoading = false;
       notifyListeners();
-   });
-
+    }).catchError((e) {
+      onFail();
+      isLoading = false;
+      notifyListeners();
+    });
   }
 
   void signOut() async {
@@ -112,13 +110,13 @@ class UserModel extends Model {
     notifyListeners();
   }
 
-  void recoverPass(String email){
+  void recoverPass(String email) {
     _auth.sendPasswordResetEmail(email: email);
   }
-  bool isLoggedIn(){
+
+  bool isLoggedIn() {
     return firebaseUser != null;
   }
-
 
   Future<Null> _saveUserData(Map<String, dynamic> userData) async {
     this.userData = userData;
@@ -128,25 +126,31 @@ class UserModel extends Model {
         .document(firebaseUser.uid)
         .setData(userData);
 
-    await Firestore.instance.collection("users").document(firebaseUser.uid).updateData({"id": firebaseUser.uid});
+    await Firestore.instance
+        .collection("users")
+        .document(firebaseUser.uid)
+        .updateData({"id": firebaseUser.uid});
 
     print("entrou aqui");
   }
 
   Future<Null> loadUserData() async {
-    DocumentSnapshot docUser =
-        await Firestore.instance.collection("users").document(firebaseUser.uid).get();
-        userData = docUser.data;
+    DocumentSnapshot docUser = await Firestore.instance
+        .collection("users")
+        .document(firebaseUser.uid)
+        .get();
+    userData = docUser.data;
   }
 
   Future<Null> _loadCurrentUser() async {
-    if(firebaseUser == null)
-      firebaseUser = await _auth.currentUser();
-    
-    if(firebaseUser != null){
-      if(userData["name"] == null){
-        DocumentSnapshot docUser =
-        await Firestore.instance.collection("users").document(firebaseUser.uid).get();
+    if (firebaseUser == null) firebaseUser = await _auth.currentUser();
+
+    if (firebaseUser != null) {
+      if (userData["name"] == null) {
+        DocumentSnapshot docUser = await Firestore.instance
+            .collection("users")
+            .document(firebaseUser.uid)
+            .get();
         userData = docUser.data;
       }
     }
@@ -157,20 +161,19 @@ class UserModel extends Model {
     userData["name"] = text;
   }
 
-    void saveEmail(String text){
+  void saveEmail(String text) {
     userData["email"] = text;
   }
 
-    void saveBirth(String text){
+  void saveBirth(String text) {
     userData["birth"] = text;
   }
 
-    void savePhone(String text){
+  void savePhone(String text) {
     userData["phone"] = text;
   }
 
-    void savePicpay(String text){
+  void savePicpay(String text) {
     userData["picpay"] = text;
   }
-
 }

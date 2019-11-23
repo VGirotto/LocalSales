@@ -372,6 +372,7 @@ class _CadastroState extends State<Cadastro> {
                               "picpay": _picpay.text,
                               "phone": _phone.text,
                               "conversou": [],
+                              "fotos":[],
                             };
 
                             model.signUp(

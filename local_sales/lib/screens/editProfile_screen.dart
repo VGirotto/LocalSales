@@ -1,17 +1,29 @@
+import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:local_sales/image/image_picker_handler.dart';
+import 'package:local_sales/models/user_model.dart';
+import 'package:local_sales/widgets/Images_widgets.dart';
 
 bool isSwitched = false;
 
 
 class EditProfile extends StatefulWidget {
+
+  EditProfile({Key key, this.title}) : super(key: key);
+  final String title;
+
   @override
   _EditProfileState createState() => _EditProfileState();
 }
 
-class _EditProfileState extends State<EditProfile> {
+class _EditProfileState extends State<EditProfile> with TickerProviderStateMixin, ImagePickerListener{
+
+  File _image;
+  AnimationController _controller;
+  ImagePickerHandler imagePicker;
 
   final _formKey = GlobalKey<FormState>();
   final date = new RegExp(r"\d\d\/\d\d\/\d\d\d\d");
@@ -25,6 +37,31 @@ class _EditProfileState extends State<EditProfile> {
   Map<String, dynamic> new_data =  Map();
 
   @override
+  void initState() {
+    super.initState();
+    _controller = new AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+    imagePicker=new ImagePickerHandler(this,_controller);
+    imagePicker.init();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  userImage(File _image) {
+    setState(() {
+      this._image = _image;
+    });
+  }
+
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -32,6 +69,8 @@ class _EditProfileState extends State<EditProfile> {
           centerTitle: true,
           backgroundColor: Colors.orange,
         ),
+        
+
         body: new SingleChildScrollView(
           child: ScopedModelDescendant<UserModel>(
             builder: (context, child, model){

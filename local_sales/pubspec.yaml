@@ -49,6 +49,8 @@ dependencies:
   photo_view: ^0.6.0
   firebase_messaging: ^5.1.0
   diacritic: ^0.1.1
+  admob_flutter: ^0.3.4
+  firebase_admob: ^0.5.2
 
 
 

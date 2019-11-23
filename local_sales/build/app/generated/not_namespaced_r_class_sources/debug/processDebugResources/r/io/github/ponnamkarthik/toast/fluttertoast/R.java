@@ -17,11 +17,11 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int text = 0x7f0700b2;
+        public static final int text = 0x7f0700c2;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int toast_custom = 0x7f0a0027;
+        public static final int toast_custom = 0x7f0a0029;
     }
 }
