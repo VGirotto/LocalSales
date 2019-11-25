@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <attr format="reference" name="coordinatorLayoutStyle"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -24,10 +23,6 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
-    <color name="browser_actions_bg_grey">#F5F5F5</color>
-    <color name="browser_actions_divider_color">#1E000000</color>
-    <color name="browser_actions_text_color">#DE000000</color>
-    <color name="browser_actions_title_color">#646464</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
@@ -184,8 +179,6 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <dimen name="browser_actions_context_menu_max_width">500dp</dimen>
-    <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
     <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
@@ -375,13 +368,6 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAusttvw1bd6HHgpUsEL5ekNi_CWfRVabw</string>
     <string name="google_storage_bucket" translatable="false">local-sales-5b7f0.appspot.com</string>
     <string name="project_id" translatable="false">local-sales-5b7f0</string>
-    <string name="s1">Save image</string>
-    <string name="s2">"Allow Ad to store image in Picture gallery?"</string>
-    <string name="s3">Accept</string>
-    <string name="s4">Decline</string>
-    <string name="s5">Create calendar event</string>
-    <string name="s6">Allow Ad to create a calendar event?</string>
-    <string name="s7">Test Ad</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="ucrop_crop">Crop</string>
@@ -1788,14 +1774,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.IAPTheme" parent="android:Theme">
-<item name="android:windowIsFloating">true</item>
-<item name="android:windowBackground">@android:color/transparent</item>
-<item name="android:windowContentOverlay">@null</item>
-<item name="android:windowNoTitle">true</item>
-<item name="android:backgroundDimEnabled">false</item>
-<item name="android:windowIsTranslucent">true</item>
-</style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>
@@ -1905,9 +1883,6 @@
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
     <style name="Widget.Compat.NotificationActionContainer" parent=""/>
     <style name="Widget.Compat.NotificationActionText" parent=""/>
-    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
-        <item name="statusBarBackground">#000000</item>
-    </style>
     <style name="ucrop_ImageViewWidgetIcon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -2072,13 +2047,6 @@
          -->
         <attr format="reference" name="expandActivityOverflowButtonDrawable"/>
     </declare-styleable>
-    <declare-styleable name="AdsAttrs">
-<attr format="string" name="adSize"/>
-
-<attr format="string" name="adSizes"/>
-
-<attr format="string" name="adUnitId"/>
-</declare-styleable>
     <declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
@@ -2710,105 +2678,6 @@
             <!-- Combines the tint and icon color and alpha channels, clamping the
                  result to valid color values. Saturate(S + D) -->
             <enum name="add" value="16"/>
-        </attr>
-    </declare-styleable>
-    <declare-styleable name="CoordinatorLayout">
-        <!-- A reference to an array of integers representing the
-             locations of horizontal keylines in dp from the starting edge.
-             Child views can refer to these keylines for alignment using
-             layout_keyline="index" where index is a 0-based index into
-             this array. -->
-        <attr format="reference" name="keylines"/>
-        <!-- Drawable to display behind the status bar when the view is set to draw behind it. -->
-        <attr format="color|reference" name="statusBarBackground"/>
-    </declare-styleable>
-    <declare-styleable name="CoordinatorLayout_Layout">
-        <attr name="android:layout_gravity"/>
-        <!-- The class name of a Behavior class defining special runtime behavior
-             for this child view. -->
-        <attr format="string" name="layout_behavior"/>
-        <!-- The id of an anchor view that this view should position relative to. -->
-        <attr format="reference" name="layout_anchor"/>
-        <!-- The index of a keyline this view should position relative to.
-             android:layout_gravity will affect how the view aligns to the
-             specified keyline. -->
-        <attr format="integer" name="layout_keyline"/>
-
-        <!-- Specifies how an object should position relative to an anchor, on both the X and Y axes,
-             within its parent's bounds.  -->
-        <attr name="layout_anchorGravity">
-            <!-- Push object to the top of its container, not changing its size. -->
-            <flag name="top" value="0x30"/>
-            <!-- Push object to the bottom of its container, not changing its size. -->
-            <flag name="bottom" value="0x50"/>
-            <!-- Push object to the left of its container, not changing its size. -->
-            <flag name="left" value="0x03"/>
-            <!-- Push object to the right of its container, not changing its size. -->
-            <flag name="right" value="0x05"/>
-            <!-- Place object in the vertical center of its container, not changing its size. -->
-            <flag name="center_vertical" value="0x10"/>
-            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
-            <flag name="fill_vertical" value="0x70"/>
-            <!-- Place object in the horizontal center of its container, not changing its size. -->
-            <flag name="center_horizontal" value="0x01"/>
-            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
-            <flag name="fill_horizontal" value="0x07"/>
-            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
-            <flag name="center" value="0x11"/>
-            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
-            <flag name="fill" value="0x77"/>
-            <!-- Additional option that can be set to have the top and/or bottom edges of
-                 the child clipped to its container's bounds.
-                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
-                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
-            <flag name="clip_vertical" value="0x80"/>
-            <!-- Additional option that can be set to have the left and/or right edges of
-                 the child clipped to its container's bounds.
-                 The clip will be based on the horizontal gravity: a left gravity will clip the right
-                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
-            <flag name="clip_horizontal" value="0x08"/>
-            <!-- Push object to the beginning of its container, not changing its size. -->
-            <flag name="start" value="0x00800003"/>
-            <!-- Push object to the end of its container, not changing its size. -->
-            <flag name="end" value="0x00800005"/>
-        </attr>
-
-        <!-- Specifies how this view insets the CoordinatorLayout and make some other views
-             dodge it. -->
-        <attr format="enum" name="layout_insetEdge">
-            <!-- Don't inset. -->
-            <enum name="none" value="0x0"/>
-            <!-- Inset the top edge. -->
-            <enum name="top" value="0x30"/>
-            <!-- Inset the bottom edge. -->
-            <enum name="bottom" value="0x50"/>
-            <!-- Inset the left edge. -->
-            <enum name="left" value="0x03"/>
-            <!-- Inset the right edge. -->
-            <enum name="right" value="0x05"/>
-            <!-- Inset the start edge. -->
-            <enum name="start" value="0x00800003"/>
-            <!-- Inset the end edge. -->
-            <enum name="end" value="0x00800005"/>
-        </attr>
-        <!-- Specifies how this view dodges the inset edges of the CoordinatorLayout. -->
-        <attr name="layout_dodgeInsetEdges">
-            <!-- Don't dodge any edges -->
-            <flag name="none" value="0x0"/>
-            <!-- Dodge the top inset edge. -->
-            <flag name="top" value="0x30"/>
-            <!-- Dodge the bottom inset edge. -->
-            <flag name="bottom" value="0x50"/>
-            <!-- Dodge the left inset edge. -->
-            <flag name="left" value="0x03"/>
-            <!-- Dodge the right inset edge. -->
-            <flag name="right" value="0x05"/>
-            <!-- Dodge the start inset edge. -->
-            <flag name="start" value="0x00800003"/>
-            <!-- Dodge the end inset edge. -->
-            <flag name="end" value="0x00800005"/>
-            <!-- Dodge all the inset edges. -->
-            <flag name="all" value="0x77"/>
         </attr>
     </declare-styleable>
     <declare-styleable name="DrawerArrowToggle">
