@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/2/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/home/augusto/AndroidStudioProjects/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/b56d2647aa92e5356c7927841a467683/res/values-v16/values-v16.xml",
+                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/0bfbcc1142ba051972449d282cec3394/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/361c0fb8eef67437852274cc536d3af3/res/values-v16/values-v16.xml",
+                    "source": "/home/augusto/.gradle/caches/transforms-2/files-2.1/b5f2ad101c8d3c971753d49ce93f378f/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

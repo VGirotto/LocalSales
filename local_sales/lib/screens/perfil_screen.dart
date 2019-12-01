@@ -22,105 +22,109 @@ class _PerfilState extends State<Perfil> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: new Align(
-                  alignment: Alignment.topCenter,
-                  child: Container(
-                    width: 190.0,
-                    height: 190.0,
-                    decoration: new BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: new DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage("images/Augusto.jpg")
+                  padding: EdgeInsets.all(10.0),
+                  child: new Align(
+                      alignment: Alignment.topCenter,
+                      child: ScopedModelDescendant<UserModel>(
+                          builder: (context, child, model){
+                            return Container(
+                                width: 190.0,
+                                height: 190.0,
+                                decoration: new BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: new DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: NetworkImage(model.userData['photoUrl'])
+                                    )
+                                )
+                            );
+                          }
                       )
-                    )
                   )
-                )
               ),
               new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: new Align(
-                  alignment: Alignment.center,
-                  child: ScopedModelDescendant<UserModel>(
-                    builder: (context, child, model){
-                      return Text(
-                        "${model.currentUser() == null ? "Fail" : model.userData["name"]}",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 15, color: Colors.black45),
-                      );
-                    }
+                  padding: EdgeInsets.all(10.0),
+                  child: new Align(
+                      alignment: Alignment.center,
+                      child: ScopedModelDescendant<UserModel>(
+                          builder: (context, child, model){
+                            return Text(
+                              "${model.currentUser() == null ? "Fail" : model.userData["name"]}",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 15, color: Colors.black45),
+                            );
+                          }
+                      )
                   )
-                )
               ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: ScopedModelDescendant<UserModel>(
-                    builder: (context, child, model){
-                      return new TextField(
-                        enabled: false,
-                        decoration: new InputDecoration(
-                          labelText: "Nome: \n\n ${model.currentUser() == null ? "Fail" : model.userData["name"]}",
-                        ),
-                      );
-                    }
+                      builder: (context, child, model){
+                        return new TextField(
+                          enabled: false,
+                          decoration: new InputDecoration(
+                            labelText: "Nome: \n\n ${model.currentUser() == null ? "Fail" : model.userData["name"]}",
+                          ),
+                        );
+                      }
                   )
-                ),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: ScopedModelDescendant<UserModel>(
-                  builder: (context, child, model){
-                    return new TextField(
-                      enabled: false,
-                      decoration: new InputDecoration(
-                        labelText: "E-mail: \n\n ${model.currentUser() == null ? "Fail" : model.userData["email"]}",
-                      ),
-                    );
-                  }
-                )
-              ),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: ScopedModelDescendant<UserModel>(
-                  builder: (context, child, model){
-                    return new TextField(
-                      enabled: false,
-                      decoration: new InputDecoration(
-                        labelText: "Data de Nascimento: \n\n ${model.currentUser() == null ? "Fail" : model.userData["birth"]}",
-                      ),
-                    );
-                  }
-                )
-              ),
-              new Padding(
-                padding: EdgeInsets.all(10.0),
-                child: ScopedModelDescendant<UserModel>(
-                  builder: (context, child, model){
-                    return new TextField(
-                      enabled: false,
-                      decoration: new InputDecoration(
-                        labelText: "Telefone: \n\n ${model.currentUser() == null ? "Fail" : model.userData["phone"]}",
-                      ),
-                    );
-                  }
-                )
               ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: ScopedModelDescendant<UserModel>(
-                    builder: (context, child, model){
-                      return new TextField(
-                        enabled: false,
-                        decoration: new InputDecoration(
-                          labelText: "Usuário do PicPay: \n\n ${model.currentUser() == null ? "Fail" : model.userData["picpay"]}",
-                        ),
-                      );
-                    }
+                      builder: (context, child, model){
+                        return new TextField(
+                          enabled: false,
+                          decoration: new InputDecoration(
+                            labelText: "E-mail: \n\n ${model.currentUser() == null ? "Fail" : model.userData["email"]}",
+                          ),
+                        );
+                      }
                   )
-                ),
+              ),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ScopedModelDescendant<UserModel>(
+                      builder: (context, child, model){
+                        return new TextField(
+                          enabled: false,
+                          decoration: new InputDecoration(
+                            labelText: "Data de Nascimento: \n\n ${model.currentUser() == null ? "Fail" : model.userData["birth"]}",
+                          ),
+                        );
+                      }
+                  )
+              ),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ScopedModelDescendant<UserModel>(
+                      builder: (context, child, model){
+                        return new TextField(
+                          enabled: false,
+                          decoration: new InputDecoration(
+                            labelText: "Telefone: \n\n ${model.currentUser() == null ? "Fail" : model.userData["phone"]}",
+                          ),
+                        );
+                      }
+                  )
+              ),
+              new Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ScopedModelDescendant<UserModel>(
+                      builder: (context, child, model){
+                        return new TextField(
+                          enabled: false,
+                          decoration: new InputDecoration(
+                            labelText: "Usuário do PicPay: \n\n ${model.currentUser() == null ? "Fail" : model.userData["picpay"]}",
+                          ),
+                        );
+                      }
+                  )
+              ),
             ],
           ),
         )
-      );
+    );
   }
 }

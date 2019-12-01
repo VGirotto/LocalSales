@@ -176,4 +176,8 @@ class UserModel extends Model {
   void savePicpay(String text) {
     userData["picpay"] = text;
   }
+
+  void savephotoUrl(String text) {
+    userData["photoUrl"] = text;
+  }
 }

@@ -96,8 +96,8 @@ class _chat_mainState extends State<chat_main>{
 
   @override
   Widget build(BuildContext context) {
-    print("entrou com 1 - $name");
-    print("entrou com 2 - $currentUserId");
+    //print("entrou com 1 - $name");
+    //print("entrou com 2 - $currentUserId");
     return Container(
       child: StreamBuilder (
         stream: Firestore.instance.collection('users').snapshots(),

@@ -2,13 +2,31 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'dart:async';
+import 'dart:io';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:local_sales/screens/fullPhoto_screen.dart';
+import 'package:intl/intl.dart';
 
-class Cadastro extends StatefulWidget {
+class Cadastro extends StatelessWidget {
   @override
-  _CadastroState createState() => _CadastroState();
+  Widget build(BuildContext context) {
+    return CadastroP();
+  }
 }
 
-class _CadastroState extends State<Cadastro> {
+class CadastroP extends StatefulWidget {
+  @override
+  State createState() => new _CadastroState();
+}
+
+class _CadastroState extends State<CadastroP> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
@@ -20,11 +38,50 @@ class _CadastroState extends State<Cadastro> {
   String _pass = "", t1 = 'Show Password', t2 = "Show Password";
   bool isSwitched = false, isChecked1 = false, isChecked2 = false;
   String _img_path;
+  File imageFile;
+  bool isLoading = false;
+  String imageUrl = '';
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final date = new RegExp(r"\d\d\/\d\d\/\d\d\d\d");
 
   @override
+  void initState() {
+    super.initState();
+    isLoading = false;
+    imageUrl = '';
+  }
+
+  Future uploadFile() async {
+    String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+    StorageReference reference = FirebaseStorage.instance.ref().child(fileName);
+    StorageUploadTask uploadTask = reference.putFile(imageFile);
+    StorageTaskSnapshot storageTaskSnapshot = await uploadTask.onComplete;
+    storageTaskSnapshot.ref.getDownloadURL().then((downloadUrl) {
+      imageUrl = downloadUrl;
+      setState(() {
+        isLoading = false;
+        //onSendMessage(imageUrl, 1);
+      });
+    }, onError: (err) {
+      setState(() {
+        isLoading = false;
+      });
+      Fluttertoast.showToast(msg: 'This file is not an image');
+    });
+  }
+
+  Future getImage() async {
+    imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+
+    if (imageFile != null) {
+      setState(() {
+        isLoading = true;
+      });
+      uploadFile();
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
@@ -196,10 +253,10 @@ class _CadastroState extends State<Cadastro> {
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
-                                        image: _img_path != null
-                                            ? AssetImage(_img_path)
+                                        image: imageUrl != ""
+                                            ? NetworkImage(imageUrl)
                                             : NetworkImage(
-                                                "https://logodetimes.com/wp-content/uploads/corinthians-capa.jpg"),
+                                                "https://previews.123rf.com/images/dxinerz/dxinerz1507/dxinerz150700705/42826470-user-select-insert-icon-vector-image-can-also-be-used-for-admin-dashboard-suitable-for-mobile-apps-w.jpg"),
                                       ),
                                     ),
                                   ),
@@ -232,20 +289,12 @@ class _CadastroState extends State<Cadastro> {
                             ),
                           ),
                           onTap: () {
-                            showDialog(
-                                context: context,
-                                child: SimpleDialog(
-                                  title: Text("Salveee"),
-                                  children: <Widget>[
-                                    Text(
-                                      "Só mostrando que aqui vai abrir a galeria pra trocar a foto :D",
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                      ),
-                                    )
-                                  ],
-                                ));
+                            getImage();
+                            print(imageUrl);
+                            print(imageUrl);
+                            print(imageUrl);
+                            print(imageUrl);
+                            print(imageUrl);
                           },
                         ),
                         SizedBox(
@@ -284,24 +333,21 @@ class _CadastroState extends State<Cadastro> {
                       },
                     ),
                   ),
-
                   Container(
                       child: new TextFormField(
-                        controller: _phone,
-                        keyboardType: TextInputType.number,
-                        decoration: new InputDecoration(
-                          labelStyle: TextStyle(color: Colors.black),
-                          hintText: '11970707070',
-                          labelText: "Telefone",
-                          prefixIcon: Icon(
-                            Icons.phone,
-                            size: 30,
-                            color: Colors.orange,
-                          ),
-                        ),
-                      )
-                  ),
-
+                    controller: _phone,
+                    keyboardType: TextInputType.number,
+                    decoration: new InputDecoration(
+                      labelStyle: TextStyle(color: Colors.black),
+                      hintText: '11970707070',
+                      labelText: "Telefone",
+                      prefixIcon: Icon(
+                        Icons.phone,
+                        size: 30,
+                        color: Colors.orange,
+                      ),
+                    ),
+                  )),
                   Container(
                       padding: EdgeInsets.only(top: 30.0),
                       child: Row(children: <Widget>[
@@ -348,8 +394,6 @@ class _CadastroState extends State<Cadastro> {
                       ),
                     ],
                   )),
-
-
                   Container(
                     padding: EdgeInsets.only(top: 20.0, bottom: 40.0),
                     child: SizedBox(
@@ -370,9 +414,10 @@ class _CadastroState extends State<Cadastro> {
                               "email": _emailController.text,
                               "birth": _birthController.text,
                               "picpay": _picpay.text,
+                              "photoUrl": imageUrl,
                               "phone": _phone.text,
                               "conversou": [],
-                              "fotos":[],
+                              "fotos": [],
                             };
 
                             model.signUp(
@@ -393,24 +438,22 @@ class _CadastroState extends State<Cadastro> {
     );
   }
 
-  void _onSuccess(){
-    _scaffoldKey.currentState.showSnackBar(
-      SnackBar(content: Text("Usuário criado com sucesso!"),
-        backgroundColor: Theme.of(context).primaryColor,
-        duration: Duration(seconds: 2),
-      )
-    );
-    Future.delayed(Duration(seconds: 2)).then((_){
+  void _onSuccess() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Usuário criado com sucesso!"),
+      backgroundColor: Theme.of(context).primaryColor,
+      duration: Duration(seconds: 2),
+    ));
+    Future.delayed(Duration(seconds: 2)).then((_) {
       Navigator.of(context).pop();
     });
   }
 
-  void _onFail(){
-    _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Falha ao criar usuário!"),
-          backgroundColor: Colors.redAccent,
-          duration: Duration(seconds: 2),
-        )
-    );
+  void _onFail() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Falha ao criar usuário!"),
+      backgroundColor: Colors.redAccent,
+      duration: Duration(seconds: 2),
+    ));
   }
 }
