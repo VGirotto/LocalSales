@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:local_sales/screens/cadastroProduto_screen.dart';
 import 'package:local_sales/tabs/aboutapp_tab.dart';
-import 'package:local_sales/tabs/configuration_tab.dart';
 import 'package:local_sales/tabs/home_tab.dart';
 import 'package:local_sales/tabs/log_tab.dart';
 import 'package:local_sales/tabs/products_tab.dart';
@@ -92,19 +91,11 @@ class _FeedState extends State<Feed> {
           ),
           Scaffold(
             appBar: AppBar(
-              title: Text("Configurações"),
-              centerTitle: true,
-            ),
-            drawer: CustomDrawer(_pageController),
-            body: ConfigurationTab(),
-          ),
-          Scaffold(
-            appBar: AppBar(
               title: Text("Sobre o app"),
               centerTitle: true,
             ),
             drawer: CustomDrawer(_pageController),
-            body: AboutAppTab(title: "Sobre o app"),
+            body: AboutAppTab(),
           ),
         ],
       ),

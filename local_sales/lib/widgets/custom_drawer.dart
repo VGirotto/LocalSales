@@ -35,20 +35,23 @@ class CustomDrawer extends StatelessWidget {
                     Positioned(
                       top: 8.0,
                       left: 0.0,
-                      child: Container(
-                        width: 100.0,
-                        height: 100.0,
-                        child: DecoratedBox(
-                          decoration: new BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage('images/Logo.png')
+                      child: ScopedModelDescendant<UserModel>(
+                      builder: (context,child,model) {
+                        return Container(
+                            width: 100.0,
+                            height: 100.0,
+                            child: DecoratedBox(
+                                decoration: new BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: new DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: NetworkImage(
+                                            model.userData['photoUrl'])
+                                    )
+                                )
                             )
-                          )
-                        )
-                      )
-                    ),
+                        );
+                      },),),
                     Positioned(
                       left: 0.0,
                       bottom: 0.0,
@@ -93,8 +96,7 @@ class CustomDrawer extends StatelessWidget {
               DrawerTile(Icons.account_circle, "Perfil", pageController, 2),
               DrawerTile(Icons.chat, "Chat", pageController, 3),
               DrawerTile(Icons.playlist_add_check, "Meus Produtos", pageController, 4),
-              DrawerTile(Icons.settings, "Configurações", pageController, 5),
-              DrawerTile(Icons.info_outline, "Sobre o app", pageController, 6),
+              DrawerTile(Icons.info_outline, "Sobre o app", pageController, 5),
             ],
           ),
         ]
