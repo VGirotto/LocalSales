@@ -8,6 +8,7 @@ import 'dart:async';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:image_cropper/image_cropper.dart';
 
 
 bool isSwitched = false;
@@ -60,6 +61,20 @@ class _EditProfileState extends State<EditProfile>
   }
   Color themeColor= Colors.orange;
 
+  Future cropImage(File image) async {
+    File croppedFile = await ImageCropper.cropImage(
+        sourcePath: image.path,
+        androidUiSettings: AndroidUiSettings(
+            toolbarColor: Colors.deepOrange,
+            toolbarWidgetColor: Colors.grey,
+            initAspectRatio: CropAspectRatioPreset.square,
+            lockAspectRatio: true),
+        iosUiSettings: IOSUiSettings(
+          minimumAspectRatio: 1.0,
+        )
+    );
+
+  }
 
   @override
   Future uploadFile() async {
@@ -83,10 +98,9 @@ class _EditProfileState extends State<EditProfile>
   }
 
 
-
   Future getImage() async {
     imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
-
+    cropImage(imageFile);
     if (imageFile != null) {
       setState(() {
         isLoading = true;

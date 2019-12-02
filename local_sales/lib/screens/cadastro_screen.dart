@@ -13,6 +13,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:local_sales/screens/fullPhoto_screen.dart';
 import 'package:intl/intl.dart';
+import 'package:image_cropper/image_cropper.dart';
+
+
 
 class Cadastro extends StatelessWidget {
   @override
@@ -52,6 +55,21 @@ class _CadastroState extends State<CadastroP> {
     imageUrl = '';
   }
 
+  Future cropImage(File image) async {
+    File croppedFile = await ImageCropper.cropImage(
+        sourcePath: image.path,
+        androidUiSettings: AndroidUiSettings(
+            toolbarColor: Colors.deepOrange,
+            toolbarWidgetColor: Colors.grey,
+            initAspectRatio: CropAspectRatioPreset.square,
+            lockAspectRatio: true),
+        iosUiSettings: IOSUiSettings(
+          minimumAspectRatio: 1.0,
+        )
+    );
+
+  }
+
   Future uploadFile() async {
     String fileName = DateTime.now().millisecondsSinceEpoch.toString();
     StorageReference reference = FirebaseStorage.instance.ref().child(fileName);
@@ -73,7 +91,7 @@ class _CadastroState extends State<CadastroP> {
 
   Future getImage() async {
     imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
-
+    cropImage(imageFile);
     if (imageFile != null) {
       setState(() {
         isLoading = true;

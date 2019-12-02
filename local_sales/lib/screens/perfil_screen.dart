@@ -3,6 +3,7 @@ import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 
+
 const String testDevice = 'Mobile_id';
 
 
