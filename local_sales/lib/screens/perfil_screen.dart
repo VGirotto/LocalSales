@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:firebase_admob/firebase_admob.dart';
+
+const String testDevice = 'Mobile_id';
+
 
 bool isSwitched = false;
 
@@ -12,6 +16,38 @@ class Perfil extends StatefulWidget {
 class _PerfilState extends State<Perfil> {
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: testDevice != null ? <String>[testDevice] : null,
+    keywords: <String>['Game','Mario'],
+  );
+
+  BannerAd myBanner = BannerAd(
+    adUnitId: BannerAd.testAdUnitId,/*"ca-app-pub-2406777328181976/7942987289",*/
+    size: AdSize.banner,
+    targetingInfo: targetingInfo,
+    listener: (MobileAdEvent event){
+      print("BannerAd $event");
+    },
+  );
+
+  @override
+  void initState(){
+    FirebaseAdMob.instance.initialize(
+      appId: "ca-app-pub-2406777328181976~5668193642",
+    );
+    myBanner..load()..show();
+    super.initState();
+  }
+
+  @override
+  void dispose(){
+    myBanner.dispose();
+    super.dispose();
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {

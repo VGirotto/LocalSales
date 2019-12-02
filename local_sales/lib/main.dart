@@ -9,6 +9,10 @@ import 'package:local_sales/screens/feed_screen.dart';
     //se a vida não é programada e
     //as melhores coisas não tem lógica
 
+    //De que adianta programar toda a vida
+    //se o retorno dela
+    //é sempre vazio
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

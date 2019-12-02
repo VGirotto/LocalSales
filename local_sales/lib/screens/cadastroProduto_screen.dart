@@ -5,7 +5,11 @@ import 'package:local_sales/validators/produto_validator.dart';
 import 'package:local_sales/widgets/Images_widgets.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 
+
+
+const String testDevice = 'Mobile_id';
 
 class cadastroProduto extends StatefulWidget {
 
@@ -24,6 +28,36 @@ class _cadastroProdutoState extends State<cadastroProduto> with ProductValidator
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final String categoriaID;
+
+
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: testDevice != null ? <String>[testDevice] : null,
+    keywords: <String>['Game','Mario'],
+  );
+
+  BannerAd myBanner = BannerAd(
+    adUnitId: BannerAd.testAdUnitId,/*"ca-app-pub-2406777328181976/7942987289",*/
+    size: AdSize.banner,
+    targetingInfo: targetingInfo,
+    listener: (MobileAdEvent event){
+      print("BannerAd $event");
+    },
+  );
+
+  @override
+  void initState(){
+    FirebaseAdMob.instance.initialize(
+      appId: "ca-app-pub-2406777328181976~5668193642",
+    );
+    myBanner..load()..show();
+    super.initState();
+  }
+
+  @override
+  void dispose(){
+    myBanner.dispose();
+    super.dispose();
+  }
 
 
   _cadastroProdutoState(this.categoriaID, DocumentSnapshot product):
