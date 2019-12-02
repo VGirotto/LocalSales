@@ -6,6 +6,8 @@ import 'package:local_sales/tabs/chat_tab.dart';
 import 'package:local_sales/models/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/cupertino.dart';
+import 'vendedor_screen.dart';
+
 
 class ProductScreen extends StatefulWidget {
   final ProductData product;
@@ -17,6 +19,7 @@ class ProductScreen extends StatefulWidget {
 }
 
 class _ProductScreenState extends State<ProductScreen> {
+
   final ProductData product;
 
   _ProductScreenState(this.product);
@@ -110,13 +113,37 @@ class _ProductScreenState extends State<ProductScreen> {
                     ),
                     Padding(
                         padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
-                        child: Text(
-                          "Vendedor(a): " + product.salesperson.toString(),
-                          style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w300
-                          ),
+                        child: FutureBuilder<DocumentSnapshot>(
+                          future: Firestore.instance.collection("users").document(product.uid).get(),
+                          builder: (context, snapshot) {
+                            return Text(
+                                  "Vendedor(a): " + snapshot.data["name"],
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w300
+                                  ),
+                                );
+                          },
                         )
+                    ),
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(0.0, 5.0, 140.0, 0.0),
+                        child: RaisedButton(
+                          color: Colors.orange,
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(           
+                                builder: (context)=>VendedorScreen(product),
+                              )
+                            );
+                          },
+                          child: Text("Acessar Perfil do Vendedor",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white,
+                                fontSize: 12.0
+                            ),
+                          ),
+                        ),
                     ),
                     Padding(
                         padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/beatriz/repositorio/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/home/vinicius/AndroidStudioProjects/LocalSales/LocalSales/local_sales/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/home/beatriz/.gradle/caches/transforms-2/files-2.1/aa1f9907a5c997396cffa7ca5236428e/res/values-land/values-land.xml",
+                    "source": "/home/vinicius/.gradle/caches/transforms-2/files-2.1/361c0fb8eef67437852274cc536d3af3/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

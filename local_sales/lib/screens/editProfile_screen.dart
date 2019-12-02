@@ -262,7 +262,7 @@ class _EditProfileState extends State<EditProfile>
                   ),
                 ),
                 new Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 60.0),
                   child: RaisedButton(
                     color: Colors.deepOrange,
                     child: Text(

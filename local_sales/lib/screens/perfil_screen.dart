@@ -36,7 +36,10 @@ class _PerfilState extends State<Perfil> {
     FirebaseAdMob.instance.initialize(
       appId: "ca-app-pub-2406777328181976~5668193642",
     );
-    myBanner..load()..show();
+    myBanner..load()..show(
+      //anchorOffset: 60.0,
+      anchorType: AnchorType.bottom,
+    );
     super.initState();
   }
 
@@ -146,7 +149,7 @@ class _PerfilState extends State<Perfil> {
                   )
               ),
               new Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 60.0),
                   child: ScopedModelDescendant<UserModel>(
                       builder: (context, child, model){
                         return new TextField(

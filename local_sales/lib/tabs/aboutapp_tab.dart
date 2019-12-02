@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:firebase_admob/firebase_admob.dart';
+
+const String testDevice = 'Mobile_id';
 
 class AboutAppTab extends StatefulWidget {
   @override
@@ -7,6 +10,36 @@ class AboutAppTab extends StatefulWidget {
 }
 
 class _AboutAppTabState extends State<AboutAppTab> {
+
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: testDevice != null ? <String>[testDevice] : null,
+    keywords: <String>['Game','Mario'],
+  );
+
+  BannerAd myBanner = BannerAd(
+    adUnitId: BannerAd.testAdUnitId,/*"ca-app-pub-2406777328181976/7942987289",*/
+    size: AdSize.banner,
+    targetingInfo: targetingInfo,
+    listener: (MobileAdEvent event){
+      print("BannerAd $event");
+    },
+  );
+
+  @override
+  void initState(){
+    FirebaseAdMob.instance.initialize(
+      appId: "ca-app-pub-2406777328181976~5668193642",
+    );
+    myBanner..load()..show();
+    super.initState();
+  }
+
+  @override
+  void dispose(){
+    myBanner.dispose();
+    super.dispose();
+  }
+
   final _emailController = TextEditingController();
 
   Widget build(BuildContext context) {
