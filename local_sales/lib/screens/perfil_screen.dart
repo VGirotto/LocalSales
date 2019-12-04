@@ -73,7 +73,7 @@ class _PerfilState extends State<Perfil> {
                                 decoration: new BoxDecoration(
                                     shape: BoxShape.circle,
                                     image: new DecorationImage(
-                                        fit: BoxFit.fill,
+                                        fit: BoxFit.cover,
                                         image: NetworkImage(model.userData['photoUrl'])
                                     )
                                 )

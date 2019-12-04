@@ -124,7 +124,7 @@ class _CadastroState extends State<CadastroP> {
                               decoration: new BoxDecoration(
                                   shape: BoxShape.circle,
                                   image: new DecorationImage(
-                                      fit: BoxFit.fill,
+                                      fit: BoxFit.cover,
                                       image: AssetImage("images/Logo.png")))))),
                   Container(
                     child: new Text('LocalSales',

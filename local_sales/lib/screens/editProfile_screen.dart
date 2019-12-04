@@ -158,7 +158,7 @@ class _EditProfileState extends State<EditProfile>
                               decoration: new BoxDecoration(
                                   shape: BoxShape.circle,
                                   image: new DecorationImage(
-                                      fit: BoxFit.fill,
+                                      fit: BoxFit.cover,
                                       image: imageUrl != model.userData["photoUrl"] && imageUrl != "" && imageUrl != null
                                           ? NetworkImage(imageUrl)
                                           : NetworkImage(model.userData["photoUrl"]),
@@ -278,7 +278,7 @@ class _EditProfileState extends State<EditProfile>
                 new Padding(
                   padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 60.0),
                   child: RaisedButton(
-                    color: Colors.deepOrange,
+                    color: Colors.orange,
                     child: Text(
                       "Submeter",
                       textAlign: TextAlign.center,

@@ -93,7 +93,7 @@ class _VendedorScreenState extends State<VendedorScreen> {
                         decoration: new BoxDecoration(
                             //shape: BoxShape.circle,
                             image: new DecorationImage(
-                                fit: BoxFit.fill,
+                                fit: BoxFit.cover,
                                 image: NetworkImage(snapshot.data["photoUrl"])
                             )
                         )

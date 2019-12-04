@@ -29,7 +29,7 @@ class CustomDrawer extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(bottom:8.0),
                 padding: EdgeInsets.fromLTRB(0.0, 16.0, 16.0, 8.0),
-                height: 170.0,
+                height: 180.0,
                 child: Stack(
                   children: <Widget>[
                     Positioned(
@@ -44,7 +44,7 @@ class CustomDrawer extends StatelessWidget {
                                 decoration: new BoxDecoration(
                                     shape: BoxShape.circle,
                                     image: new DecorationImage(
-                                        fit: BoxFit.fill,
+                                        fit: BoxFit.cover,
                                         image: NetworkImage(
                                             model.userData['photoUrl'])
                                     )
