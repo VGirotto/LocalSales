@@ -238,7 +238,7 @@ class _CadastroState extends State<CadastroP> {
                         }),
                   ]),
                   Container(
-                      padding: EdgeInsets.only(top: 30.0),
+                      padding: EdgeInsets.only(top: 30.0, bottom: 15.0),
                       child: Row(children: <Widget>[
                         Icon(
                           Icons.account_box,
@@ -252,8 +252,76 @@ class _CadastroState extends State<CadastroP> {
                             color: Colors.black,
                           ),
                         )
-                      ])),
+                      ]
+                    )
+                  ),
+                  
+                  
+                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.center,
+                        child: CircleAvatar(
+                          radius: 95,
+                          child: ClipOval(
+                            child: SizedBox(
+                              width: 175.0,
+                              height: 175.0,
+                              child: Image(
+                                image: (imageUrl != "")?NetworkImage(imageUrl)
+                                :NetworkImage(
+                                "http://www.tuktukdesign.com/wp-content/uploads/2017/12/person-icon.jpg"),
+                                fit: BoxFit.cover,
+                              )
+                            ),
+                          ),
+                          backgroundColor: Colors.black12,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 60.0),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.camera_alt,
+                            color: Colors. orange,
+                            size: 45.0,
+                          ),
+                          onPressed: (){
+                            getImage();//Pega imagem da galeria
+                          },
+                        )
+                      ),
+                    ],
+                  ),
                   Container(
+                    width: 250,
+                    child: TextFormField(
+                      controller: _nameController,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        labelStyle: TextStyle(
+                          color: Colors.black
+                          ),
+                        hintText: "Fulano da Silva",
+                        labelText: 'Nome',
+                        prefixIcon: Icon(
+                          Icons.contacts,
+                          size: 30,
+                          color: Colors.orange,
+                        )
+                      ),
+                      validator: (text) {
+                        if (text.isEmpty)
+                          return "Nome Inválido!";
+                      },
+                    ),
+                  ),
+                  
+                  
+                  
+                  /*Container(
                     padding: EdgeInsets.only(top: 10.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -331,11 +399,16 @@ class _CadastroState extends State<CadastroP> {
                         ),
                       ],
                     ),
-                  ),
+                  ),*/
+                  
+                  
+                  
+                  
+                  
                   Container(
                     child: TextFormField(
                       controller: _birthController,
-                      keyboardType: TextInputType.datetime,
+                      keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                           labelStyle: TextStyle(color: Colors.black),
                           hintText: "01/01/2000",
