@@ -15,8 +15,6 @@ import 'package:local_sales/screens/fullPhoto_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:image_cropper/image_cropper.dart';
 
-
-
 class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -67,7 +65,6 @@ class _CadastroState extends State<CadastroP> {
           minimumAspectRatio: 1.0,
         )
     );
-
   }
 
   Future uploadFile() async {
@@ -318,93 +315,6 @@ class _CadastroState extends State<CadastroP> {
                       },
                     ),
                   ),
-                  
-                  
-                  
-                  /*Container(
-                    padding: EdgeInsets.only(top: 10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        GestureDetector(
-                          child: Container(
-                            child: Row(
-                              children: <Widget>[
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: imageUrl != ""
-                                            ? NetworkImage(imageUrl)
-                                            : NetworkImage(
-                                                "https://previews.123rf.com/images/dxinerz/dxinerz1507/dxinerz150700705/42826470-user-select-insert-icon-vector-image-can-also-be-used-for-admin-dashboard-suitable-for-mobile-apps-w.jpg"),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  child: Container(
-                                    width: 250,
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: TextFormField(
-                                      controller: _nameController,
-                                      keyboardType: TextInputType.text,
-                                      decoration: InputDecoration(
-                                          labelStyle:
-                                              TextStyle(color: Colors.black),
-                                          hintText: "Fulano da Silva",
-                                          labelText: 'Nome',
-                                          prefixIcon: Icon(
-                                            Icons.contacts,
-                                            size: 30,
-                                            color: Colors.orange,
-                                          )),
-                                      validator: (text) {
-                                        if (text.isEmpty)
-                                          return "Nome Inválido!";
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          onTap: () {
-                            getImage();
-                            print(imageUrl);
-                            print(imageUrl);
-                            print(imageUrl);
-                            print(imageUrl);
-                            print(imageUrl);
-                          },
-                        ),
-                        SizedBox(
-                          width: 100.0,
-                          child: Container(
-                            padding: EdgeInsets.only(top: 5, left: 15),
-                            child: Text(
-                              "      Foto",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),*/
-                  
-                  
-                  
-                  
-                  
                   Container(
                     child: TextFormField(
                       controller: _birthController,
