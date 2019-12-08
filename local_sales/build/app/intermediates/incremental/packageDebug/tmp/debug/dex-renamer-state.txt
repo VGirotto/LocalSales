@@ -1,4 +1,4 @@
-#Sat Dec 07 16:03:51 BRST 2019
+#Sun Dec 08 20:56:24 BRST 2019
 base.10=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\25
 path.30=classes2.dex
 base.9=C\:\\Users\\Claud\\Documents\\EngSoft\\LocalSales\\local_sales\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\17
